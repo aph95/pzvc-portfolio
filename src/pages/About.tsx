@@ -1,8 +1,19 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import AboutSkeleton from '@/components/skeletons/AboutSkeleton';
 
 const About = () => {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1200);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const toggleSection = (section: string) => {
     setExpandedSection(expandedSection === section ? null : section);
@@ -34,6 +45,10 @@ const About = () => {
     { category: "Tools", items: ["Figma", "Sketch", "Principle", "Adobe Creative Suite"] },
     { category: "Methods", items: ["Design Thinking", "Agile", "User Testing", "Workshop Facilitation"] }
   ];
+
+  if (isLoading) {
+    return <AboutSkeleton />;
+  }
 
   return (
     <div className="min-h-screen bg-white pt-24">
