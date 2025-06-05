@@ -1,20 +1,9 @@
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
-import ProjectsSkeleton from '@/components/skeletons/ProjectsSkeleton';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1300);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   const projects = [
     {
@@ -54,10 +43,6 @@ const Projects = () => {
       image: "/api/placeholder/600/400"
     }
   ];
-
-  if (isLoading) {
-    return <ProjectsSkeleton />;
-  }
 
   return (
     <div className="min-h-screen bg-white pt-24">

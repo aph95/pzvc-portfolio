@@ -1,25 +1,8 @@
 
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
-import HomeSkeleton from '@/components/skeletons/HomeSkeleton';
 
 const Home = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return <HomeSkeleton />;
-  }
-
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
