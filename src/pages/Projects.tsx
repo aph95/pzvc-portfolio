@@ -1,6 +1,9 @@
 
 import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
+import ScrollReveal from '../components/ScrollReveal';
+import AnimatedLine from '../components/AnimatedLine';
+import GuideArrow from '../components/GuideArrow';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -45,10 +48,10 @@ const Projects = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-24">
+    <div className="min-h-screen bg-white pt-24 relative">
       <div className="max-w-6xl mx-auto px-6 py-12">
         {/* Header */}
-        <div className="fade-in mb-16">
+        <div className="fade-in mb-16 relative">
           <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
             Selected work
           </h1>
@@ -56,95 +59,147 @@ const Projects = () => {
             Here's a collection of projects that showcase my approach to solving 
             complex design challenges through user-centered thinking and systematic design.
           </p>
+
+          {/* Guide path to projects */}
+          <div className="mt-8">
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-gray-500">Follow the journey</span>
+              <GuideArrow direction="down" delay={1000} />
+            </div>
+          </div>
+
+          {/* Curved guide line to first project */}
+          <AnimatedLine
+            startX={20}
+            startY={80}
+            endX={50}
+            endY={100}
+            delay={1500}
+            curve={true}
+            className="hidden md:block"
+          />
         </div>
 
         {/* Projects Grid */}
-        <div className="space-y-8">
+        <div className="space-y-8 relative">
           {projects.map((project, index) => (
-            <div
+            <ScrollReveal 
               key={project.id}
-              className={`notion-card overflow-hidden transition-all duration-500 fade-in ${
-                index === 1 ? 'fade-in-delay-1' : index === 2 ? 'fade-in-delay-2' : ''
-              }`}
+              delay={index * 200}
+              className="relative"
             >
-              <div className="md:flex">
-                {/* Project Image */}
-                <div className="md:w-1/2">
-                  <div className="aspect-video bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-blue-600 rounded-lg mx-auto mb-4 opacity-20"></div>
-                      <p className="text-blue-600 font-medium">{project.title}</p>
+              <div className="notion-card overflow-hidden transition-all duration-500 group">
+                <div className="md:flex">
+                  {/* Project Image */}
+                  <div className="md:w-1/2">
+                    <div className="aspect-video bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center relative">
+                      <div className="text-center">
+                        <div className="w-16 h-16 bg-blue-600 rounded-lg mx-auto mb-4 opacity-20"></div>
+                        <p className="text-blue-600 font-medium">{project.title}</p>
+                      </div>
+                      
+                      {/* Project connection indicator */}
+                      <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="w-3 h-3 bg-blue-600 rounded-full animate-pulse"></div>
+                      </div>
                     </div>
                   </div>
+
+                  {/* Project Info */}
+                  <div className="md:w-1/2 p-8 relative">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-sm text-gray-500">{project.category}</span>
+                      <span className="text-gray-300">•</span>
+                      <span className="text-sm text-gray-500">{project.year}</span>
+                    </div>
+                    
+                    <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                      {project.title}
+                    </h3>
+                    
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tags.map((tag, tagIndex) => (
+                        <span
+                          key={tagIndex}
+                          className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <button
+                      onClick={() => setSelectedProject(
+                        selectedProject === project.id ? null : project.id
+                      )}
+                      className="group inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
+                    >
+                      {selectedProject === project.id ? 'Show less' : 'View details'}
+                      <ChevronRight className={`ml-1 h-4 w-4 transition-transform duration-200 ${
+                        selectedProject === project.id ? 'rotate-90' : 'group-hover:translate-x-1'
+                      }`} />
+                    </button>
+                  </div>
                 </div>
 
-                {/* Project Info */}
-                <div className="md:w-1/2 p-8">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-sm text-gray-500">{project.category}</span>
-                    <span className="text-gray-300">•</span>
-                    <span className="text-sm text-gray-500">{project.year}</span>
-                  </div>
-                  
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                    {project.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {project.description}
-                  </p>
+                {/* Expanded Details */}
+                {selectedProject === project.id && (
+                  <div className="border-t border-gray-100 p-8 animate-fade-in relative">
+                    <div className="grid md:grid-cols-3 gap-8">
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-3">Challenge</h4>
+                        <p className="text-gray-600 leading-relaxed">{project.challenge}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-3">Solution</h4>
+                        <p className="text-gray-600 leading-relaxed">{project.solution}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-3">Impact</h4>
+                        <p className="text-gray-600 leading-relaxed">{project.impact}</p>
+                      </div>
+                    </div>
 
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag, tagIndex) => (
-                      <span
-                        key={tagIndex}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                    {/* Process flow connecting lines */}
+                    <div className="mt-6 relative">
+                      <AnimatedLine
+                        startX={16}
+                        startY={90}
+                        endX={84}
+                        endY={90}
+                        delay={500}
+                        dashed={true}
+                        withArrow={true}
+                        className="hidden md:block"
+                      />
+                    </div>
                   </div>
+                )}
 
-                  <button
-                    onClick={() => setSelectedProject(
-                      selectedProject === project.id ? null : project.id
-                    )}
-                    className="group inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
-                  >
-                    {selectedProject === project.id ? 'Show less' : 'View details'}
-                    <ChevronRight className={`ml-1 h-4 w-4 transition-transform duration-200 ${
-                      selectedProject === project.id ? 'rotate-90' : 'group-hover:translate-x-1'
-                    }`} />
-                  </button>
-                </div>
+                {/* Project-to-project connecting line */}
+                {index < projects.length - 1 && (
+                  <div className="absolute left-1/2 -bottom-4 transform -translate-x-1/2">
+                    <div className="w-px h-8 bg-gradient-to-b from-blue-200 to-transparent"></div>
+                    <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2">
+                      <div className="w-2 h-2 bg-blue-400 rounded-full opacity-60"></div>
+                    </div>
+                  </div>
+                )}
               </div>
-
-              {/* Expanded Details */}
-              {selectedProject === project.id && (
-                <div className="border-t border-gray-100 p-8 animate-fade-in">
-                  <div className="grid md:grid-cols-3 gap-8">
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-3">Challenge</h4>
-                      <p className="text-gray-600 leading-relaxed">{project.challenge}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-3">Solution</h4>
-                      <p className="text-gray-600 leading-relaxed">{project.solution}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-3">Impact</h4>
-                      <p className="text-gray-600 leading-relaxed">{project.impact}</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
+            </ScrollReveal>
           ))}
+
+          {/* Main project flow line */}
+          <div className="absolute left-1/2 top-0 w-px h-full bg-gradient-to-b from-transparent via-blue-100 to-transparent opacity-30 transform -translate-x-1/2"></div>
         </div>
 
         {/* CTA Section */}
-        <div className="mt-20 text-center fade-in fade-in-delay-3">
-          <div className="notion-card p-12">
+        <ScrollReveal delay={1000} className="mt-20 text-center">
+          <div className="notion-card p-12 relative">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">
               Interested in working together?
             </h2>
@@ -152,14 +207,33 @@ const Projects = () => {
               I'm always open to discussing new opportunities and interesting projects. 
               Let's create something amazing together.
             </p>
+            
+            {/* Final guide element */}
+            <div className="mb-6">
+              <GuideArrow direction="down" delay={1500} pulse={false} />
+            </div>
+            
             <a
               href="mailto:hello@example.com"
               className="inline-flex items-center px-8 py-4 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
             >
               Get in touch
             </a>
+
+            {/* Celebratory connecting element */}
+            <AnimatedLine
+              startX={30}
+              startY={80}
+              endX={70}
+              endY={80}
+              delay={2000}
+              curve={true}
+              dashed={false}
+              withArrow={false}
+              className="hidden md:block opacity-20"
+            />
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </div>
   );
