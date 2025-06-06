@@ -1,5 +1,6 @@
 
 import { useEffect, useRef } from 'react';
+import { useTheme } from '@/contexts/ThemeContext';
 
 interface SpacetimeGridProps {
   className?: string;
@@ -8,6 +9,7 @@ interface SpacetimeGridProps {
 
 const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { isDarkMode } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -51,7 +53,13 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
 
     const drawGrid = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.strokeStyle = 'rgba(156, 163, 175, 0.3)';
+      
+      // Adaptive colors based on theme
+      const gridColor = isDarkMode ? 'rgba(156, 163, 175, 0.2)' : 'rgba(156, 163, 175, 0.3)';
+      const gradientColor1 = isDarkMode ? 'rgba(59, 130, 246, 0.1)' : 'rgba(59, 130, 246, 0.15)';
+      const gradientColor2 = isDarkMode ? 'rgba(59, 130, 246, 0.05)' : 'rgba(59, 130, 246, 0.08)';
+      
+      ctx.strokeStyle = gridColor;
       ctx.lineWidth = 1;
 
       const cols = Math.ceil(canvas.offsetWidth / gridSize);
@@ -151,8 +159,8 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
           mousePosition.x, mousePosition.y, 0,
           mousePosition.x, mousePosition.y, 150
         );
-        gradient.addColorStop(0, 'rgba(59, 130, 246, 0.15)');
-        gradient.addColorStop(0.5, 'rgba(59, 130, 246, 0.08)');
+        gradient.addColorStop(0, gradientColor1);
+        gradient.addColorStop(0.5, gradientColor2);
         gradient.addColorStop(1, 'rgba(59, 130, 246, 0)');
         
         ctx.fillStyle = gradient;
@@ -170,7 +178,7 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
       window.removeEventListener('resize', resizeCanvas);
       cancelAnimationFrame(animationId);
     };
-  }, [mousePosition]);
+  }, [mousePosition, isDarkMode]);
 
   return (
     <canvas
