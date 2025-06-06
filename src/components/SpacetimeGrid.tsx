@@ -32,16 +32,16 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
       const dx = x - mouseX;
       const dy = y - mouseY;
       const distance = Math.sqrt(dx * dx + dy * dy);
-      const maxDistance = 150;
+      const maxDistance = 200;
       
       if (distance < maxDistance) {
         const normalizedDistance = distance / maxDistance;
-        const warpStrength = (1 - normalizedDistance) * 30;
+        const warpStrength = (1 - normalizedDistance) * 40;
         
-        // Create a more realistic curvature effect
-        const curvatureFactor = Math.pow(1 - normalizedDistance, 2);
-        const warpX = (dx / distance) * warpStrength * curvatureFactor;
-        const warpY = (dy / distance) * warpStrength * curvatureFactor;
+        // Create gravitational pull effect - points bend towards the mouse
+        const pullFactor = Math.pow(1 - normalizedDistance, 3);
+        const warpX = -(dx / distance) * warpStrength * pullFactor;
+        const warpY = -(dy / distance) * warpStrength * pullFactor;
         
         return { warpX, warpY };
       }
@@ -57,48 +57,90 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
       const cols = Math.ceil(canvas.offsetWidth / gridSize);
       const rows = Math.ceil(canvas.offsetHeight / gridSize);
 
-      // Draw vertical lines with curvature
+      // Draw curved vertical lines
       for (let i = 0; i <= cols; i++) {
         ctx.beginPath();
         
-        for (let j = 0; j <= rows; j++) {
-          const x = i * gridSize;
+        let prevX = i * gridSize;
+        let prevY = 0;
+        
+        // Apply warp to starting point
+        if (mousePosition) {
+          const { warpX, warpY } = calculateWarp(prevX, prevY, mousePosition.x, mousePosition.y);
+          prevX += warpX;
+          prevY += warpY;
+        }
+        
+        ctx.moveTo(prevX, prevY);
+        
+        // Draw curved line by connecting multiple warped points
+        for (let j = 1; j <= rows; j++) {
+          let x = i * gridSize;
           let y = j * gridSize;
 
           // Apply spacetime curvature
           if (mousePosition) {
-            const { warpY } = calculateWarp(x, y, mousePosition.x, mousePosition.y);
+            const { warpX, warpY } = calculateWarp(x, y, mousePosition.x, mousePosition.y);
+            x += warpX;
             y += warpY;
           }
 
-          if (j === 0) {
-            ctx.moveTo(x, y);
-          } else {
+          // Create smooth curves using quadratic curves
+          const controlX = (prevX + x) / 2;
+          const controlY = (prevY + y) / 2;
+          
+          if (j === 1) {
             ctx.lineTo(x, y);
+          } else {
+            ctx.quadraticCurveTo(controlX, controlY, x, y);
           }
+          
+          prevX = x;
+          prevY = y;
         }
         ctx.stroke();
       }
 
-      // Draw horizontal lines with curvature
+      // Draw curved horizontal lines
       for (let j = 0; j <= rows; j++) {
         ctx.beginPath();
         
-        for (let i = 0; i <= cols; i++) {
+        let prevX = 0;
+        let prevY = j * gridSize;
+        
+        // Apply warp to starting point
+        if (mousePosition) {
+          const { warpX, warpY } = calculateWarp(prevX, prevY, mousePosition.x, mousePosition.y);
+          prevX += warpX;
+          prevY += warpY;
+        }
+        
+        ctx.moveTo(prevX, prevY);
+        
+        // Draw curved line by connecting multiple warped points
+        for (let i = 1; i <= cols; i++) {
           let x = i * gridSize;
-          const y = j * gridSize;
+          let y = j * gridSize;
 
           // Apply spacetime curvature
           if (mousePosition) {
-            const { warpX } = calculateWarp(x, y, mousePosition.x, mousePosition.y);
+            const { warpX, warpY } = calculateWarp(x, y, mousePosition.x, mousePosition.y);
             x += warpX;
+            y += warpY;
           }
 
-          if (i === 0) {
-            ctx.moveTo(x, y);
-          } else {
+          // Create smooth curves using quadratic curves
+          const controlX = (prevX + x) / 2;
+          const controlY = (prevY + y) / 2;
+          
+          if (i === 1) {
             ctx.lineTo(x, y);
+          } else {
+            ctx.quadraticCurveTo(controlX, controlY, x, y);
           }
+          
+          prevX = x;
+          prevY = y;
         }
         ctx.stroke();
       }
@@ -107,15 +149,15 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
       if (mousePosition) {
         const gradient = ctx.createRadialGradient(
           mousePosition.x, mousePosition.y, 0,
-          mousePosition.x, mousePosition.y, 100
+          mousePosition.x, mousePosition.y, 150
         );
-        gradient.addColorStop(0, 'rgba(59, 130, 246, 0.1)');
-        gradient.addColorStop(0.5, 'rgba(59, 130, 246, 0.05)');
+        gradient.addColorStop(0, 'rgba(59, 130, 246, 0.15)');
+        gradient.addColorStop(0.5, 'rgba(59, 130, 246, 0.08)');
         gradient.addColorStop(1, 'rgba(59, 130, 246, 0)');
         
         ctx.fillStyle = gradient;
         ctx.beginPath();
-        ctx.arc(mousePosition.x, mousePosition.y, 100, 0, Math.PI * 2);
+        ctx.arc(mousePosition.x, mousePosition.y, 150, 0, Math.PI * 2);
         ctx.fill();
       }
 
