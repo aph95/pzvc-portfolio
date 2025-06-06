@@ -1,6 +1,6 @@
+
 import { useState } from 'react';
 import FloatingPlanet from '../components/FloatingPlanet';
-import ThemeToggle from '../components/ThemeToggle';
 
 const About = () => {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
@@ -38,11 +38,6 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background pt-24 relative overflow-hidden transition-colors duration-300">
-      {/* Theme Toggle */}
-      <div className="fixed top-6 right-6 z-50">
-        <ThemeToggle />
-      </div>
-
       {/* Floating Elements */}
       <FloatingPlanet size="sm" color="bg-blue-400" initialX={10} initialY={20} speed={0.5} />
       <FloatingPlanet size="md" color="bg-purple-400" initialX={90} initialY={30} speed={0.8} />
@@ -103,7 +98,7 @@ const About = () => {
                     <div className={`transition-transform duration-300 ${
                       expandedSection === `exp-${index}` ? 'rotate-45' : ''
                     }`}>
-                      <div className="w-6 h-6 border border-border rounded flex items-center justify-center hover:border-blue-500 transition-colors">
+                      <div className="w-6 h-6 border border-border rounded flex items-center justify-center hover:border-blue-400 transition-colors">
                         <span className="text-muted-foreground text-sm">+</span>
                       </div>
                     </div>
@@ -130,7 +125,7 @@ const About = () => {
                 <ul className="space-y-2">
                   {skillGroup.items.map((skill, skillIndex) => (
                     <li key={skillIndex} className="text-muted-foreground flex items-center">
-                      <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-3"></span>
+                      <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-3"></span>
                       {skill}
                     </li>
                   ))}

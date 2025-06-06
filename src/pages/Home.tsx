@@ -4,18 +4,12 @@ import { ChevronRight } from 'lucide-react';
 import { useMousePosition } from '../hooks/useMousePosition';
 import SpacetimeGrid from '../components/SpacetimeGrid';
 import FloatingPlanet from '../components/FloatingPlanet';
-import ThemeToggle from '../components/ThemeToggle';
 
 const Home = () => {
   const mousePosition = useMousePosition();
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden transition-colors duration-300">
-      {/* Theme Toggle */}
-      <div className="fixed top-6 right-6 z-50">
-        <ThemeToggle />
-      </div>
-
       {/* Spacetime Grid Background */}
       <div className="absolute inset-0">
         <SpacetimeGrid mousePosition={mousePosition} />
@@ -33,9 +27,9 @@ const Home = () => {
           <div className="fade-in">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-foreground mb-8 leading-tight">
               Just as planets
-              <span className="block text-blue-600 font-medium">curve spacetime,</span>
+              <span className="block text-blue-400 font-medium">curve spacetime,</span>
               <span className="block">great designs curve</span>
-              <span className="block text-indigo-600 font-medium">user behavior</span>
+              <span className="block text-indigo-400 font-medium">user behavior</span>
             </h1>
           </div>
           

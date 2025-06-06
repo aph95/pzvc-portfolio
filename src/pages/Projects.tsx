@@ -18,7 +18,7 @@ const Projects = () => {
       solution: "Designed an intuitive dashboard that consolidates data streams into orbital patterns, creating natural information hierarchies and actionable insights through clear gravitational design principles.",
       impact: "Reduced cognitive load by 35% and improved data accuracy by creating momentum-based workflows that feel natural and intuitive.",
       tags: ["User Research", "Data Visualization", "Healthcare", "Enterprise"],
-      gradient: "from-blue-50 to-indigo-100"
+      gradient: "from-blue-900/20 to-indigo-900/40"
     },
     {
       id: 2,
@@ -30,7 +30,7 @@ const Projects = () => {
       solution: "Developed a clean interface with natural attraction points and progressive disclosure, using momentum-based interactions to build confidence and reduce financial anxiety.",
       impact: "Increased user engagement by 60% and improved accessibility scores to WCAG AA standards through balanced design that feels both secure and approachable.",
       tags: ["Mobile Design", "Accessibility", "Finance", "User Testing"],
-      gradient: "from-purple-50 to-pink-100"
+      gradient: "from-purple-900/20 to-pink-900/40"
     },
     {
       id: 3,
@@ -42,12 +42,12 @@ const Projects = () => {
       solution: "Developed an adaptive interface with multiple content formats and progress tracking that creates momentum through achievement, using orbital design patterns for different learning modules.",
       impact: "Improved course completion rates by 45% and received 4.8/5 user satisfaction rating by creating learning ecosystems that feel naturally progressive.",
       tags: ["EdTech", "Adaptive Design", "Progressive Web App", "Gamification"],
-      gradient: "from-green-50 to-emerald-100"
+      gradient: "from-green-900/20 to-emerald-900/40"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-24 relative overflow-hidden">
+    <div className="min-h-screen bg-background pt-24 relative overflow-hidden">
       {/* Floating Elements */}
       <FloatingPlanet size="md" color="bg-blue-500" initialX={15} initialY={25} speed={0.7} />
       <FloatingPlanet size="sm" color="bg-purple-500" initialX={85} initialY={15} speed={1.1} />
@@ -57,10 +57,10 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto px-6 py-12 relative z-10">
         {/* Header */}
         <div className="fade-in mb-16">
-          <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-light text-foreground mb-6">
             Project constellation
           </h1>
-          <p className="text-xl text-gray-600 leading-relaxed max-w-3xl">
+          <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
             Each project represents a unique gravitational field where user needs, 
             business goals, and design principles converge to create meaningful experiences 
             that naturally guide behavior.
@@ -86,13 +86,13 @@ const Projects = () => {
                       <div className={`w-16 h-16 bg-current rounded-lg mx-auto mb-4 opacity-20 transition-transform duration-300 ${
                         hoveredProject === project.id ? 'scale-110 rotate-12' : ''
                       }`}></div>
-                      <p className="text-gray-700 font-medium">{project.title}</p>
+                      <p className="text-foreground font-medium">{project.title}</p>
                     </div>
                     {/* Subtle floating elements */}
-                    <div className={`absolute top-4 right-4 w-3 h-3 bg-white rounded-full opacity-40 transition-transform duration-1000 ${
+                    <div className={`absolute top-4 right-4 w-3 h-3 bg-foreground/40 rounded-full opacity-40 transition-transform duration-1000 ${
                       hoveredProject === project.id ? 'translate-x-2 translate-y-1' : ''
                     }`}></div>
-                    <div className={`absolute bottom-6 left-6 w-2 h-2 bg-white rounded-full opacity-30 transition-transform duration-1000 ${
+                    <div className={`absolute bottom-6 left-6 w-2 h-2 bg-foreground/40 rounded-full opacity-30 transition-transform duration-1000 ${
                       hoveredProject === project.id ? '-translate-x-1 -translate-y-1' : ''
                     }`}></div>
                   </div>
@@ -101,16 +101,16 @@ const Projects = () => {
                 {/* Project Info */}
                 <div className="md:w-1/2 p-8">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="text-sm text-gray-500">{project.category}</span>
-                    <span className="text-gray-300">•</span>
-                    <span className="text-sm text-gray-500">{project.year}</span>
+                    <span className="text-sm text-muted-foreground">{project.category}</span>
+                    <span className="text-muted-foreground/50">•</span>
+                    <span className="text-sm text-muted-foreground">{project.year}</span>
                   </div>
                   
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-2xl font-semibold text-foreground mb-4">
                     {project.title}
                   </h3>
                   
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
                     {project.description}
                   </p>
 
@@ -118,8 +118,8 @@ const Projects = () => {
                     {project.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className={`px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full transition-all duration-200 ${
-                          hoveredProject === project.id ? 'bg-gray-200 shadow-sm' : ''
+                        className={`px-3 py-1 bg-accent text-accent-foreground text-sm rounded-full transition-all duration-200 ${
+                          hoveredProject === project.id ? 'bg-accent/80 shadow-sm' : ''
                         }`}
                       >
                         {tag}
@@ -131,7 +131,7 @@ const Projects = () => {
                     onClick={() => setSelectedProject(
                       selectedProject === project.id ? null : project.id
                     )}
-                    className="group inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
+                    className="group inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200"
                   >
                     {selectedProject === project.id ? 'Collapse details' : 'Explore gravitational field'}
                     <ChevronRight className={`ml-1 h-4 w-4 transition-transform duration-200 ${
@@ -143,19 +143,19 @@ const Projects = () => {
 
               {/* Expanded Details */}
               {selectedProject === project.id && (
-                <div className="border-t border-gray-100 p-8 animate-fade-in bg-gray-50/50">
+                <div className="border-t border-border p-8 animate-fade-in bg-accent/50">
                   <div className="grid md:grid-cols-3 gap-8">
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-3">Gravitational Challenge</h4>
-                      <p className="text-gray-600 leading-relaxed">{project.challenge}</p>
+                      <h4 className="font-semibold text-foreground mb-3">Gravitational Challenge</h4>
+                      <p className="text-muted-foreground leading-relaxed">{project.challenge}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-3">Design Solution</h4>
-                      <p className="text-gray-600 leading-relaxed">{project.solution}</p>
+                      <h4 className="font-semibold text-foreground mb-3">Design Solution</h4>
+                      <p className="text-muted-foreground leading-relaxed">{project.solution}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-3">Orbital Impact</h4>
-                      <p className="text-gray-600 leading-relaxed">{project.impact}</p>
+                      <h4 className="font-semibold text-foreground mb-3">Orbital Impact</h4>
+                      <p className="text-muted-foreground leading-relaxed">{project.impact}</p>
                     </div>
                   </div>
                 </div>
@@ -167,16 +167,16 @@ const Projects = () => {
         {/* CTA Section */}
         <div className="mt-20 text-center fade-in fade-in-delay-3">
           <div className="notion-card p-12 hover:shadow-lg transition-all duration-300">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-2xl font-semibold text-foreground mb-4">
               Ready to create your own design universe?
             </h2>
-            <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
               Let's collaborate to build experiences that naturally guide users toward 
               meaningful interactions through the gravitational pull of thoughtful design.
             </p>
             <a
               href="mailto:hello@example.com"
-              className="inline-flex items-center px-8 py-4 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+              className="inline-flex items-center px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
             >
               Enter my orbit
             </a>
