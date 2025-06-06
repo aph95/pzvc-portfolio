@@ -1,9 +1,11 @@
 
 import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
+import FloatingPlanet from '../components/FloatingPlanet';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   const projects = [
     {
@@ -11,50 +13,57 @@ const Projects = () => {
       title: "Healthcare Dashboard",
       category: "Enterprise SaaS",
       year: "2023",
-      description: "A comprehensive dashboard for healthcare professionals to manage patient data and track treatment outcomes.",
-      challenge: "Healthcare workers needed a unified view of patient information scattered across multiple systems.",
-      solution: "Designed an intuitive dashboard that consolidates data streams and provides actionable insights through clear visualizations.",
-      impact: "Reduced time spent on administrative tasks by 35% and improved data accuracy.",
+      description: "A comprehensive dashboard that creates gravitational pull around critical patient data, guiding healthcare professionals through complex workflows.",
+      challenge: "Healthcare workers needed a unified view of patient information scattered across multiple systems, like planets in different solar systems.",
+      solution: "Designed an intuitive dashboard that consolidates data streams into orbital patterns, creating natural information hierarchies and actionable insights through clear gravitational design principles.",
+      impact: "Reduced cognitive load by 35% and improved data accuracy by creating momentum-based workflows that feel natural and intuitive.",
       tags: ["User Research", "Data Visualization", "Healthcare", "Enterprise"],
-      image: "/api/placeholder/600/400"
+      gradient: "from-blue-50 to-indigo-100"
     },
     {
       id: 2,
       title: "Mobile Banking App",
       category: "Fintech",
-      year: "2023",
-      description: "A secure and user-friendly mobile banking application focused on accessibility and ease of use.",
-      challenge: "Traditional banking interfaces were intimidating and complex for everyday users.",
-      solution: "Created a clean, intuitive interface with progressive disclosure and clear visual hierarchy.",
-      impact: "Increased user engagement by 60% and improved accessibility scores to WCAG AA standards.",
+      year: "2023", 
+      description: "A secure banking app that uses gravitational UX principles to create trust and guide users through complex financial tasks.",
+      challenge: "Traditional banking interfaces created friction and anxiety, repelling users instead of attracting them to engage with their finances.",
+      solution: "Developed a clean interface with natural attraction points and progressive disclosure, using momentum-based interactions to build confidence and reduce financial anxiety.",
+      impact: "Increased user engagement by 60% and improved accessibility scores to WCAG AA standards through balanced design that feels both secure and approachable.",
       tags: ["Mobile Design", "Accessibility", "Finance", "User Testing"],
-      image: "/api/placeholder/600/400"
+      gradient: "from-purple-50 to-pink-100"
     },
     {
       id: 3,
-      title: "Learning Platform",
+      title: "Learning Platform", 
       category: "Education",
       year: "2022",
-      description: "An interactive e-learning platform that adapts to different learning styles and paces.",
-      challenge: "Students needed personalized learning experiences that could adapt to their individual needs.",
-      solution: "Developed an adaptive interface with multiple content formats and progress tracking.",
-      impact: "Improved course completion rates by 45% and received 4.8/5 user satisfaction rating.",
+      description: "An adaptive e-learning platform that creates orbital learning paths, naturally guiding students through personalized educational journeys.",
+      challenge: "Students needed personalized learning experiences that could adapt to their individual pace and learning style, like customized gravitational fields.",
+      solution: "Developed an adaptive interface with multiple content formats and progress tracking that creates momentum through achievement, using orbital design patterns for different learning modules.",
+      impact: "Improved course completion rates by 45% and received 4.8/5 user satisfaction rating by creating learning ecosystems that feel naturally progressive.",
       tags: ["EdTech", "Adaptive Design", "Progressive Web App", "Gamification"],
-      image: "/api/placeholder/600/400"
+      gradient: "from-green-50 to-emerald-100"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-24">
-      <div className="max-w-6xl mx-auto px-6 py-12">
+    <div className="min-h-screen bg-white pt-24 relative overflow-hidden">
+      {/* Floating Elements */}
+      <FloatingPlanet size="md" color="bg-blue-500" initialX={15} initialY={25} speed={0.7} />
+      <FloatingPlanet size="sm" color="bg-purple-500" initialX={85} initialY={15} speed={1.1} />
+      <FloatingPlanet size="lg" color="bg-green-500" initialX={75} initialY={75} speed={0.5} />
+      <FloatingPlanet size="sm" color="bg-indigo-500" initialX={20} initialY={85} speed={0.9} />
+
+      <div className="max-w-6xl mx-auto px-6 py-12 relative z-10">
         {/* Header */}
         <div className="fade-in mb-16">
           <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
-            Selected work
+            Project constellation
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed max-w-3xl">
-            Here's a collection of projects that showcase my approach to solving 
-            complex design challenges through user-centered thinking and systematic design.
+            Each project represents a unique gravitational field where user needs, 
+            business goals, and design principles converge to create meaningful experiences 
+            that naturally guide behavior.
           </p>
         </div>
 
@@ -63,16 +72,29 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div 
               key={project.id}
-              className={`notion-card overflow-hidden transition-all duration-500 fade-in fade-in-delay-${index + 1}`}
+              className={`notion-card overflow-hidden transition-all duration-500 fade-in fade-in-delay-${index + 1} ${
+                hoveredProject === project.id ? 'shadow-xl -translate-y-2' : 'hover:shadow-lg hover:-translate-y-1'
+              }`}
+              onMouseEnter={() => setHoveredProject(project.id)}
+              onMouseLeave={() => setHoveredProject(null)}
             >
               <div className="md:flex">
-                {/* Project Image */}
+                {/* Project Visual */}
                 <div className="md:w-1/2">
-                  <div className="aspect-video bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-blue-600 rounded-lg mx-auto mb-4 opacity-20"></div>
-                      <p className="text-blue-600 font-medium">{project.title}</p>
+                  <div className={`aspect-video bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
+                    <div className="text-center z-10">
+                      <div className={`w-16 h-16 bg-current rounded-lg mx-auto mb-4 opacity-20 transition-transform duration-300 ${
+                        hoveredProject === project.id ? 'scale-110 rotate-12' : ''
+                      }`}></div>
+                      <p className="text-gray-700 font-medium">{project.title}</p>
                     </div>
+                    {/* Subtle floating elements */}
+                    <div className={`absolute top-4 right-4 w-3 h-3 bg-white rounded-full opacity-40 transition-transform duration-1000 ${
+                      hoveredProject === project.id ? 'translate-x-2 translate-y-1' : ''
+                    }`}></div>
+                    <div className={`absolute bottom-6 left-6 w-2 h-2 bg-white rounded-full opacity-30 transition-transform duration-1000 ${
+                      hoveredProject === project.id ? '-translate-x-1 -translate-y-1' : ''
+                    }`}></div>
                   </div>
                 </div>
 
@@ -96,7 +118,9 @@ const Projects = () => {
                     {project.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full"
+                        className={`px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full transition-all duration-200 ${
+                          hoveredProject === project.id ? 'bg-gray-200 shadow-sm' : ''
+                        }`}
                       >
                         {tag}
                       </span>
@@ -109,7 +133,7 @@ const Projects = () => {
                     )}
                     className="group inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
                   >
-                    {selectedProject === project.id ? 'Show less' : 'View details'}
+                    {selectedProject === project.id ? 'Collapse details' : 'Explore gravitational field'}
                     <ChevronRight className={`ml-1 h-4 w-4 transition-transform duration-200 ${
                       selectedProject === project.id ? 'rotate-90' : 'group-hover:translate-x-1'
                     }`} />
@@ -119,18 +143,18 @@ const Projects = () => {
 
               {/* Expanded Details */}
               {selectedProject === project.id && (
-                <div className="border-t border-gray-100 p-8 animate-fade-in">
+                <div className="border-t border-gray-100 p-8 animate-fade-in bg-gray-50/50">
                   <div className="grid md:grid-cols-3 gap-8">
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-3">Challenge</h4>
+                      <h4 className="font-semibold text-gray-900 mb-3">Gravitational Challenge</h4>
                       <p className="text-gray-600 leading-relaxed">{project.challenge}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-3">Solution</h4>
+                      <h4 className="font-semibold text-gray-900 mb-3">Design Solution</h4>
                       <p className="text-gray-600 leading-relaxed">{project.solution}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-3">Impact</h4>
+                      <h4 className="font-semibold text-gray-900 mb-3">Orbital Impact</h4>
                       <p className="text-gray-600 leading-relaxed">{project.impact}</p>
                     </div>
                   </div>
@@ -142,19 +166,19 @@ const Projects = () => {
 
         {/* CTA Section */}
         <div className="mt-20 text-center fade-in fade-in-delay-3">
-          <div className="notion-card p-12">
+          <div className="notion-card p-12 hover:shadow-lg transition-all duration-300">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-              Interested in working together?
+              Ready to create your own design universe?
             </h2>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-              I'm always open to discussing new opportunities and interesting projects. 
-              Let's create something amazing together.
+              Let's collaborate to build experiences that naturally guide users toward 
+              meaningful interactions through the gravitational pull of thoughtful design.
             </p>
             <a
               href="mailto:hello@example.com"
               className="inline-flex items-center px-8 py-4 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
             >
-              Get in touch
+              Enter my orbit
             </a>
           </div>
         </div>
