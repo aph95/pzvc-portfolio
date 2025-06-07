@@ -30,7 +30,7 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
     const gridSize = 50;
     let animationId: number;
 
-    const calculateSphericalWarp = (x: number, y: number, mouseX: number, mouseY: number) => {
+    const calculateWarp = (x: number, y: number, mouseX: number, mouseY: number) => {
       const dx = x - mouseX;
       const dy = y - mouseY;
       const distance = Math.sqrt(dx * dx + dy * dy);
@@ -38,50 +38,17 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
       
       if (distance < maxDistance) {
         const normalizedDistance = distance / maxDistance;
+        const warpStrength = (1 - normalizedDistance) * 40;
         
-        // Create spherical warping using a smoother falloff function
-        const sphericalFactor = Math.pow(Math.cos(normalizedDistance * Math.PI * 0.5), 2);
-        const warpStrength = sphericalFactor * 60;
-        
-        // Add depth effect - points closer to center warp more inward
-        const depthFactor = Math.pow(1 - normalizedDistance, 3);
-        const radialPull = depthFactor * 25;
-        
-        // Calculate spherical coordinates for smooth curvature
-        const angle = Math.atan2(dy, dx);
-        const warpX = -(Math.cos(angle) * warpStrength) - (dx / distance) * radialPull;
-        const warpY = -(Math.sin(angle) * warpStrength) - (dy / distance) * radialPull;
+        // Create gravitational pull effect - points bend towards the mouse
+        const pullFactor = Math.pow(1 - normalizedDistance, 3);
+        const warpX = -(dx / distance) * warpStrength * pullFactor;
+        const warpY = -(dy / distance) * warpStrength * pullFactor;
         
         return { warpX, warpY };
       }
       
       return { warpX: 0, warpY: 0 };
-    };
-
-    const drawSmoothLine = (points: { x: number; y: number }[]) => {
-      if (points.length < 2) return;
-      
-      ctx.moveTo(points[0].x, points[0].y);
-      
-      for (let i = 1; i < points.length; i++) {
-        const currentPoint = points[i];
-        const previousPoint = points[i - 1];
-        
-        if (i === 1) {
-          ctx.lineTo(currentPoint.x, currentPoint.y);
-        } else {
-          // Use quadratic curves for smoother lines
-          const controlX = (previousPoint.x + currentPoint.x) / 2;
-          const controlY = (previousPoint.y + currentPoint.y) / 2;
-          ctx.quadraticCurveTo(previousPoint.x, previousPoint.y, controlX, controlY);
-        }
-      }
-      
-      // Final point
-      if (points.length > 2) {
-        const lastPoint = points[points.length - 1];
-        ctx.lineTo(lastPoint.x, lastPoint.y);
-      }
     };
 
     const drawGrid = () => {
@@ -98,83 +65,107 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
       const cols = Math.ceil(canvas.offsetWidth / gridSize);
       const rows = Math.ceil(canvas.offsetHeight / gridSize);
 
-      // Draw curved vertical lines with higher resolution for smoother curves
+      // Draw curved vertical lines
       for (let i = 0; i <= cols; i++) {
         ctx.beginPath();
-        const points = [];
         
-        // Generate more points for smoother curves
-        const steps = rows * 3; // Triple the resolution
-        for (let step = 0; step <= steps; step++) {
-          let x = i * gridSize;
-          let y = (step / steps) * (rows * gridSize);
-
-          // Apply spherical spacetime curvature
-          if (mousePosition) {
-            const { warpX, warpY } = calculateSphericalWarp(x, y, mousePosition.x, mousePosition.y);
-            x += warpX;
-            y += warpY;
-          }
-
-          points.push({ x, y });
+        let prevX = i * gridSize;
+        let prevY = 0;
+        
+        // Apply warp to starting point
+        if (mousePosition) {
+          const { warpX, warpY } = calculateWarp(prevX, prevY, mousePosition.x, mousePosition.y);
+          prevX += warpX;
+          prevY += warpY;
         }
         
-        drawSmoothLine(points);
-        ctx.stroke();
-      }
-
-      // Draw curved horizontal lines with higher resolution
-      for (let j = 0; j <= rows; j++) {
-        ctx.beginPath();
-        const points = [];
+        ctx.moveTo(prevX, prevY);
         
-        // Generate more points for smoother curves
-        const steps = cols * 3; // Triple the resolution
-        for (let step = 0; step <= steps; step++) {
-          let x = (step / steps) * (cols * gridSize);
+        // Draw curved line by connecting multiple warped points
+        for (let j = 1; j <= rows; j++) {
+          let x = i * gridSize;
           let y = j * gridSize;
 
-          // Apply spherical spacetime curvature
+          // Apply spacetime curvature
           if (mousePosition) {
-            const { warpX, warpY } = calculateSphericalWarp(x, y, mousePosition.x, mousePosition.y);
+            const { warpX, warpY } = calculateWarp(x, y, mousePosition.x, mousePosition.y);
             x += warpX;
             y += warpY;
           }
 
-          points.push({ x, y });
+          // Create smooth curves using quadratic curves
+          const controlX = (prevX + x) / 2;
+          const controlY = (prevY + y) / 2;
+          
+          if (j === 1) {
+            ctx.lineTo(x, y);
+          } else {
+            ctx.quadraticCurveTo(controlX, controlY, x, y);
+          }
+          
+          prevX = x;
+          prevY = y;
         }
-        
-        drawSmoothLine(points);
         ctx.stroke();
       }
 
-      // Draw enhanced gravitational well visualization
+      // Draw curved horizontal lines
+      for (let j = 0; j <= rows; j++) {
+        ctx.beginPath();
+        
+        let prevX = 0;
+        let prevY = j * gridSize;
+        
+        // Apply warp to starting point
+        if (mousePosition) {
+          const { warpX, warpY } = calculateWarp(prevX, prevY, mousePosition.x, mousePosition.y);
+          prevX += warpX;
+          prevY += warpY;
+        }
+        
+        ctx.moveTo(prevX, prevY);
+        
+        // Draw curved line by connecting multiple warped points
+        for (let i = 1; i <= cols; i++) {
+          let x = i * gridSize;
+          let y = j * gridSize;
+
+          // Apply spacetime curvature
+          if (mousePosition) {
+            const { warpX, warpY } = calculateWarp(x, y, mousePosition.x, mousePosition.y);
+            x += warpX;
+            y += warpY;
+          }
+
+          // Create smooth curves using quadratic curves
+          const controlX = (prevX + x) / 2;
+          const controlY = (prevY + y) / 2;
+          
+          if (i === 1) {
+            ctx.lineTo(x, y);
+          } else {
+            ctx.quadraticCurveTo(controlX, controlY, x, y);
+          }
+          
+          prevX = x;
+          prevY = y;
+        }
+        ctx.stroke();
+      }
+
+      // Draw gravitational well visualization around mouse
       if (mousePosition) {
-        // Outer gradient
-        const outerGradient = ctx.createRadialGradient(
+        const gradient = ctx.createRadialGradient(
           mousePosition.x, mousePosition.y, 0,
-          mousePosition.x, mousePosition.y, 180
+          mousePosition.x, mousePosition.y, 150
         );
-        outerGradient.addColorStop(0, gradientColor1);
-        outerGradient.addColorStop(0.3, gradientColor2);
-        outerGradient.addColorStop(1, 'rgba(59, 130, 246, 0)');
+        gradient.addColorStop(0, gradientColor1);
+        gradient.addColorStop(0.5, gradientColor2);
+        gradient.addColorStop(1, 'rgba(59, 130, 246, 0)');
         
-        ctx.fillStyle = outerGradient;
+        ctx.fillStyle = gradient;
         ctx.beginPath();
-        ctx.arc(mousePosition.x, mousePosition.y, 180, 0, Math.PI * 2);
-        ctx.fill();
-        
-        // Inner intense glow
-        const innerGradient = ctx.createRadialGradient(
-          mousePosition.x, mousePosition.y, 0,
-          mousePosition.x, mousePosition.y, 80
-        );
-        innerGradient.addColorStop(0, 'rgba(59, 130, 246, 0.15)');
-        innerGradient.addColorStop(1, 'rgba(59, 130, 246, 0)');
-        
-        ctx.fillStyle = innerGradient;
-        ctx.beginPath();
-        ctx.arc(mousePosition.x, mousePosition.y, 80, 0, Math.PI * 2);
+        ctx.arc(mousePosition.x, mousePosition.y, 150, 0, Math.PI * 2);
         ctx.fill();
       }
 
