@@ -6,13 +6,19 @@ export const useMousePosition = () => {
 
   useEffect(() => {
     const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      // Account for scroll offset to get the correct position relative to the document
+      setMousePosition({ 
+        x: e.clientX, 
+        y: e.clientY + window.scrollY 
+      });
     };
 
     window.addEventListener('mousemove', updateMousePosition);
+    window.addEventListener('scroll', updateMousePosition);
 
     return () => {
       window.removeEventListener('mousemove', updateMousePosition);
+      window.removeEventListener('scroll', updateMousePosition);
     };
   }, []);
 

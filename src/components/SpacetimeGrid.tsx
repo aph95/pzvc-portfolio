@@ -31,8 +31,13 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
     let animationId: number;
 
     const calculateWarp = (x: number, y: number, mouseX: number, mouseY: number) => {
-      const dx = x - mouseX;
-      const dy = y - mouseY;
+      // Get canvas position relative to the viewport
+      const rect = canvas.getBoundingClientRect();
+      const canvasMouseX = mouseX - rect.left;
+      const canvasMouseY = mouseY - rect.top + window.scrollY - rect.top;
+      
+      const dx = x - canvasMouseX;
+      const dy = y - canvasMouseY;
       const distance = Math.sqrt(dx * dx + dy * dy);
       const maxDistance = 200;
       
@@ -155,9 +160,13 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
 
       // Draw gravitational well visualization around mouse
       if (mousePosition) {
+        const rect = canvas.getBoundingClientRect();
+        const canvasMouseX = mousePosition.x - rect.left;
+        const canvasMouseY = mousePosition.y - rect.top + window.scrollY - rect.top;
+        
         const gradient = ctx.createRadialGradient(
-          mousePosition.x, mousePosition.y, 0,
-          mousePosition.x, mousePosition.y, 150
+          canvasMouseX, canvasMouseY, 0,
+          canvasMouseX, canvasMouseY, 150
         );
         gradient.addColorStop(0, gradientColor1);
         gradient.addColorStop(0.5, gradientColor2);
@@ -165,7 +174,7 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
         
         ctx.fillStyle = gradient;
         ctx.beginPath();
-        ctx.arc(mousePosition.x, mousePosition.y, 150, 0, Math.PI * 2);
+        ctx.arc(canvasMouseX, canvasMouseY, 150, 0, Math.PI * 2);
         ctx.fill();
       }
 
