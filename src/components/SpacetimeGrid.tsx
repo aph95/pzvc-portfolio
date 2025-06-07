@@ -34,14 +34,14 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
       // Get canvas position relative to the viewport
       const rect = canvas.getBoundingClientRect();
       const canvasMouseX = mouseX - rect.left;
-      const canvasMouseY = mouseY - rect.top + window.scrollY - rect.top;
+      const canvasMouseY = mouseY - rect.top;
       
       const dx = x - canvasMouseX;
       const dy = y - canvasMouseY;
       const distance = Math.sqrt(dx * dx + dy * dy);
       const maxDistance = 200;
       
-      if (distance < maxDistance) {
+      if (distance < maxDistance && distance > 0) {
         const normalizedDistance = distance / maxDistance;
         const warpStrength = (1 - normalizedDistance) * 40;
         
@@ -162,20 +162,26 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
       if (mousePosition) {
         const rect = canvas.getBoundingClientRect();
         const canvasMouseX = mousePosition.x - rect.left;
-        const canvasMouseY = mousePosition.y - rect.top + window.scrollY - rect.top;
+        const canvasMouseY = mousePosition.y - rect.top;
         
-        const gradient = ctx.createRadialGradient(
-          canvasMouseX, canvasMouseY, 0,
-          canvasMouseX, canvasMouseY, 150
-        );
-        gradient.addColorStop(0, gradientColor1);
-        gradient.addColorStop(0.5, gradientColor2);
-        gradient.addColorStop(1, 'rgba(59, 130, 246, 0)');
-        
-        ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.arc(canvasMouseX, canvasMouseY, 150, 0, Math.PI * 2);
-        ctx.fill();
+        // Validate that all values are finite before creating gradient
+        if (isFinite(canvasMouseX) && isFinite(canvasMouseY) && 
+            canvasMouseX >= 0 && canvasMouseY >= 0 &&
+            canvasMouseX <= canvas.offsetWidth && canvasMouseY <= canvas.offsetHeight) {
+          
+          const gradient = ctx.createRadialGradient(
+            canvasMouseX, canvasMouseY, 0,
+            canvasMouseX, canvasMouseY, 150
+          );
+          gradient.addColorStop(0, gradientColor1);
+          gradient.addColorStop(0.5, gradientColor2);
+          gradient.addColorStop(1, 'rgba(59, 130, 246, 0)');
+          
+          ctx.fillStyle = gradient;
+          ctx.beginPath();
+          ctx.arc(canvasMouseX, canvasMouseY, 150, 0, Math.PI * 2);
+          ctx.fill();
+        }
       }
 
       animationId = requestAnimationFrame(drawGrid);
