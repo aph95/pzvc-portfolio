@@ -1,25 +1,17 @@
 
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
-import { useMousePosition } from '../hooks/useMousePosition';
-import SpacetimeGrid from '../components/SpacetimeGrid';
-import FloatingPlanet from '../components/FloatingPlanet';
+import SpacetimeOrb from '../components/SpacetimeOrb';
 
 const Home = () => {
-  const mousePosition = useMousePosition();
-
   return (
     <div className="min-h-screen bg-background relative overflow-hidden transition-colors duration-300">
-      {/* Spacetime Grid Background */}
-      <div className="absolute inset-0">
-        <SpacetimeGrid mousePosition={mousePosition} />
+      {/* Central Spacetime Orb Background */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="w-full h-full max-w-4xl max-h-4xl">
+          <SpacetimeOrb />
+        </div>
       </div>
-
-      {/* Floating Planets */}
-      <FloatingPlanet size="lg" color="bg-blue-500" initialX={20} initialY={30} speed={0.8} />
-      <FloatingPlanet size="md" color="bg-purple-500" initialX={80} initialY={20} speed={1.2} />
-      <FloatingPlanet size="sm" color="bg-green-500" initialX={70} initialY={70} speed={0.6} />
-      <FloatingPlanet size="md" color="bg-indigo-500" initialX={15} initialY={80} speed={1.0} />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 z-10">
