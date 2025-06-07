@@ -4,6 +4,7 @@ import { ChevronRight } from 'lucide-react';
 import { useMousePosition } from '../hooks/useMousePosition';
 import SpacetimeGrid from '../components/SpacetimeGrid';
 import FloatingPlanet from '../components/FloatingPlanet';
+import '../components/OptimizedAnimations.css';
 
 const Home = () => {
   const mousePosition = useMousePosition();
@@ -15,11 +16,12 @@ const Home = () => {
         <SpacetimeGrid mousePosition={mousePosition} />
       </div>
 
-      {/* Floating Planets */}
-      <FloatingPlanet size="lg" color="bg-blue-500" initialX={20} initialY={30} speed={0.8} />
-      <FloatingPlanet size="md" color="bg-purple-500" initialX={80} initialY={20} speed={1.2} />
-      <FloatingPlanet size="sm" color="bg-green-500" initialX={70} initialY={70} speed={0.6} />
-      <FloatingPlanet size="md" color="bg-indigo-500" initialX={15} initialY={80} speed={1.0} />
+      {/* Optimized Floating Planets */}
+      <FloatingPlanet size="lg" color="bg-blue-500" initialX={15} initialY={25} speed={0.7} />
+      <FloatingPlanet size="md" color="bg-purple-500" initialX={85} initialY={15} speed={1.1} />
+      <FloatingPlanet size="sm" color="bg-green-500" initialX={75} initialY={75} speed={0.5} />
+      <FloatingPlanet size="md" color="bg-indigo-500" initialX={10} initialY={85} speed={0.9} />
+      <FloatingPlanet size="sm" color="bg-cyan-500" initialX={90} initialY={60} speed={1.3} />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 z-10">
