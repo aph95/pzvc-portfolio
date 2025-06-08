@@ -1,5 +1,5 @@
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface FloatingPlanetProps {
   size?: 'sm' | 'md' | 'lg';
@@ -18,7 +18,7 @@ const FloatingPlanet = ({
   speed = 1,
   className = ''
 }: FloatingPlanetProps) => {
-  const [position, setPosition] = useState({ x: initialX, y: initialY });
+  const elementRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number>();
   const startTimeRef = useRef<number>();
 
@@ -29,17 +29,22 @@ const FloatingPlanet = ({
   };
 
   useEffect(() => {
+    const element = elementRef.current;
+    if (!element) return;
+
     const animate = (timestamp: number) => {
       if (!startTimeRef.current) {
         startTimeRef.current = timestamp;
       }
 
-      const elapsed = (timestamp - startTimeRef.current) * 0.001 * speed; // Convert to seconds and apply speed
-
-      setPosition({
-        x: initialX + Math.sin(elapsed) * 30,
-        y: initialY + Math.cos(elapsed * 0.7) * 20
-      });
+      const elapsed = (timestamp - startTimeRef.current) * 0.001 * speed;
+      
+      // Calculate offset positions
+      const offsetX = Math.sin(elapsed) * 30;
+      const offsetY = Math.cos(elapsed * 0.7) * 20;
+      
+      // Use CSS transform for hardware acceleration
+      element.style.transform = `translate(-50%, -50%) translate(${offsetX}px, ${offsetY}px)`;
 
       animationRef.current = requestAnimationFrame(animate);
     };
@@ -51,16 +56,18 @@ const FloatingPlanet = ({
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [initialX, initialY, speed]);
+  }, [speed]);
 
   return (
     <div
+      ref={elementRef}
       className={`absolute rounded-full ${sizeClasses[size]} ${color} opacity-60 blur-sm transition-all duration-300 hover:opacity-80 hover:blur-none ${className}`}
       style={{
-        left: `${position.x}%`,
-        top: `${position.y}%`,
+        left: `${initialX}%`,
+        top: `${initialY}%`,
         transform: 'translate(-50%, -50%)',
-        boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)'
+        boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)',
+        willChange: 'transform'
       }}
     />
   );
