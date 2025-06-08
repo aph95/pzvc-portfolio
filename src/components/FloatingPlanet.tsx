@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 interface FloatingPlanetProps {
   size?: 'sm' | 'md' | 'lg';
@@ -19,7 +19,8 @@ const FloatingPlanet = ({
   className = ''
 }: FloatingPlanetProps) => {
   const [position, setPosition] = useState({ x: initialX, y: initialY });
-  const [time, setTime] = useState(0);
+  const animationRef = useRef<number>();
+  const startTimeRef = useRef<number>();
 
   const sizeClasses = {
     sm: 'w-8 h-8',
@@ -28,19 +29,29 @@ const FloatingPlanet = ({
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTime(prev => prev + 0.01 * speed);
-    }, 16);
+    const animate = (timestamp: number) => {
+      if (!startTimeRef.current) {
+        startTimeRef.current = timestamp;
+      }
 
-    return () => clearInterval(interval);
-  }, [speed]);
+      const elapsed = (timestamp - startTimeRef.current) * 0.001 * speed; // Convert to seconds and apply speed
 
-  useEffect(() => {
-    setPosition({
-      x: initialX + Math.sin(time) * 30,
-      y: initialY + Math.cos(time * 0.7) * 20
-    });
-  }, [time, initialX, initialY]);
+      setPosition({
+        x: initialX + Math.sin(elapsed) * 30,
+        y: initialY + Math.cos(elapsed * 0.7) * 20
+      });
+
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [initialX, initialY, speed]);
 
   return (
     <div
