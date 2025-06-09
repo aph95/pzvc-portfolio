@@ -11,29 +11,29 @@ const About = () => {
 
   const experiences = [
     {
-      company: "Design Studio",
-      role: "Senior UX Designer",
-      period: "2022 - Present",
-      description: "Leading design for enterprise SaaS products, conducting user research, and building design systems that create gravitational pull for user engagement."
-    },
-    {
-      company: "Tech Startup",
-      role: "UX Designer", 
-      period: "2020 - 2022",
-      description: "Designed user experiences for mobile apps, collaborated with cross-functional teams, and improved user engagement by 40% through momentum-based design patterns."
+      company: "Kristianstad University",
+      role: "Bachelor of Science in Informatics - Digital Design",
+      period: "2023 - 2026",
+      description: "Specializing in digital design with a focus on user experience, interaction design, and frontend development. Exploring the intersection of technology, creativity, and human-centered design principles."
     },
     {
       company: "Freelance",
-      role: "UX/UI Designer",
-      period: "2018 - 2020", 
-      description: "Worked with various clients on web and mobile projects, from concept to launch, focusing on creating balanced design ecosystems."
+      role: "Graphic Designer", 
+      period: "2018 - 2023",
+      description: "Provided creative design solutions for various clients as a side hustle, developing skills in visual communication, branding, and client collaboration that now inform my UX approach."
+    },
+    {
+      company: "Self-Directed Learning",
+      role: "AI & Design Integration",
+      period: "2022 - Present", 
+      description: "Continuously exploring how artificial intelligence can enhance the design process, from concept development to user testing, creating more efficient and innovative workflows."
     }
   ];
 
   const skills = [
-    { category: "Design Forces", items: ["User Research", "Interaction Physics", "Design Systems", "Accessibility"] },
-    { category: "Tools & Methods", items: ["Figma", "Prototyping", "User Testing", "Design Thinking"] },
-    { category: "Physics Principles", items: ["Gestalt Laws", "Cognitive Load", "Information Architecture", "Behavioral Design"] }
+    { category: "Design & UX", items: ["User Experience Design", "Interaction Design", "Concept Development", "Design Systems"] },
+    { category: "Development", items: ["Frontend Development", "React & TypeScript", "Responsive Design", "Prototyping"] },
+    { category: "AI & Innovation", items: ["AI-Enhanced Design", "Creative Automation", "Emerging Technologies", "Design Research"] }
   ];
 
   return (
@@ -47,42 +47,43 @@ const About = () => {
         {/* Header */}
         <div className="fade-in mb-16">
           <h1 className="text-4xl md:text-5xl font-light text-foreground mb-6">
-            About my design orbit
+            About my creative journey
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Like celestial bodies that shape the fabric of spacetime, I believe designers 
-            have the power to bend user behavior through thoughtful, intentional experiences. 
-            My approach combines the precision of physics with the artistry of human-centered design.
+            I'm Aleksandar Praizovic Hedström, a 29-year-old designer and developer passionate 
+            about creating digital experiences that seamlessly blend human intuition with 
+            technological innovation. Currently pursuing my Bachelor's in Informatics with 
+            a specialization in Digital Design at Kristianstad University.
           </p>
         </div>
 
         {/* Personal Story */}
         <div className="notion-card p-8 mb-16 fade-in fade-in-delay-1 hover:shadow-lg transition-all duration-300">
-          <h2 className="text-2xl font-semibold text-foreground mb-6">My gravitational journey</h2>
+          <h2 className="text-2xl font-semibold text-foreground mb-6">My design philosophy</h2>
           <div className="prose prose-lg text-muted-foreground leading-relaxed space-y-4">
             <p>
-              My fascination with design began in physics class, watching demonstrations of 
-              spacetime curvature. I realized that just as mass bends spacetime to guide 
-              the motion of objects, thoughtful design can bend user behavior to create 
-              meaningful interactions.
+              My journey into design began with freelance graphic design work—initially as a 
+              creative side hustle that sparked my passion for visual communication. This 
+              foundation in design thinking naturally evolved into a deeper fascination with 
+              how users interact with digital interfaces.
             </p>
             <p>
-              This revelation led me from studying cognitive science to UX design, where I 
-              discovered that the same principles governing planetary motion could be applied 
-              to user journeys—creating natural attraction points, smooth orbital flows, 
-              and balanced design ecosystems.
+              Today, I'm focused on frontend development, UX design, and interaction design, 
+              with a particular interest in how artificial intelligence can enhance the creative 
+              process. I believe AI isn't here to replace designers, but to amplify our capabilities—
+              helping us iterate faster, explore more possibilities, and create more personalized experiences.
             </p>
             <p>
-              When I'm not designing digital universes, you'll find me stargazing, reading 
-              about quantum mechanics, or experimenting with new ways to visualize complex 
-              information architectures.
+              When I'm not crafting digital experiences, you'll find me exploring the latest 
+              design tools, experimenting with AI-powered workflows, or diving deep into 
+              emerging technologies that could shape the future of human-computer interaction.
             </p>
           </div>
         </div>
 
         {/* Experience */}
         <div className="mb-16 fade-in fade-in-delay-2">
-          <h2 className="text-2xl font-semibold text-foreground mb-8">Professional constellation</h2>
+          <h2 className="text-2xl font-semibold text-foreground mb-8">Education & experience</h2>
           <div className="space-y-4">
             {experiences.map((exp, index) => (
               <div key={index} className="notion-card overflow-hidden hover:shadow-lg transition-all duration-300">
@@ -117,7 +118,7 @@ const About = () => {
 
         {/* Skills */}
         <div className="fade-in fade-in-delay-3">
-          <h2 className="text-2xl font-semibold text-foreground mb-8">Design force fields</h2>
+          <h2 className="text-2xl font-semibold text-foreground mb-8">Core competencies</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {skills.map((skillGroup, index) => (
               <div key={index} className="notion-card p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
