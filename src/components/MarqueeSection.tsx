@@ -35,16 +35,21 @@ const MarqueeSection = () => {
           {tools.map((tool, index) => {
             const IconComponent = tool.icon;
             return (
-              <div key={index} className="flex items-center mx-12">
-                <div className="group flex items-center justify-center w-12 h-12 rounded-lg bg-muted/50 hover:bg-muted transition-all duration-300 hover:scale-110 hover:shadow-lg">
-                  <IconComponent 
-                    size={24} 
-                    className="text-muted-foreground group-hover:text-foreground transition-colors duration-300"
-                    strokeWidth={1.5}
-                  />
+              <div key={index} className="flex items-center mx-8">
+                <div className="group flex items-center space-x-3">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-muted/50 group-hover:bg-muted transition-all duration-300 group-hover:scale-110">
+                    <IconComponent 
+                      size={16} 
+                      className="text-muted-foreground group-hover:text-foreground transition-colors duration-300"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                  <span className="text-lg font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300 whitespace-nowrap">
+                    {tool.name}
+                  </span>
                 </div>
                 {index < tools.length - 1 && (
-                  <div className="w-0.5 h-0.5 bg-primary/40 rounded-full mx-12 flex-shrink-0" />
+                  <div className="w-1 h-1 bg-primary/40 rounded-full mx-8 flex-shrink-0" />
                 )}
               </div>
             );
