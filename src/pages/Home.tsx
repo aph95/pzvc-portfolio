@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { useMousePosition } from '../hooks/useMousePosition';
@@ -25,7 +26,10 @@ const Home = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="fade-in">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-foreground mb-8 leading-tight">
-              Like gravity sculpting the path of planets, design guides users — but their movements leave imprints that shape the next iteration.
+              Where design meets
+              <span className="block text-blue-400 font-medium">intelligence,</span>
+              <span className="block">experiences become</span>
+              <span className="block text-indigo-400 font-medium">extraordinary</span>
             </h1>
           </div>
           
