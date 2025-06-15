@@ -10,36 +10,17 @@ const MarqueeSection = () => {
     { name: 'AI Tools', icon: Brain }
   ];
 
+  // Create multiple duplicates for seamless infinite scroll
+  const duplicatedTools = [...tools, ...tools, ...tools, ...tools];
+
   return (
     <section className="relative py-12 overflow-hidden border-y border-border/20 bg-gradient-to-r from-transparent via-muted/30 to-transparent">
       <div className="marquee-wrapper">
-        <div className="marquee-content">
-          {/* First set of tools */}
-          {tools.map((tool, index) => {
+        <div className="marquee-content-infinite">
+          {duplicatedTools.map((tool, index) => {
             const IconComponent = tool.icon;
             return (
-              <div key={`first-${index}`} className="marquee-item">
-                <div className="group flex items-center space-x-3">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-muted/50 group-hover:bg-muted transition-all duration-300 group-hover:scale-110">
-                    <IconComponent 
-                      size={16} 
-                      className="text-muted-foreground group-hover:text-foreground transition-colors duration-300"
-                      strokeWidth={1.5}
-                    />
-                  </div>
-                  <span className="text-lg font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300 whitespace-nowrap">
-                    {tool.name}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
-          
-          {/* Duplicate set for seamless loop */}
-          {tools.map((tool, index) => {
-            const IconComponent = tool.icon;
-            return (
-              <div key={`second-${index}`} className="marquee-item">
+              <div key={index} className="marquee-item">
                 <div className="group flex items-center space-x-3">
                   <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-muted/50 group-hover:bg-muted transition-all duration-300 group-hover:scale-110">
                     <IconComponent 

@@ -144,34 +144,31 @@
     @apply text-gray-400;
   }
 
-  /* Continuous Marquee Animation */
+  /* Truly Infinite Marquee Animation */
   .marquee-wrapper {
     @apply w-full overflow-hidden;
   }
 
-  .marquee-content {
-    @apply flex items-center gap-16 animate-marquee-scroll;
+  .marquee-content-infinite {
+    @apply flex items-center gap-16;
     width: max-content;
+    animation: infinite-scroll 40s linear infinite;
   }
 
   .marquee-item {
     @apply flex-shrink-0;
   }
 
-  .marquee-wrapper:hover .marquee-content {
+  .marquee-wrapper:hover .marquee-content-infinite {
     animation-play-state: paused;
   }
 
-  @keyframes marquee-scroll {
+  @keyframes infinite-scroll {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-50%);
+      transform: translateX(-25%);
     }
-  }
-
-  .animate-marquee-scroll {
-    animation: marquee-scroll 30s linear infinite;
   }
 }
