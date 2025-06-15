@@ -160,7 +160,7 @@
   }
 
   .marquee-wrapper:hover .marquee-content-infinite {
-    animation-play-state: paused;
+    animation-duration: 120s;
   }
 
   @keyframes infinite-scroll {
