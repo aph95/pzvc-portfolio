@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -143,45 +144,26 @@
     @apply text-gray-400;
   }
 
-  /* Smooth Infinite Marquee Animation */
+  /* Truly Infinite Marquee Animation */
   .marquee-wrapper {
     @apply w-full overflow-hidden;
   }
 
-  /* Use a custom property for the animation duration so it transitions smoothly */
   .marquee-content-infinite {
     @apply flex items-center gap-16;
     width: max-content;
-    animation: infinite-scroll linear infinite;
-    animation-duration: var(--marquee-duration, 40s);
-    will-change: transform;
-    /* Smooth transition of animation duration */
-    transition: animation-duration 0.6s cubic-bezier(0.4,0,0.2,1);
-  }
-
-  .marquee-wrapper:hover .marquee-content-infinite {
-    --marquee-duration: 120s;
-  }
-
-  /* Initially set the marquee duration */
-  .marquee-content-infinite {
-    --marquee-duration: 40s;
+    animation: infinite-scroll 40s linear infinite;
   }
 
   .marquee-item {
     @apply flex-shrink-0;
   }
 
-  @keyframes infinite-scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-25%);
-    }
+  .marquee-wrapper:hover .marquee-content-infinite {
+    animation-play-state: paused;
   }
 
-  @keyframes infinite-scroll-slow {
+  @keyframes infinite-scroll {
     0% {
       transform: translateX(0);
     }
