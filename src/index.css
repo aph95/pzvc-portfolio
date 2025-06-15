@@ -144,7 +144,7 @@
     @apply text-gray-400;
   }
 
-  /* Truly Infinite Marquee Animation */
+  /* Smooth Infinite Marquee Animation */
   .marquee-wrapper {
     @apply w-full overflow-hidden;
   }
@@ -160,10 +160,19 @@
   }
 
   .marquee-wrapper:hover .marquee-content-infinite {
-    animation-duration: 120s;
+    animation: infinite-scroll-slow 120s linear infinite;
   }
 
   @keyframes infinite-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-25%);
+    }
+  }
+
+  @keyframes infinite-scroll-slow {
     0% {
       transform: translateX(0);
     }
