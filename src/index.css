@@ -145,34 +145,33 @@
   }
 
   /* Continuous Marquee Animation */
-  @keyframes marquee-continuous {
+  .marquee-wrapper {
+    @apply w-full overflow-hidden;
+  }
+
+  .marquee-content {
+    @apply flex items-center gap-16 animate-marquee-scroll;
+    width: max-content;
+  }
+
+  .marquee-item {
+    @apply flex-shrink-0;
+  }
+
+  .marquee-wrapper:hover .marquee-content {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee-scroll {
     0% {
       transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-25%);
-    }
-  }
-
-  .animate-marquee-continuous {
-    animation: marquee-continuous 20s linear infinite;
-  }
-
-  /* Keep old marquee for backwards compatibility */
-  .marquee-container {
-    animation: marquee 25s linear infinite;
-  }
-  
-  @keyframes marquee {
-    0% {
-      transform: translateX(0%);
     }
     100% {
       transform: translateX(-50%);
     }
   }
 
-  .animate-marquee {
-    animation: marquee 25s linear infinite;
+  .animate-marquee-scroll {
+    animation: marquee-scroll 30s linear infinite;
   }
 }
