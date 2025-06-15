@@ -144,7 +144,21 @@
     @apply text-gray-400;
   }
 
-  /* Marquee Animation */
+  /* Continuous Marquee Animation */
+  @keyframes marquee-continuous {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-25%);
+    }
+  }
+
+  .animate-marquee-continuous {
+    animation: marquee-continuous 20s linear infinite;
+  }
+
+  /* Keep old marquee for backwards compatibility */
   .marquee-container {
     animation: marquee 25s linear infinite;
   }

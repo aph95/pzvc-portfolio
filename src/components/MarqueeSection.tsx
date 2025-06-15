@@ -17,11 +17,19 @@ const MarqueeSection = () => {
     const marquee = marqueeRef.current;
     if (!marquee) return;
 
-    // Duplicate the content for seamless loop
+    // Duplicate the content multiple times for seamless loop
     const marqueeContent = marquee.querySelector('.marquee-content');
     if (marqueeContent) {
-      const clone = marqueeContent.cloneNode(true);
-      marquee.appendChild(clone);
+      // Remove any existing clones first
+      const existingClones = marquee.querySelectorAll('.marquee-clone');
+      existingClones.forEach(clone => clone.remove());
+      
+      // Create multiple clones for seamless scrolling
+      for (let i = 0; i < 3; i++) {
+        const clone = marqueeContent.cloneNode(true) as HTMLElement;
+        clone.classList.add('marquee-clone');
+        marquee.appendChild(clone);
+      }
     }
   }, []);
 
@@ -29,9 +37,10 @@ const MarqueeSection = () => {
     <section className="relative py-12 overflow-hidden border-y border-border/20 bg-gradient-to-r from-transparent via-muted/30 to-transparent">
       <div 
         ref={marqueeRef}
-        className="flex whitespace-nowrap hover:[animation-play-state:paused] marquee-container"
+        className="flex whitespace-nowrap hover:[animation-play-state:paused]"
+        style={{ width: 'max-content' }}
       >
-        <div className="marquee-content flex items-center animate-marquee">
+        <div className="marquee-content flex items-center animate-marquee-continuous">
           {tools.map((tool, index) => {
             const IconComponent = tool.icon;
             return (
