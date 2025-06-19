@@ -4,7 +4,6 @@ import { ChevronRight } from 'lucide-react';
 import { useMousePosition } from '../hooks/useMousePosition';
 import SpacetimeGrid from '../components/SpacetimeGrid';
 import FloatingPlanet from '../components/FloatingPlanet';
-import MarqueeSection from '../components/MarqueeSection';
 
 const Home = () => {
   const mousePosition = useMousePosition();
@@ -60,8 +59,25 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Marquee Section */}
-      <MarqueeSection />
+      {/* Contact Section */}
+      <section className="relative py-20 px-6 border-y border-border/20 bg-gradient-to-r from-transparent via-muted/30 to-transparent z-10">
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="fade-in">
+            <h2 className="text-3xl md:text-4xl font-light text-foreground mb-4">
+              Get in touch
+            </h2>
+            <p className="text-muted-foreground mb-8">
+              Ready to collaborate? Send me a message and let's create something extraordinary together.
+            </p>
+            <a
+              href="mailto:aleksandar.praizovic.hedstrom@gmail.com"
+              className="inline-flex items-center px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+            >
+              Contact me
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* Design Philosophy Section */}
       <section className="relative py-20 px-6 bg-gradient-to-b from-transparent to-muted/50 z-10">
