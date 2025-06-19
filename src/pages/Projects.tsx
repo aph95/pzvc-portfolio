@@ -175,7 +175,7 @@ const Projects = () => {
               meaningful interactions through the gravitational pull of thoughtful design.
             </p>
             <a
-              href="mailto:hello@example.com"
+              href="mailto:aleksandar.praizovic.hedstrom@gmail.com"
               className="inline-flex items-center px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
             >
               Enter my orbit
