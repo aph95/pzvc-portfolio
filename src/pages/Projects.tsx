@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { usePageTitle } from '../hooks/usePageTitle';
 import FloatingPlanet from '../components/FloatingPlanet';
-import GameFlowChart from '../components/GameFlowChart';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -195,7 +194,7 @@ const Projects = () => {
               {/* Expanded Details */}
               {selectedProject === project.id && (
                 <div className="border-t border-border p-8 animate-fade-in bg-accent/50">
-                  <div className="grid md:grid-cols-3 gap-8 mb-8">
+                  <div className="grid md:grid-cols-3 gap-8">
                     <div>
                       <h4 className="font-semibold text-foreground mb-3">Gravitational Challenge</h4>
                       <p className="text-muted-foreground leading-relaxed">{project.challenge}</p>
@@ -209,13 +208,6 @@ const Projects = () => {
                       <p className="text-muted-foreground leading-relaxed">{project.impact}</p>
                     </div>
                   </div>
-                  
-                  {/* Game Flow Chart for Patient Zero */}
-                  {project.id === 1 && (
-                    <div className="mt-8">
-                      <GameFlowChart />
-                    </div>
-                  )}
                 </div>
               )}
             </div>
