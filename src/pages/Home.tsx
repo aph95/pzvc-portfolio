@@ -2,11 +2,13 @@
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { useMousePosition } from '../hooks/useMousePosition';
+import { usePageTitle } from '../hooks/usePageTitle';
 import SpacetimeGrid from '../components/SpacetimeGrid';
 import FloatingPlanet from '../components/FloatingPlanet';
 
 const Home = () => {
   const mousePosition = useMousePosition();
+  usePageTitle('PZVC | Creative Portfolio');
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden transition-colors duration-300">

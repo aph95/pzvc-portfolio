@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
+import { usePageTitle } from '../hooks/usePageTitle';
 import FloatingPlanet from '../components/FloatingPlanet';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  usePageTitle('PZVC | Featured Projects');
 
   const projects = [
     {
@@ -34,18 +36,6 @@ const Projects = () => {
       tags: ["Mobile Design", "UX Research", "User-Centered Design", "Driver Experience"],
       gradient: "from-red-900/20 to-orange-900/40",
       logo: "/lovable-uploads/2be92a79-4506-4da4-a242-31c6c304c818.png"
-    },
-    {
-      id: 3,
-      title: "Learning Platform",
-      category: "Education",
-      year: "2022",
-      description: "An adaptive e-learning platform that creates orbital learning paths, naturally guiding students through personalized educational journeys.",
-      challenge: "Students needed personalized learning experiences that could adapt to their individual pace and learning style, like customized gravitational fields.",
-      solution: "Developed an adaptive interface with multiple content formats and progress tracking that creates momentum through achievement, using orbital design patterns for different learning modules.",
-      impact: "Improved course completion rates by 45% and received 4.8/5 user satisfaction rating by creating learning ecosystems that feel naturally progressive.",
-      tags: ["EdTech", "Adaptive Design", "Progressive Web App", "Gamification"],
-      gradient: "from-green-900/20 to-emerald-900/40"
     }
   ];
 
