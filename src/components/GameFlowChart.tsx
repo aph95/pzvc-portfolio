@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { ZoomIn, ZoomOut, RotateCcw } from 'lucide-react';
 
 interface FlowNode {
   id: string;
@@ -15,6 +16,11 @@ interface FlowNode {
 const GameFlowChart = () => {
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
   const [selectedNode, setSelectedNode] = useState<string | null>(null);
+  const [zoom, setZoom] = useState(1);
+  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const svgRef = useRef<SVGSVGElement>(null);
 
   const nodes: FlowNode[] = [
     // Row 1 - Start
@@ -143,80 +149,153 @@ const GameFlowChart = () => {
     }).filter(Boolean);
   };
 
+  const handleZoomIn = () => setZoom(prev => Math.min(prev + 0.2, 3));
+  const handleZoomOut = () => setZoom(prev => Math.max(prev - 0.2, 0.5));
+  const handleReset = () => {
+    setZoom(1);
+    setPan({ x: 0, y: 0 });
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (e.target === svgRef.current) {
+      setIsDragging(true);
+      setDragStart({ x: e.clientX - pan.x, y: e.clientY - pan.y });
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging) {
+      setPan({
+        x: e.clientX - dragStart.x,
+        y: e.clientY - dragStart.y
+      });
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleWheel = (e: React.WheelEvent) => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? -0.1 : 0.1;
+    setZoom(prev => Math.max(0.5, Math.min(3, prev + delta)));
+  };
+
   return (
     <div className="w-full bg-card rounded-lg border border-border p-6">
-      <h3 className="text-xl font-bold text-foreground mb-4">Patient Zero - Interactive Game Flow</h3>
-      <p className="text-sm text-muted-foreground mb-6">
-        Hover over nodes to see details. Click to highlight paths.
-      </p>
+      <div className="flex items-center justify-between mb-4">
+        <div>
+          <h3 className="text-xl font-bold text-foreground">Patient Zero - Interactive Game Flow</h3>
+          <p className="text-sm text-muted-foreground mt-1">
+            Hover over nodes to see details. Use controls to zoom and pan.
+          </p>
+        </div>
+        
+        {/* Zoom Controls */}
+        <div className="flex items-center gap-2">
+          <button
+            onClick={handleZoomOut}
+            className="p-2 bg-secondary text-secondary-foreground rounded-md hover:bg-secondary/80 transition-colors"
+            title="Zoom Out"
+          >
+            <ZoomOut className="h-4 w-4" />
+          </button>
+          <span className="text-sm text-muted-foreground min-w-[3rem] text-center">
+            {Math.round(zoom * 100)}%
+          </span>
+          <button
+            onClick={handleZoomIn}
+            className="p-2 bg-secondary text-secondary-foreground rounded-md hover:bg-secondary/80 transition-colors"
+            title="Zoom In"
+          >
+            <ZoomIn className="h-4 w-4" />
+          </button>
+          <button
+            onClick={handleReset}
+            className="p-2 bg-secondary text-secondary-foreground rounded-md hover:bg-secondary/80 transition-colors"
+            title="Reset View"
+          >
+            <RotateCcw className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
       
-      <div className="overflow-x-auto">
+      <div className="relative overflow-hidden border border-border/50 rounded bg-background/50 h-[70vh]">
         <svg
-          width="800"
-          height="1520"
+          ref={svgRef}
+          width="100%"
+          height="100%"
           viewBox="0 0 800 1520"
-          className="w-full h-auto max-h-[80vh] border border-border/50 rounded bg-background/50"
+          className="cursor-grab active:cursor-grabbing"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onWheel={handleWheel}
         >
-          {/* Arrow marker definition */}
-          <defs>
-            <marker
-              id="arrowhead"
-              markerWidth="10"
-              markerHeight="7"
-              refX="9"
-              refY="3.5"
-              orient="auto"
-            >
-              <polygon
-                points="0 0, 10 3.5, 0 7"
-                fill="hsl(var(--border))"
-              />
-            </marker>
-          </defs>
-          
-          {/* Render connections first (behind nodes) */}
-          {nodes.map(node => getConnections(node))}
-          
-          {/* Render nodes */}
-          {nodes.map(node => {
-            const isHovered = hoveredNode === node.id;
-            const isSelected = selectedNode === node.id;
-            
-            return (
-              <g key={node.id}>
-                <rect
-                  x={node.x}
-                  y={node.y}
-                  width={node.width}
-                  height={node.height}
-                  fill={getNodeColor(node.type)}
-                  stroke={isHovered || isSelected ? 'hsl(var(--primary))' : 'hsl(var(--border))'}
-                  strokeWidth={isHovered || isSelected ? 3 : 1}
-                  rx="8"
-                  className="cursor-pointer transition-all duration-200"
-                  onMouseEnter={() => setHoveredNode(node.id)}
-                  onMouseLeave={() => setHoveredNode(null)}
-                  onClick={() => setSelectedNode(selectedNode === node.id ? null : node.id)}
+          <g transform={`translate(${pan.x}, ${pan.y}) scale(${zoom})`}>
+            {/* Arrow marker definition */}
+            <defs>
+              <marker
+                id="arrowhead"
+                markerWidth="10"
+                markerHeight="7"
+                refX="9"
+                refY="3.5"
+                orient="auto"
+              >
+                <polygon
+                  points="0 0, 10 3.5, 0 7"
+                  fill="hsl(var(--border))"
                 />
-                <text
-                  x={node.x + node.width / 2}
-                  y={node.y + node.height / 2}
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  fill="hsl(var(--foreground))"
-                  fontSize="12"
-                  fontWeight="600"
-                  className="pointer-events-none select-none"
-                >
-                  {node.text.split('\n').map((line, i) => (
-                    <tspan key={i} x={node.x + node.width / 2} dy={i === 0 ? 0 : 14}>
-                      {line}
-                    </tspan>
-                  ))}
-                </text>
-              </g>
-            );
-          })}
+              </marker>
+            </defs>
+            
+            {/* Render connections first (behind nodes) */}
+            {nodes.map(node => getConnections(node))}
+            
+            {/* Render nodes */}
+            {nodes.map(node => {
+              const isHovered = hoveredNode === node.id;
+              const isSelected = selectedNode === node.id;
+              
+              return (
+                <g key={node.id}>
+                  <rect
+                    x={node.x}
+                    y={node.y}
+                    width={node.width}
+                    height={node.height}
+                    fill={getNodeColor(node.type)}
+                    stroke={isHovered || isSelected ? 'hsl(var(--primary))' : 'hsl(var(--border))'}
+                    strokeWidth={isHovered || isSelected ? 3 : 1}
+                    rx="8"
+                    className="cursor-pointer transition-all duration-200"
+                    onMouseEnter={() => setHoveredNode(node.id)}
+                    onMouseLeave={() => setHoveredNode(null)}
+                    onClick={() => setSelectedNode(selectedNode === node.id ? null : node.id)}
+                  />
+                  <text
+                    x={node.x + node.width / 2}
+                    y={node.y + node.height / 2}
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    fill="hsl(var(--foreground))"
+                    fontSize="12"
+                    fontWeight="600"
+                    className="pointer-events-none select-none"
+                  >
+                    {node.text.split('\n').map((line, i) => (
+                      <tspan key={i} x={node.x + node.width / 2} dy={i === 0 ? 0 : 14}>
+                        {line}
+                      </tspan>
+                    ))}
+                  </text>
+                </g>
+              );
+            })}
+          </g>
         </svg>
       </div>
       
