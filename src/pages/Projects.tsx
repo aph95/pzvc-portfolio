@@ -24,15 +24,16 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Mobile Banking App",
-      category: "Fintech", 
-      year: "2023",
-      description: "A secure banking app that uses gravitational UX principles to create trust and guide users through complex financial tasks.",
-      challenge: "Traditional banking interfaces created friction and anxiety, repelling users instead of attracting them to engage with their finances.",
-      solution: "Developed a clean interface with natural attraction points and progressive disclosure, using momentum-based interactions to build confidence and reduce financial anxiety.",
-      impact: "Increased user engagement by 60% and improved accessibility scores to WCAG AA standards through balanced design that feels both secure and approachable.",
-      tags: ["Mobile Design", "Accessibility", "Finance", "User Testing"],
-      gradient: "from-purple-900/20 to-pink-900/40"
+      title: "Deliverly",
+      category: "Mobile App Design",
+      year: "2024",
+      description: "A mobile app concept built by a delivery driver — for delivery drivers. Designed to simplify and enhance the day-to-day experience of delivery drivers through real-world informed UX decisions.",
+      challenge: "Outdated apps made for frustrating workflows — clunky navigation, poor single-handed usability, and unnecessary steps that slowed drivers down during critical delivery moments.",
+      solution: "Developed a driver-first approach prioritizing clean focused UI, one-handed interaction patterns, intuitive delivery flows, and streamlined navigation designed for speed and safety.",
+      impact: "Created an empathy-driven design based on real driver needs, demonstrating how user research from personal experience can lead to more effective and human-centered solutions.",
+      tags: ["Mobile Design", "UX Research", "User-Centered Design", "Driver Experience"],
+      gradient: "from-red-900/20 to-orange-900/40",
+      logo: "/lovable-uploads/2be92a79-4506-4da4-a242-31c6c304c818.png"
     },
     {
       id: 3,
