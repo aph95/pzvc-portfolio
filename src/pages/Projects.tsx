@@ -35,7 +35,8 @@ const Projects = () => {
       impact: "Created an empathy-driven design based on real driver needs, demonstrating how user research from personal experience can lead to more effective and human-centered solutions.",
       tags: ["Mobile Design", "UX Research", "User-Centered Design", "Driver Experience"],
       gradient: "from-red-900/20 to-orange-900/40",
-      logo: "/lovable-uploads/2266e951-e4f0-4298-9662-aa43bfcd3509.png"
+      logo: "/lovable-uploads/45caed78-6c9e-4c18-9185-604667205a05.png",
+      fullCoverImage: true
     }
   ];
 
@@ -83,6 +84,14 @@ const Projects = () => {
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
+                      />
+                    </div>
+                  ) : project.fullCoverImage ? (
+                    <div className="aspect-video relative overflow-hidden">
+                      <img 
+                        src={project.logo} 
+                        alt={`${project.title} illustration`} 
+                        className="w-full h-full object-cover"
                       />
                     </div>
                   ) : (
