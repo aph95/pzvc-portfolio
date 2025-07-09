@@ -36,7 +36,8 @@ const Projects = () => {
       tags: ["Mobile Design", "UX Research", "User-Centered Design", "Driver Experience"],
       gradient: "from-red-900/20 to-orange-900/40",
       logo: "/lovable-uploads/85e937a9-af1f-4909-9f3c-5fffdad97a2a.png",
-      fullCoverImage: true
+      fullCoverImage: true,
+      prototypeUrl: "https://www.figma.com/proto/R3S5emLjv1eL84nVBFdszs/Deliverly?node-id=48-1133&t=X23M6OvpfhyIXPxK-1"
     }
   ];
 
@@ -173,6 +174,17 @@ const Projects = () => {
                         className="inline-flex items-center text-muted-foreground hover:text-foreground font-medium transition-colors duration-200"
                       >
                         Watch Demo
+                      </a>
+                    )}
+                    
+                    {project.prototypeUrl && (
+                      <a
+                        href={project.prototypeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-muted-foreground hover:text-foreground font-medium transition-colors duration-200"
+                      >
+                        Test prototype
                       </a>
                     )}
                   </div>
