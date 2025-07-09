@@ -173,7 +173,7 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center text-muted-foreground hover:text-foreground font-medium transition-colors duration-200"
                       >
-                        Watch Demo
+                        Watch demo
                       </a>
                     )}
                     
