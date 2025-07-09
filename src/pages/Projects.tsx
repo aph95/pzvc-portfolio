@@ -10,15 +10,17 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Healthcare Dashboard",
-      category: "Enterprise SaaS",
-      year: "2023",
-      description: "A comprehensive dashboard that creates gravitational pull around critical patient data, guiding healthcare professionals through complex workflows.",
-      challenge: "Healthcare workers needed a unified view of patient information scattered across multiple systems, like planets in different solar systems.",
-      solution: "Designed an intuitive dashboard that consolidates data streams into orbital patterns, creating natural information hierarchies and actionable insights through clear gravitational design principles.",
-      impact: "Reduced cognitive load by 35% and improved data accuracy by creating momentum-based workflows that feel natural and intuitive.",
-      tags: ["User Research", "Data Visualization", "Healthcare", "Enterprise"],
-      gradient: "from-blue-900/20 to-indigo-900/40"
+      title: "Patient Zero",
+      category: "Phygital Game Design",
+      year: "2024",
+      description: "A conceptual prototype of a real-world, phygital (physical + digital) game designed with children's wellbeing in mind, integrating wearable technology and directional audio to create immersive, interactive storytelling.",
+      challenge: "Children today face four foundational harms in the digital age according to Jonathan Haidt's framework. Traditional games often contribute to digital isolation and overprotection rather than addressing these issues.",
+      solution: "Developed a phygital game experience that encourages real-world exploration, movement, and social connection through wearable proximity-triggered tech and directional audio hardware, creating a counterbalance to digital isolation.",
+      impact: "Created an innovative prototype that demonstrates how technology can be used to promote physical activity and real-world social interaction rather than replace it, contributing to children's wellbeing research.",
+      tags: ["Wearable Tech", "UX Design", "Visual Identity", "Phygital Design"],
+      gradient: "from-red-900/20 to-pink-900/40",
+      logo: "/lovable-uploads/57f6e072-fad0-424d-b433-4dbd1ded2abd.png",
+      videoUrl: "https://www.youtube.com/watch?v=20dxeJcHg78"
     },
     {
       id: 2,
@@ -83,9 +85,19 @@ const Projects = () => {
                 <div className="md:w-1/2">
                   <div className={`aspect-video bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
                     <div className="text-center z-10">
-                      <div className={`w-16 h-16 bg-current rounded-lg mx-auto mb-4 opacity-20 transition-transform duration-300 ${
-                        hoveredProject === project.id ? 'scale-110 rotate-12' : ''
-                      }`}></div>
+                      {project.logo ? (
+                        <img 
+                          src={project.logo} 
+                          alt={`${project.title} logo`} 
+                          className={`h-16 mx-auto mb-4 transition-transform duration-300 ${
+                            hoveredProject === project.id ? 'scale-110 rotate-3' : ''
+                          }`}
+                        />
+                      ) : (
+                        <div className={`w-16 h-16 bg-current rounded-lg mx-auto mb-4 opacity-20 transition-transform duration-300 ${
+                          hoveredProject === project.id ? 'scale-110 rotate-12' : ''
+                        }`}></div>
+                      )}
                       <p className="text-foreground font-medium">{project.title}</p>
                     </div>
                     {/* Subtle floating elements */}
@@ -127,17 +139,30 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  <button
-                    onClick={() => setSelectedProject(
-                      selectedProject === project.id ? null : project.id
+                  <div className="flex items-center gap-4">
+                    <button
+                      onClick={() => setSelectedProject(
+                        selectedProject === project.id ? null : project.id
+                      )}
+                      className="group inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200"
+                    >
+                      {selectedProject === project.id ? 'Collapse details' : 'Explore gravitational field'}
+                      <ChevronRight className={`ml-1 h-4 w-4 transition-transform duration-200 ${
+                        selectedProject === project.id ? 'rotate-90' : 'group-hover:translate-x-1'
+                      }`} />
+                    </button>
+                    
+                    {project.videoUrl && (
+                      <a
+                        href={project.videoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-muted-foreground hover:text-foreground font-medium transition-colors duration-200"
+                      >
+                        Watch Demo
+                      </a>
                     )}
-                    className="group inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200"
-                  >
-                    {selectedProject === project.id ? 'Collapse details' : 'Explore gravitational field'}
-                    <ChevronRight className={`ml-1 h-4 w-4 transition-transform duration-200 ${
-                      selectedProject === project.id ? 'rotate-90' : 'group-hover:translate-x-1'
-                    }`} />
-                  </button>
+                  </div>
                 </div>
               </div>
 
