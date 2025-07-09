@@ -5,7 +5,7 @@ import FloatingPlanet from '../components/FloatingPlanet';
 
 const About = () => {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
-  usePageTitle('PZVC | About Me');
+  usePageTitle('PZVC - About');
 
   const toggleSection = (section: string) => {
     setExpandedSection(expandedSection === section ? null : section);

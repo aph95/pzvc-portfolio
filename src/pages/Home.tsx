@@ -8,7 +8,7 @@ import FloatingPlanet from '../components/FloatingPlanet';
 
 const Home = () => {
   const mousePosition = useMousePosition();
-  usePageTitle('PZVC | Creative Portfolio');
+  usePageTitle('PZVC - Home');
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden transition-colors duration-300">

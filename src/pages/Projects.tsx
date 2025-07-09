@@ -6,7 +6,7 @@ import FloatingPlanet from '../components/FloatingPlanet';
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
-  usePageTitle('PZVC | Featured Projects');
+  usePageTitle('PZVC - Projects');
 
   const projects = [
     {
