@@ -11,7 +11,7 @@ const Projects = () => {
       id: 1,
       title: "Patient Zero",
       category: "Phygital Game Design",
-      year: "2024",
+      year: "2025",
       description: "A conceptual prototype of a real-world, phygital (physical + digital) game designed with children's wellbeing in mind, integrating wearable technology and directional audio to create immersive, interactive storytelling.",
       challenge: "Children today face four foundational harms in the digital age according to Jonathan Haidt's framework. Traditional games often contribute to digital isolation and overprotection rather than addressing these issues.",
       solution: "Developed a phygital game experience that encourages real-world exploration, movement, and social connection through wearable proximity-triggered tech and directional audio hardware, creating a counterbalance to digital isolation.",
