@@ -22,9 +22,9 @@ const Navigation = () => {
             <div className="flex items-center justify-between">
               <Link 
                 to="/" 
-                className="text-xl font-semibold text-foreground hover:text-foreground/80 transition-colors duration-200"
+                className="text-xl font-outfit font-extrabold text-foreground hover:text-foreground/80 transition-colors duration-200"
               >
-                Portfolio
+                PZVC
               </Link>
               
               <div className="flex items-center space-x-8">
