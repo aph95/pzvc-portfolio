@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Brain, Users, Play, Skull, Heart, MapPin, Trophy, RotateCcw, Zap } from 'lucide-react';
 import { usePageTitle } from '../hooks/usePageTitle';
 import FloatingPlanet from '../components/FloatingPlanet';
-import InteractiveGameFlow from '../components/InteractiveGameFlow';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -210,10 +209,180 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* Interactive Game Flow - Only for Patient Zero */}
+                  {/* Game Flow Overview - Only for Patient Zero */}
                   {project.id === 1 && (
                     <div className="border-t border-border pt-8">
-                      <InteractiveGameFlow />
+                      <div className="mb-6">
+                        <h4 className="text-xl font-semibold text-foreground mb-2 flex items-center gap-2">
+                          <Brain className="h-5 w-5" />
+                          Patient Zero – Game Flow Overview
+                        </h4>
+                        <p className="text-sm text-muted-foreground">
+                          Core gameplay logic of the phygital infection-based experience using wearable tech and directional audio
+                        </p>
+                      </div>
+
+                      <div className="space-y-6">
+                        {/* Flow Steps */}
+                        <div className="grid gap-6 lg:grid-cols-2">
+                          {/* Step 1: Matchmaking */}
+                          <div className="notion-card p-6">
+                            <div className="flex items-start gap-3 mb-4">
+                              <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-semibold text-sm">
+                                1
+                              </div>
+                              <div>
+                                <h5 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                                  <Users className="h-4 w-4" />
+                                  Matchmaking & Lobby
+                                </h5>
+                                <ul className="text-sm text-muted-foreground space-y-1">
+                                  <li>• Players enter matchmaking lobby</li>
+                                  <li>• Random role assignment: Human or Zombie</li>
+                                  <li>• Create/Join room options</li>
+                                  <li>• Define boundaries (Auto/Manual)</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Step 2: Game Start */}
+                          <div className="notion-card p-6">
+                            <div className="flex items-start gap-3 mb-4">
+                              <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-semibold text-sm">
+                                2
+                              </div>
+                              <div>
+                                <h5 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                                  <Play className="h-4 w-4" />
+                                  Game Start
+                                </h5>
+                                <ul className="text-sm text-muted-foreground space-y-1">
+                                  <li>• Boundaries and time defined</li>
+                                  <li>• Game timer begins</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Step 3: Zombie Mechanics */}
+                          <div className="notion-card p-6">
+                            <div className="flex items-start gap-3 mb-4">
+                              <div className="flex-shrink-0 w-8 h-8 bg-destructive text-destructive-foreground rounded-full flex items-center justify-center font-semibold text-sm">
+                                3
+                              </div>
+                              <div>
+                                <h5 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                                  <Skull className="h-4 w-4" />
+                                  Zombie Mechanics
+                                </h5>
+                                <ul className="text-sm text-muted-foreground space-y-1">
+                                  <li>• Zombies attempt to infect humans</li>
+                                  <li>• Upon attack:</li>
+                                  <li className="ml-4">→ Infected: health depletes gradually</li>
+                                  <li className="ml-4">→ Safe: health stable/replenishes</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Step 4: Human Health */}
+                          <div className="notion-card p-6">
+                            <div className="flex items-start gap-3 mb-4">
+                              <div className="flex-shrink-0 w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-semibold text-sm">
+                                4
+                              </div>
+                              <div>
+                                <h5 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                                  <Heart className="h-4 w-4" />
+                                  Human Health System
+                                </h5>
+                                <ul className="text-sm text-muted-foreground space-y-1">
+                                  <li>• Infected humans: health depletes</li>
+                                  <li>• Antidote found → health replenishes</li>
+                                  <li>• No antidote → may die</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Step 5: Boundary Rules */}
+                          <div className="notion-card p-6">
+                            <div className="flex items-start gap-3 mb-4">
+                              <div className="flex-shrink-0 w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center font-semibold text-sm">
+                                5
+                              </div>
+                              <div>
+                                <h5 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                                  <MapPin className="h-4 w-4" />
+                                  Boundary Rules
+                                </h5>
+                                <ul className="text-sm text-muted-foreground space-y-1">
+                                  <li>• Out of bounds → location exposed</li>
+                                  <li>• Return within 30s → stealth restored</li>
+                                  <li>• Otherwise → vulnerability remains</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Step 6: Win Conditions */}
+                          <div className="notion-card p-6">
+                            <div className="flex items-start gap-3 mb-4">
+                              <div className="flex-shrink-0 w-8 h-8 bg-yellow-600 text-white rounded-full flex items-center justify-center font-semibold text-sm">
+                                6
+                              </div>
+                              <div>
+                                <h5 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                                  <Trophy className="h-4 w-4" />
+                                  Win Conditions
+                                </h5>
+                                <ul className="text-sm text-muted-foreground space-y-1">
+                                  <li>• All humans infected/dead → Zombies win</li>
+                                  <li>• Timer runs out + humans survive → Humans win</li>
+                                  <li>• No zombies remain → Humans win</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Final Steps */}
+                        <div className="flex flex-col lg:flex-row gap-6">
+                          <div className="notion-card p-6 flex-1">
+                            <div className="flex items-start gap-3">
+                              <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold text-sm">
+                                7
+                              </div>
+                              <div>
+                                <h5 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                                  <RotateCcw className="h-4 w-4" />
+                                  Replay Prompt
+                                </h5>
+                                <p className="text-sm text-muted-foreground">
+                                  Option to replay the game at the end
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="notion-card p-6 flex-1 bg-accent/30 border-dashed">
+                            <div className="flex items-start gap-3">
+                              <div className="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center">
+                                <Zap className="h-4 w-4" />
+                              </div>
+                              <div>
+                                <h5 className="font-semibold text-foreground mb-2">
+                                  Special Event Trigger
+                                </h5>
+                                <p className="text-sm text-muted-foreground">
+                                  Temporary clue may reveal the location of a random human to zombies during gameplay
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   )}
                 </div>
