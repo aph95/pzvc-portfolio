@@ -35,7 +35,7 @@ const Projects = () => {
       impact: "Created an empathy-driven design based on real driver needs, demonstrating how user research from personal experience can lead to more effective and human-centered solutions.",
       tags: ["Mobile Design", "UX Research", "User-Centered Design", "Driver Experience"],
       gradient: "from-red-900/20 to-orange-900/40",
-      logo: "/lovable-uploads/45caed78-6c9e-4c18-9185-604667205a05.png",
+      logo: "/lovable-uploads/85e937a9-af1f-4909-9f3c-5fffdad97a2a.png",
       fullCoverImage: true
     }
   ];
