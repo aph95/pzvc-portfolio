@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import FloatingPlanet from '../components/FloatingPlanet';
@@ -20,13 +19,14 @@ const Projects = () => {
       tags: ["Wearable Tech", "UX Design", "Visual Identity", "Phygital Design"],
       gradient: "from-red-900/20 to-pink-900/40",
       logo: "/lovable-uploads/57f6e072-fad0-424d-b433-4dbd1ded2abd.png",
-      videoUrl: "https://www.youtube.com/watch?v=20dxeJcHg78"
+      videoUrl: "https://www.youtube.com/watch?v=20dxeJcHg78",
+      embedVideoUrl: "https://www.youtube.com/embed/20dxeJcHg78"
     },
     {
       id: 2,
       title: "Mobile Banking App",
-      category: "Fintech",
-      year: "2023", 
+      category: "Fintech", 
+      year: "2023",
       description: "A secure banking app that uses gravitational UX principles to create trust and guide users through complex financial tasks.",
       challenge: "Traditional banking interfaces created friction and anxiety, repelling users instead of attracting them to engage with their finances.",
       solution: "Developed a clean interface with natural attraction points and progressive disclosure, using momentum-based interactions to build confidence and reduce financial anxiety.",
@@ -36,7 +36,7 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Learning Platform", 
+      title: "Learning Platform",
       category: "Education",
       year: "2022",
       description: "An adaptive e-learning platform that creates orbital learning paths, naturally guiding students through personalized educational journeys.",
@@ -83,31 +83,44 @@ const Projects = () => {
               <div className="md:flex">
                 {/* Project Visual */}
                 <div className="md:w-1/2">
-                  <div className={`aspect-video bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
-                    <div className="text-center z-10">
-                      {project.logo ? (
-                        <img 
-                          src={project.logo} 
-                          alt={`${project.title} logo`} 
-                          className={`h-16 mx-auto mb-4 transition-transform duration-300 ${
-                            hoveredProject === project.id ? 'scale-110 rotate-3' : ''
-                          }`}
-                        />
-                      ) : (
-                        <div className={`w-16 h-16 bg-current rounded-lg mx-auto mb-4 opacity-20 transition-transform duration-300 ${
-                          hoveredProject === project.id ? 'scale-110 rotate-12' : ''
-                        }`}></div>
-                      )}
-                      <p className="text-foreground font-medium">{project.title}</p>
+                  {project.embedVideoUrl ? (
+                    <div className="aspect-video relative overflow-hidden">
+                      <iframe
+                        src={project.embedVideoUrl}
+                        title={`${project.title} demo video`}
+                        className="w-full h-full"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      />
                     </div>
-                    {/* Subtle floating elements */}
-                    <div className={`absolute top-4 right-4 w-3 h-3 bg-foreground/40 rounded-full opacity-40 transition-transform duration-1000 ${
-                      hoveredProject === project.id ? 'translate-x-2 translate-y-1' : ''
-                    }`}></div>
-                    <div className={`absolute bottom-6 left-6 w-2 h-2 bg-foreground/40 rounded-full opacity-30 transition-transform duration-1000 ${
-                      hoveredProject === project.id ? '-translate-x-1 -translate-y-1' : ''
-                    }`}></div>
-                  </div>
+                  ) : (
+                    <div className={`aspect-video bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
+                      <div className="text-center z-10">
+                        {project.logo ? (
+                          <img 
+                            src={project.logo} 
+                            alt={`${project.title} logo`} 
+                            className={`h-16 mx-auto mb-4 transition-transform duration-300 ${
+                              hoveredProject === project.id ? 'scale-110 rotate-3' : ''
+                            }`}
+                          />
+                        ) : (
+                          <div className={`w-16 h-16 bg-current rounded-lg mx-auto mb-4 opacity-20 transition-transform duration-300 ${
+                            hoveredProject === project.id ? 'scale-110 rotate-12' : ''
+                          }`}></div>
+                        )}
+                        <p className="text-foreground font-medium">{project.title}</p>
+                      </div>
+                      {/* Subtle floating elements */}
+                      <div className={`absolute top-4 right-4 w-3 h-3 bg-foreground/40 rounded-full opacity-40 transition-transform duration-1000 ${
+                        hoveredProject === project.id ? 'translate-x-2 translate-y-1' : ''
+                      }`}></div>
+                      <div className={`absolute bottom-6 left-6 w-2 h-2 bg-foreground/40 rounded-full opacity-30 transition-transform duration-1000 ${
+                        hoveredProject === project.id ? '-translate-x-1 -translate-y-1' : ''
+                      }`}></div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Project Info */}
