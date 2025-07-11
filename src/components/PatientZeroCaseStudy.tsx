@@ -124,7 +124,7 @@ const PatientZeroCaseStudy = () => {
           <h3 className="text-xl font-semibold text-foreground">Tools Used</h3>
         </div>
         <p className="text-muted-foreground">
-          Software: Adobe Illustrator, Adobe XD, Draw.io, Adobe Premiere Pro, Adobe After Effects
+          <strong>Software:</strong> Adobe Illustrator, Adobe XD, Draw.io, Adobe Premiere Pro, Adobe After Effects
         </p>
       </div>
 
@@ -139,15 +139,15 @@ const PatientZeroCaseStudy = () => {
         </p>
         <ul className="grid md:grid-cols-2 gap-3">
           {[
-            "Promote social interaction and collaboration",
-            "Stimulate strategic thinking", 
-            "Create a sense of positive, experiential stress",
-            "Increase replayability through varied challenges"
+            "Promote <strong>social interaction</strong> and <strong>collaboration</strong>",
+            "Stimulate <strong>strategic thinking</strong>", 
+            "Create a sense of positive, <strong>experiential stress</strong>",
+            "Increase <strong>replayability</strong> through varied challenges"
           ].map((goal, index) => (
-            <li key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
-              <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-muted-foreground">{goal}</span>
-            </li>
+             <li key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
+               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
+               <span className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: goal }}></span>
+             </li>
           ))}
         </ul>
         <PlaceholderSection title="Moodboard or visual goal diagram" />
@@ -162,12 +162,12 @@ const PatientZeroCaseStudy = () => {
         <p className="text-muted-foreground mb-4">We conducted an initial scan of:</p>
         <div className="space-y-3">
           {[
-            "Existing games in the location-based and phygital space",
-            "Scientific articles on game design, child psychology, and immersive play"
+            "Existing games in the <strong>location-based</strong> and <strong>phygital space</strong>",
+            "<strong>Scientific articles</strong> on game design, child psychology, and immersive play"
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-muted-foreground">{item}</span>
+              <span className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: item }}></span>
             </div>
           ))}
         </div>
@@ -183,13 +183,13 @@ const PatientZeroCaseStudy = () => {
         <p className="text-muted-foreground mb-4">We analyzed:</p>
         <div className="space-y-3">
           {[
-            "Popular social and physical-digital games",
-            "Gameplay mechanics and user motivation",
-            "Opportunities for strategic tension and engagement"
+            "Popular <strong>social</strong> and <strong>physical-digital games</strong>",
+            "<strong>Gameplay mechanics</strong> and user motivation",
+            "Opportunities for <strong>strategic tension</strong> and engagement"
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-muted-foreground">{item}</span>
+              <span className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: item }}></span>
             </div>
           ))}
         </div>
@@ -205,13 +205,13 @@ const PatientZeroCaseStudy = () => {
         <p className="text-muted-foreground mb-4">Several early design directions were explored, including:</p>
         <div className="space-y-3">
           {[
-            "Infection-based movement mechanics",
-            "Directional audio as a gameplay feature", 
-            "Real-world cooperation and decision-making"
+            "<strong>Infection-based</strong> movement mechanics",
+            "<strong>Directional audio</strong> as a gameplay feature", 
+            "<strong>Real-world cooperation</strong> and decision-making"
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-muted-foreground">{item}</span>
+              <span className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: item }}></span>
             </div>
           ))}
         </div>
@@ -224,17 +224,17 @@ const PatientZeroCaseStudy = () => {
           <Package className="h-6 w-6 text-primary" />
           <h3 className="text-xl font-semibold text-foreground">Rapid Prototyping</h3>
         </div>
-        <p className="text-muted-foreground mb-4">We created and tested 9 unique prototypes focusing on:</p>
+        <p className="text-muted-foreground mb-4">We created and tested <strong>9 unique prototypes</strong> focusing on:</p>
         <div className="grid md:grid-cols-2 gap-3">
           {[
-            "Game pacing",
-            "Real-world interaction",
-            "One-handed interaction models",
-            "Strategic variability"
+            "<strong>Game pacing</strong>",
+            "<strong>Real-world interaction</strong>",
+            "<strong>One-handed interaction</strong> models",
+            "<strong>Strategic variability</strong>"
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-muted-foreground">{item}</span>
+              <span className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: item }}></span>
             </div>
           ))}
         </div>
@@ -250,12 +250,12 @@ const PatientZeroCaseStudy = () => {
         <p className="text-muted-foreground mb-4">We conducted:</p>
         <div className="space-y-3 mb-4">
           {[
-            "An observation study",
-            "Iterative feedback sessions with design students"
+            "An <strong>observation study</strong>",
+            "<strong>Iterative feedback sessions</strong> with design students"
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-muted-foreground">{item}</span>
+              <span className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: item }}></span>
             </div>
           ))}
         </div>
@@ -273,17 +273,17 @@ const PatientZeroCaseStudy = () => {
           <GitBranch className="h-6 w-6 text-primary" />
           <h3 className="text-xl font-semibold text-foreground">Game Flow Design</h3>
         </div>
-        <p className="text-muted-foreground mb-4">A detailed game flow was created to finalize:</p>
+        <p className="text-muted-foreground mb-4">A detailed <strong>game flow</strong> was created to finalize:</p>
         <div className="grid md:grid-cols-2 gap-3">
           {[
-            "Role logic (human/zombie)",
-            "Infection timelines and recovery logic",
-            "Boundary violations and stealth visibility",
-            "Win conditions and replay triggers"
+            "<strong>Role logic</strong> (human/zombie)",
+            "<strong>Infection timelines</strong> and recovery logic",
+            "<strong>Boundary violations</strong> and stealth visibility",
+            "<strong>Win conditions</strong> and replay triggers"
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-muted-foreground">{item}</span>
+              <span className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: item }}></span>
             </div>
           ))}
         </div>
@@ -296,16 +296,16 @@ const PatientZeroCaseStudy = () => {
           <Play className="h-6 w-6 text-primary" />
           <h3 className="text-xl font-semibold text-foreground">Final Build & Demo</h3>
         </div>
-        <p className="text-muted-foreground mb-4">The final product included:</p>
+        <p className="text-muted-foreground mb-4">The <strong>final product</strong> included:</p>
         <div className="space-y-3">
           {[
-            "Functional mechanics",
-            "Visual identity and logo",
-            "A walkthrough demo video"
+            "<strong>Functional mechanics</strong>",
+            "<strong>Visual identity</strong> and logo",
+            "A walkthrough <strong>demo video</strong>"
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-muted-foreground">{item}</span>
+              <span className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: item }}></span>
             </div>
           ))}
         </div>
@@ -319,9 +319,9 @@ const PatientZeroCaseStudy = () => {
           <h3 className="text-xl font-semibold text-foreground">Summary</h3>
         </div>
         <p className="text-muted-foreground leading-relaxed text-lg">
-          Patient Zero blends real-world activity, strategic design, and psychological research into a dynamic, 
-          phygital game experience. Grounded in research and shaped by user testing, it's designed to provoke 
-          positive stress, teamwork, and replayability.
+          Patient Zero blends <strong>real-world activity</strong>, <strong>strategic design</strong>, and <strong>psychological research</strong> into a dynamic, 
+          <strong>phygital game experience</strong>. Grounded in research and shaped by <strong>user testing</strong>, it's designed to provoke 
+          positive stress, teamwork, and <strong>replayability</strong>.
         </p>
       </section>
     </div>
