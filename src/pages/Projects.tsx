@@ -197,9 +197,9 @@ const Projects = () => {
               {selectedProject === project.id && (
                 <div className="border-t border-border p-8 animate-fade-in bg-accent/50">
                   {project.id === 1 ? (
-                    <PatientZeroCaseStudy />
+                    <PatientZeroCaseStudy onCollapse={() => setSelectedProject(null)} />
                   ) : project.id === 2 ? (
-                    <DeliverlyCaseStudy />
+                    <DeliverlyCaseStudy onCollapse={() => setSelectedProject(null)} />
                   ) : (
                     <div className="grid md:grid-cols-3 gap-8">
                       <div>

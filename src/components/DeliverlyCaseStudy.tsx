@@ -1,6 +1,10 @@
-import { Smartphone, Target, Search, PenTool, Palette, Package, Trophy, Cog } from 'lucide-react';
+import { Smartphone, Target, Search, PenTool, Palette, Package, Trophy, Cog, ChevronRight } from 'lucide-react';
 
-const DeliverlyCaseStudy = () => {
+interface DeliverlyCaseStudyProps {
+  onCollapse?: () => void;
+}
+
+const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
   const PlaceholderSection = ({ title }: { title: string }) => (
     <div className="my-8 p-6 border-2 border-dashed border-border rounded-lg bg-accent/30">
       <div className="text-center">
@@ -237,6 +241,19 @@ const DeliverlyCaseStudy = () => {
           </p>
         </div>
       </section>
+
+      {/* Collapse Button */}
+      {onCollapse && (
+        <div className="text-center pt-8">
+          <button
+            onClick={onCollapse}
+            className="group inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200"
+          >
+            Collapse details
+            <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-200 rotate-90" />
+          </button>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,6 +1,10 @@
-import { Play, Users, Target, Lightbulb, Cog, Eye, GitBranch, Package, Trophy } from 'lucide-react';
+import { Play, Users, Target, Lightbulb, Cog, Eye, GitBranch, Package, Trophy, ChevronRight } from 'lucide-react';
 
-const PatientZeroCaseStudy = () => {
+interface PatientZeroCaseStudyProps {
+  onCollapse?: () => void;
+}
+
+const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
   const sections = [
     {
       icon: Cog,
@@ -324,6 +328,19 @@ const PatientZeroCaseStudy = () => {
           positive stress, teamwork, and <strong>replayability</strong>.
         </p>
       </section>
+
+      {/* Collapse Button */}
+      {onCollapse && (
+        <div className="text-center pt-8">
+          <button
+            onClick={onCollapse}
+            className="group inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200"
+          >
+            Collapse details
+            <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-200 rotate-90" />
+          </button>
+        </div>
+      )}
     </div>
   );
 };
