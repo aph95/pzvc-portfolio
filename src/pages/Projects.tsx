@@ -3,6 +3,7 @@ import { ChevronRight } from 'lucide-react';
 import { usePageTitle } from '../hooks/usePageTitle';
 import FloatingPlanet from '../components/FloatingPlanet';
 import PatientZeroCaseStudy from '../components/PatientZeroCaseStudy';
+import DeliverlyCaseStudy from '../components/DeliverlyCaseStudy';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -197,6 +198,8 @@ const Projects = () => {
                 <div className="border-t border-border p-8 animate-fade-in bg-accent/50">
                   {project.id === 1 ? (
                     <PatientZeroCaseStudy />
+                  ) : project.id === 2 ? (
+                    <DeliverlyCaseStudy />
                   ) : (
                     <div className="grid md:grid-cols-3 gap-8">
                       <div>
