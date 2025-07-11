@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { usePageTitle } from '../hooks/usePageTitle';
 import FloatingPlanet from '../components/FloatingPlanet';
+import PatientZeroCaseStudy from '../components/PatientZeroCaseStudy';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -194,20 +195,24 @@ const Projects = () => {
               {/* Expanded Details */}
               {selectedProject === project.id && (
                 <div className="border-t border-border p-8 animate-fade-in bg-accent/50">
-                  <div className="grid md:grid-cols-3 gap-8">
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-3">Gravitational Challenge</h4>
-                      <p className="text-muted-foreground leading-relaxed">{project.challenge}</p>
+                  {project.id === 1 ? (
+                    <PatientZeroCaseStudy />
+                  ) : (
+                    <div className="grid md:grid-cols-3 gap-8">
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Gravitational Challenge</h4>
+                        <p className="text-muted-foreground leading-relaxed">{project.challenge}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Design Solution</h4>
+                        <p className="text-muted-foreground leading-relaxed">{project.solution}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Orbital Impact</h4>
+                        <p className="text-muted-foreground leading-relaxed">{project.impact}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-3">Design Solution</h4>
-                      <p className="text-muted-foreground leading-relaxed">{project.solution}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-3">Orbital Impact</h4>
-                      <p className="text-muted-foreground leading-relaxed">{project.impact}</p>
-                    </div>
-                  </div>
+                  )}
                 </div>
               )}
             </div>
