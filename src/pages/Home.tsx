@@ -28,10 +28,10 @@ const Home = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="fade-in">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-foreground mb-8 leading-tight">
-              Where design meets
-              <span className="block text-blue-400 font-medium">intelligence,</span>
-              <span className="block">experiences become</span>
-              <span className="block text-indigo-400 font-medium">extraordinary</span>
+              Just as planets shape
+              <span className="block text-blue-400 font-medium">spacetime,</span>
+              <span className="block">users shape the</span>
+              <span className="block text-indigo-400 font-medium">design universe</span>
             </h1>
           </div>
           
