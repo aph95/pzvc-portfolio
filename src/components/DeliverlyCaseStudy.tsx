@@ -22,7 +22,7 @@ const DeliverlyCaseStudy = () => {
       {/* Header */}
       <div className="text-center">
         <h2 className="text-3xl font-bold text-foreground mb-4">Deliverly</h2>
-        <p className="text-lg text-muted-foreground">
+        <p className="text-lg text-foreground/70">
           A driver-first mobile app concept focused on fixing what's broken in food delivery apps
         </p>
       </div>
@@ -33,7 +33,7 @@ const DeliverlyCaseStudy = () => {
           <Cog className="h-6 w-6 text-primary" />
           <h3 className="text-xl font-semibold text-foreground">Tools Used</h3>
         </div>
-        <p className="text-muted-foreground">
+        <p className="text-foreground/80">
           <strong>Software:</strong> Adobe Illustrator, Figma, Draw.io
         </p>
       </div>
@@ -45,12 +45,12 @@ const DeliverlyCaseStudy = () => {
           <h3 className="text-xl font-semibold text-foreground">Background</h3>
         </div>
         <div className="space-y-4">
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="text-foreground/80 leading-relaxed">
             While working as a <strong>delivery driver</strong> for a major Swedish food delivery company during my studies in digital design, 
             I encountered daily frustrations caused by <strong>poorly designed apps</strong> and tools. The workflow was not optimized for 
             <strong>real-world use</strong>: small tap targets, non-intuitive flows, and an overall <strong>lack of empathy</strong> for the driver's experience.
           </p>
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="text-foreground/80 leading-relaxed">
             Deliverly emerged from a desire to <strong>improve—not replace</strong>—these tools, by focusing on <strong>iterative betterment</strong> of the 
             most frustrating aspects from the <strong>driver's perspective</strong>.
           </p>
@@ -72,7 +72,7 @@ const DeliverlyCaseStudy = () => {
           ].map((goal, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: goal }}></span>
+              <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: goal }}></span>
             </div>
           ))}
         </div>
@@ -85,7 +85,7 @@ const DeliverlyCaseStudy = () => {
           <Search className="h-6 w-6 text-primary" />
           <h3 className="text-xl font-semibold text-foreground">Research & Field Insights</h3>
         </div>
-        <p className="text-muted-foreground mb-4">
+        <p className="text-foreground/80 mb-4">
           Being <strong>embedded in the delivery environment</strong> gave me direct access to:
         </p>
         <div className="space-y-3 mb-4">
@@ -96,12 +96,12 @@ const DeliverlyCaseStudy = () => {
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: item }}></span>
+              <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: item }}></span>
             </div>
           ))}
         </div>
         <div className="p-4 bg-primary/10 border-l-4 border-primary rounded-r-lg">
-          <p className="text-muted-foreground italic">
+          <p className="text-foreground/70 italic">
             This firsthand exposure grounded my understanding in practical reality, forming the core of the design approach.
           </p>
         </div>
@@ -114,7 +114,7 @@ const DeliverlyCaseStudy = () => {
           <PenTool className="h-6 w-6 text-primary" />
           <h3 className="text-xl font-semibold text-foreground">Wireframing & Structure</h3>
         </div>
-        <p className="text-muted-foreground mb-4">
+        <p className="text-foreground/80 mb-4">
           Before jumping into high-fidelity design, a complete <strong>wireframe</strong> of the app was created, exploring:
         </p>
         <div className="grid md:grid-cols-2 gap-3">
@@ -126,7 +126,7 @@ const DeliverlyCaseStudy = () => {
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: item }}></span>
+              <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: item }}></span>
             </div>
           ))}
         </div>
@@ -139,7 +139,7 @@ const DeliverlyCaseStudy = () => {
           <Package className="h-6 w-6 text-primary" />
           <h3 className="text-xl font-semibold text-foreground">Design Exploration & Iteration</h3>
         </div>
-        <p className="text-muted-foreground mb-4">
+        <p className="text-foreground/80 mb-4">
           After <strong>wireframing</strong>, I moved into refining and testing design elements including:
         </p>
         <div className="grid md:grid-cols-2 gap-3 mb-4">
@@ -151,12 +151,12 @@ const DeliverlyCaseStudy = () => {
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: item }}></span>
+              <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: item }}></span>
             </div>
           ))}
         </div>
         <div className="p-4 bg-primary/10 border-l-4 border-primary rounded-r-lg">
-          <p className="text-muted-foreground italic">
+          <p className="text-foreground/70 italic">
             I conducted multiple <strong>informal feedback sessions</strong> with former co-workers and design peers to iterate on layout, text, and overall <strong>usability</strong>.
           </p>
         </div>
@@ -169,7 +169,7 @@ const DeliverlyCaseStudy = () => {
           <Palette className="h-6 w-6 text-primary" />
           <h3 className="text-xl font-semibold text-foreground">Visual Identity & Branding</h3>
         </div>
-        <p className="text-muted-foreground mb-4">
+        <p className="text-foreground/80 mb-4">
           Deliverly's <strong>visual identity</strong> was built to reflect:
         </p>
         <div className="grid md:grid-cols-2 gap-3">
@@ -181,7 +181,7 @@ const DeliverlyCaseStudy = () => {
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: item }}></span>
+              <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: item }}></span>
             </div>
           ))}
         </div>
@@ -194,7 +194,7 @@ const DeliverlyCaseStudy = () => {
           <Smartphone className="h-6 w-6 text-primary" />
           <h3 className="text-xl font-semibold text-foreground">Final Prototype</h3>
         </div>
-        <p className="text-muted-foreground mb-4">
+        <p className="text-foreground/80 mb-4">
           The <strong>final prototype</strong> includes:
         </p>
         <div className="space-y-3 mb-6">
@@ -206,12 +206,12 @@ const DeliverlyCaseStudy = () => {
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: item }}></span>
+              <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: item }}></span>
             </div>
           ))}
         </div>
         <div className="p-4 bg-yellow-500/10 border-l-4 border-yellow-500 rounded-r-lg">
-          <p className="text-muted-foreground italic">
+          <p className="text-foreground/70 italic">
             <strong>Note:</strong> Deliverly is not intended to be a fully complete application—rather, it serves as an 
             <strong>iterative rethinking</strong> of key problem areas in current delivery tools, designed through the lens of real <strong>driver pain points</strong>.
           </p>
@@ -226,12 +226,12 @@ const DeliverlyCaseStudy = () => {
           <h3 className="text-xl font-semibold text-foreground">Summary</h3>
         </div>
         <div className="space-y-4">
-          <p className="text-muted-foreground leading-relaxed text-lg">
+          <p className="text-foreground/80 leading-relaxed text-lg">
             Deliverly is a <strong>UX-first concept</strong> rooted in direct delivery experience and <strong>iterative design practice</strong>. 
             It represents a vision of what food delivery tools could become if they truly prioritized the user 
             at the heart of the process: <strong>the driver</strong>.
           </p>
-          <p className="text-muted-foreground leading-relaxed text-lg">
+          <p className="text-foreground/80 leading-relaxed text-lg">
             This project highlights how small, thoughtful adjustments—based on <strong>empathy</strong> and <strong>field insight</strong>—can 
             make an outsized impact on daily <strong>user experience</strong>.
           </p>
