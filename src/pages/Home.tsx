@@ -37,8 +37,8 @@ const Home = () => {
           
           <div className="fade-in fade-in-delay-1">
             <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-              I'm Aleksandar, a UX designer and frontend developer who harnesses the power of AI 
-              to create intuitive, innovative digital experiences that naturally guide users toward meaningful interactions.
+              I'm <strong>Aleksandar</strong>, a <strong>UX designer</strong> and <strong>frontend developer</strong> who harnesses the power of <strong>AI</strong> 
+              to create <strong>intuitive, innovative digital experiences</strong> that naturally guide users toward <strong>meaningful interactions</strong>.
             </p>
           </div>
           
