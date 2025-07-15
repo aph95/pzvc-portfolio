@@ -293,12 +293,19 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
           ))}
         </div>
         <div className="my-8 space-y-4">
-          <div className="rounded-lg border border-border bg-background shadow-sm overflow-hidden">
+          <div className="relative group rounded-lg border border-border bg-background shadow-sm overflow-hidden">
             <img
               src="/lovable-uploads/3946dae6-46c5-414f-9ae2-b824ae5a64e4.png"
               alt="Patient Zero Gameplay Flow Diagram"
-              className="w-full h-auto"
+              className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
             />
+            {/* Hover overlay with label */}
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start p-4">
+              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm text-foreground px-3 py-2 rounded-md shadow-sm border border-border/20">
+                <p className="text-sm font-medium">Gameplay Flow Diagram</p>
+                <p className="text-xs text-muted-foreground">Complete decision tree and game mechanics</p>
+              </div>
+            </div>
           </div>
           <div className="flex justify-center">
             <Button
