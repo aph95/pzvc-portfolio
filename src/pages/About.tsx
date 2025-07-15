@@ -34,7 +34,7 @@ const About = () => {
 
   const skills = [
     { category: "Design & UX", items: ["User Experience Design", "Interaction Design", "Concept Development", "Design Systems"] },
-    { category: "Development", items: ["Frontend Development", "React & TypeScript", "Responsive Design", "Prototyping"] },
+    { category: "Development", items: ["Frontend Development", "Responsive Design", "Prototyping"] },
     { category: "AI & Innovation", items: ["AI-Enhanced Design", "Creative Automation", "Emerging Technologies", "Design Research"] }
   ];
 
