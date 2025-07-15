@@ -21,7 +21,7 @@ const About = () => {
     {
       company: "Freelance",
       role: "Graphic Designer", 
-      period: "2018 - 2023",
+      period: "2015 - 2023",
       description: "Provided creative design solutions for various clients as a side hustle, developing skills in visual communication, branding, and client collaboration that now inform my UX approach."
     },
     {
