@@ -314,9 +314,9 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
           ))}
         </div>
         {/* Logo Section */}
-        <div className="my-8 p-8 bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800 rounded-lg border border-border/20">
+        <div className="my-8 p-8 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 rounded-lg border border-border/20">
           <div className="text-center">
-            <div className="inline-flex items-center justify-center p-6 bg-white dark:bg-neutral-900 rounded-xl shadow-sm border border-border/10 mb-4">
+            <div className="inline-flex items-center justify-center p-6 bg-white rounded-xl shadow-sm border border-border/10 mb-4">
               <img 
                 src="/lovable-uploads/e44747aa-508c-4e20-aa1c-32cdc115edf1.png" 
                 alt="Patient Zero Logo" 
