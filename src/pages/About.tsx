@@ -20,22 +20,22 @@ const About = () => {
     },
     {
       company: "Freelance",
-      role: "Graphic Designer", 
+      role: "Graphic designer", 
       period: "2015 - 2023",
       description: "Provided creative design solutions for various clients as a side hustle, developing skills in visual communication, branding, and client collaboration that now inform my UX approach."
     },
     {
       company: "Self-Directed Learning",
-      role: "AI & Design Integration",
-      period: "2023 - Present", 
+      role: "AI & design integration",
+      period: "2023 - Present",
       description: "Continuously exploring how artificial intelligence can enhance the design process, from concept development to user testing, creating more efficient and innovative workflows."
     }
   ];
 
   const skills = [
-    { category: "Design & UX", items: ["User Experience Design", "Interaction Design", "Concept Development", "Design Systems"] },
-    { category: "Development", items: ["Frontend Development", "Responsive Design", "Prototyping"] },
-    { category: "AI & Innovation", items: ["AI-Enhanced Design", "Creative Automation", "Emerging Technologies", "Design Research"] }
+    { category: "Design & UX", items: ["User experience design", "Interaction design", "Concept development", "Design systems"] },
+    { category: "Development", items: ["Frontend development", "Responsive design", "Prototyping"] },
+    { category: "AI & Innovation", items: ["AI-enhanced design", "Creative automation", "Emerging technologies", "Design research"] }
   ];
 
   return (
