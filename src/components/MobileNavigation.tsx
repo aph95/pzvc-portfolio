@@ -87,7 +87,7 @@ const MobileNavigation = () => {
               >
                 {link.name}
                 {location.pathname === link.path && (
-                  <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-blue-400 rounded-full"></span>
+                  <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-blue-400 rounded-full"></span>
                 )}
               </Link>
             ))}
