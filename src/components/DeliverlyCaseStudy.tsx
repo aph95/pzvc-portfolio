@@ -1,4 +1,5 @@
 import { Smartphone, Target, Search, PenTool, Palette, Package, Trophy, Cog, ChevronRight } from 'lucide-react';
+import { SafeTextRenderer } from '@/lib/safeTextRenderer';
 
 interface DeliverlyCaseStudyProps {
   onCollapse?: () => void;
@@ -76,7 +77,7 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
           ].map((goal, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: goal }}></span>
+              <span className="text-foreground/80"><SafeTextRenderer text={goal} /></span>
             </div>
           ))}
         </div>
@@ -100,7 +101,7 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: item }}></span>
+              <span className="text-foreground/80"><SafeTextRenderer text={item} /></span>
             </div>
           ))}
         </div>
@@ -130,7 +131,7 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: item }}></span>
+              <span className="text-foreground/80"><SafeTextRenderer text={item} /></span>
             </div>
           ))}
         </div>
@@ -155,7 +156,7 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: item }}></span>
+              <span className="text-foreground/80"><SafeTextRenderer text={item} /></span>
             </div>
           ))}
         </div>
@@ -185,7 +186,7 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: item }}></span>
+              <span className="text-foreground/80"><SafeTextRenderer text={item} /></span>
             </div>
           ))}
         </div>
@@ -210,7 +211,7 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: item }}></span>
+              <span className="text-foreground/80"><SafeTextRenderer text={item} /></span>
             </div>
           ))}
         </div>

@@ -1,5 +1,6 @@
 import { Play, Users, Target, Lightbulb, Cog, Eye, GitBranch, Package, Trophy, ChevronRight, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SafeTextRenderer } from '@/lib/safeTextRenderer';
 
 interface PatientZeroCaseStudyProps {
   onCollapse?: () => void;
@@ -151,7 +152,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
           ].map((goal, index) => (
              <li key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
                <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-               <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: goal }}></span>
+               <span className="text-foreground/80"><SafeTextRenderer text={goal} /></span>
              </li>
           ))}
         </ul>
@@ -172,7 +173,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: item }}></span>
+              <span className="text-foreground/80"><SafeTextRenderer text={item} /></span>
             </div>
           ))}
         </div>
@@ -194,7 +195,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: item }}></span>
+              <span className="text-foreground/80"><SafeTextRenderer text={item} /></span>
             </div>
           ))}
         </div>
@@ -216,7 +217,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: item }}></span>
+              <span className="text-foreground/80"><SafeTextRenderer text={item} /></span>
             </div>
           ))}
         </div>
@@ -239,7 +240,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: item }}></span>
+              <span className="text-foreground/80"><SafeTextRenderer text={item} /></span>
             </div>
           ))}
         </div>
@@ -260,7 +261,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: item }}></span>
+              <span className="text-foreground/80"><SafeTextRenderer text={item} /></span>
             </div>
           ))}
         </div>
@@ -288,7 +289,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: item }}></span>
+              <span className="text-foreground/80"><SafeTextRenderer text={item} /></span>
             </div>
           ))}
         </div>
@@ -342,7 +343,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
           ].map((item, index) => (
             <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
               <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-              <span className="text-foreground/80" dangerouslySetInnerHTML={{ __html: item }}></span>
+              <span className="text-foreground/80"><SafeTextRenderer text={item} /></span>
             </div>
           ))}
         </div>
