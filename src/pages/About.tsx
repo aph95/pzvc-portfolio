@@ -27,7 +27,7 @@ const About = () => {
     {
       company: "Self-Directed Learning",
       role: "AI & Design Integration",
-      period: "2022 - Present", 
+      period: "2023 - Present", 
       description: "Continuously exploring how artificial intelligence can enhance the design process, from concept development to user testing, creating more efficient and innovative workflows."
     }
   ];
