@@ -226,7 +226,7 @@ const Projects = () => {
         <div className="mt-20 text-center fade-in fade-in-delay-3">
           <div className="notion-card p-12 hover:shadow-lg transition-all duration-300">
             <h2 className="text-2xl font-semibold text-foreground mb-4">
-              Ready to create your own design universe?
+              Looking for fresh design energy? Let’s connect.
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
               Let's collaborate to build experiences that naturally guide users toward 
