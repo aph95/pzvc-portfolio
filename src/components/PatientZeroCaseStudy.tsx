@@ -14,7 +14,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
     {
       icon: Target,
       title: "Project Goals",
-      content: "To guide the design of Patient Zero, we defined the following goals:",
+      content: "To guide the design of Patient Zero, I defined the following goals:",
       list: [
         "Promote social interaction and collaboration",
         "Stimulate strategic thinking", 
@@ -25,7 +25,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
     {
       icon: Eye,
       title: "Research & Trend Analysis",
-      content: "We conducted an initial scan of:",
+      content: "I conducted an initial scan of:",
       list: [
         "Existing games in the location-based and phygital space",
         "Scientific articles on game design, child psychology, and immersive play"
@@ -34,7 +34,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
     {
       icon: Users,
       title: "Game & Play Analysis", 
-      content: "We analyzed:",
+      content: "I analyzed:",
       list: [
         "Popular social and physical-digital games",
         "Gameplay mechanics and user motivation",
@@ -54,7 +54,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
     {
       icon: Package,
       title: "Rapid Prototyping",
-      content: "We created and tested 9 unique prototypes focusing on:",
+      content: "I created and tested 9 unique prototypes focusing on:",
       list: [
         "Game pacing",
         "Real-world interaction",
@@ -65,7 +65,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
     {
       icon: Eye,
       title: "Observation & Iterative Feedback",
-      content: "We conducted:",
+      content: "I conducted:",
       list: [
         "An observation study",
         "Iterative feedback sessions with design students"
@@ -139,7 +139,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
           <h3 className="text-xl font-semibold text-foreground">Project Goals</h3>
         </div>
         <p className="text-foreground/80 mb-4">
-          To guide the design of Patient Zero, we defined the following goals:
+          To guide the design of Patient Zero, I defined the following goals:
         </p>
         <ul className="grid md:grid-cols-2 gap-3">
           {[
@@ -163,7 +163,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
           <Eye className="h-6 w-6 text-primary" />
           <h3 className="text-xl font-semibold text-foreground">Research & Trend Analysis</h3>
         </div>
-        <p className="text-foreground/80 mb-4">We conducted an initial scan of:</p>
+        <p className="text-foreground/80 mb-4">I conducted an initial scan of:</p>
         <div className="space-y-3">
           {[
             "Existing games in the <strong>location-based</strong> and <strong>phygital space</strong>",
@@ -184,7 +184,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
           <Users className="h-6 w-6 text-primary" />
           <h3 className="text-xl font-semibold text-foreground">Game & Play Analysis</h3>
         </div>
-        <p className="text-foreground/80 mb-4">We analyzed:</p>
+        <p className="text-foreground/80 mb-4">I analyzed:</p>
         <div className="space-y-3">
           {[
             "Popular <strong>social</strong> and <strong>physical-digital games</strong>",
@@ -228,7 +228,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
           <Package className="h-6 w-6 text-primary" />
           <h3 className="text-xl font-semibold text-foreground">Rapid Prototyping</h3>
         </div>
-        <p className="text-foreground/80 mb-4">We created and tested <strong>9 unique prototypes</strong> focusing on:</p>
+        <p className="text-foreground/80 mb-4">I created and tested <strong>9 unique prototypes</strong> focusing on:</p>
         <div className="grid md:grid-cols-2 gap-3">
           {[
             "<strong>Game pacing</strong>",
@@ -251,7 +251,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
           <Eye className="h-6 w-6 text-primary" />
           <h3 className="text-xl font-semibold text-foreground">Observation & Iterative Feedback</h3>
         </div>
-        <p className="text-foreground/80 mb-4">We conducted:</p>
+        <p className="text-foreground/80 mb-4">I conducted:</p>
         <div className="space-y-3 mb-4">
           {[
             "An <strong>observation study</strong>",
