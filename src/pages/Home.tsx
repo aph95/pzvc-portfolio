@@ -98,7 +98,7 @@ const Home = () => {
               <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <div className="w-6 h-6 bg-blue-600 rounded-full"></div>
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">AI-Enhanced Design</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-4">AI-enhanced design</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Leveraging artificial intelligence to amplify creativity, streamline workflows, 
                 and uncover insights that lead to more intuitive user experiences.
@@ -109,7 +109,7 @@ const Home = () => {
               <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <div className="w-6 h-6 bg-purple-600 rounded-full"></div>
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">Interactive Experiences</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-4">Interactive experiences</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Creating engaging, responsive interfaces that adapt to user behavior 
                 and guide them naturally through their digital journey.
@@ -120,7 +120,7 @@ const Home = () => {
               <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <div className="w-6 h-6 bg-green-600 rounded-full"></div>
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">Concept to Code</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-4">Concept to dode</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Bridging the gap between design vision and technical implementation 
                 through hands-on frontend development and prototyping.
