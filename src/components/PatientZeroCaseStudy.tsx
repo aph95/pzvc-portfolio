@@ -1,5 +1,5 @@
-import { Play, Users, Target, Lightbulb, Cog, Eye, GitBranch, Package, Trophy, ChevronRight } from 'lucide-react';
-import InteractiveGameFlowViewer from './InteractiveGameFlowViewer';
+import { Play, Users, Target, Lightbulb, Cog, Eye, GitBranch, Package, Trophy, ChevronRight, Download } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface PatientZeroCaseStudyProps {
   onCollapse?: () => void;
@@ -292,12 +292,31 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
             </div>
           ))}
         </div>
-        <div className="my-8">
-          <InteractiveGameFlowViewer
-            imageUrl="/lovable-uploads/3946dae6-46c5-414f-9ae2-b824ae5a64e4.png"
-            alt="Patient Zero Gameplay Flow Diagram"
-            downloadUrl="/lovable-uploads/3946dae6-46c5-414f-9ae2-b824ae5a64e4.png"
-          />
+        <div className="my-8 space-y-4">
+          <div className="rounded-lg border border-border bg-background shadow-sm overflow-hidden">
+            <img
+              src="/lovable-uploads/3946dae6-46c5-414f-9ae2-b824ae5a64e4.png"
+              alt="Patient Zero Gameplay Flow Diagram"
+              className="w-full h-auto"
+            />
+          </div>
+          <div className="flex justify-center">
+            <Button
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/lovable-uploads/3946dae6-46c5-414f-9ae2-b824ae5a64e4.png';
+                link.download = 'patient-zero-gameplay-flow.png';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+              variant="outline"
+              className="group border-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+            >
+              <Download className="h-4 w-4 mr-2" />
+              Download full gameplay flow
+            </Button>
+          </div>
         </div>
       </section>
 
