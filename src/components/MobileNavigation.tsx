@@ -24,6 +24,14 @@ const MobileNavigation = () => {
 
   return (
     <>
+      {/* Mobile Logo */}
+      <Link 
+        to="/" 
+        className="fixed top-4 left-6 z-[60] text-lg font-outfit font-extrabold text-foreground hover:text-foreground/80 transition-colors duration-200"
+      >
+        PZVC
+      </Link>
+
       {/* Hamburger Button */}
       <button
         onClick={toggleMenu}
