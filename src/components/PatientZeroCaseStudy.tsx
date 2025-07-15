@@ -1,4 +1,5 @@
 import { Play, Users, Target, Lightbulb, Cog, Eye, GitBranch, Package, Trophy, ChevronRight } from 'lucide-react';
+import InteractiveGameFlowViewer from './InteractiveGameFlowViewer';
 
 interface PatientZeroCaseStudyProps {
   onCollapse?: () => void;
@@ -291,7 +292,13 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
             </div>
           ))}
         </div>
-        <PlaceholderSection title="Flowchart (image or embedded visual)" />
+        <div className="my-8">
+          <InteractiveGameFlowViewer
+            imageUrl="/lovable-uploads/3946dae6-46c5-414f-9ae2-b824ae5a64e4.png"
+            alt="Patient Zero Gameplay Flow Diagram"
+            downloadUrl="/lovable-uploads/3946dae6-46c5-414f-9ae2-b824ae5a64e4.png"
+          />
+        </div>
       </section>
 
       {/* Final Build & Demo */}
