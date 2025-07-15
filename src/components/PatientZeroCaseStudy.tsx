@@ -300,10 +300,10 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
               className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
             />
             {/* Hover overlay with label */}
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start p-4">
-              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm text-foreground px-3 py-2 rounded-md shadow-sm border border-border/20">
-                <p className="text-sm font-medium">Gameplay Flow Diagram</p>
-                <p className="text-xs text-muted-foreground">Complete decision tree and game mechanics</p>
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start pl-4 pr-4 pb-4">
+              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 backdrop-blur-sm text-white px-4 py-3 rounded-md shadow-lg">
+                <p className="text-base font-semibold">Gameplay Flow Diagram</p>
+                <p className="text-sm text-white/90">Complete decision tree and game mechanics</p>
               </div>
             </div>
           </div>
