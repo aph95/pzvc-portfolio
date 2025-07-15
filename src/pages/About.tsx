@@ -52,10 +52,10 @@ const About = () => {
             About my creative journey
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            I'm Aleksandar Praizovic Hedström, a 29-year-old designer and developer passionate 
-            about creating digital experiences that seamlessly blend human intuition with 
-            technological innovation. Currently pursuing my Bachelor's in Informatics with 
-            a specialization in Digital Design at Kristianstad University.
+            I'm <span className="font-semibold text-foreground">Aleksandar Praizovic Hedström</span>, a 29-year-old designer and developer passionate 
+            about creating <span className="font-medium text-foreground">digital experiences</span> that seamlessly blend <em>human intuition</em> with 
+            <em>technological innovation</em>. Currently pursuing my Bachelor's in Informatics with 
+            a specialization in <span className="font-medium text-foreground">Digital Design</span> at Kristianstad University.
           </p>
         </div>
 
@@ -64,21 +64,21 @@ const About = () => {
           <h2 className="text-2xl font-semibold text-foreground mb-6">My design philosophy</h2>
           <div className="prose prose-lg text-muted-foreground leading-relaxed space-y-4">
             <p>
-              My journey into design began with freelance graphic design work—initially as a 
-              creative side hustle that sparked my passion for visual communication. This 
+              My journey into design began with <span className="font-medium text-foreground">freelance graphic design work</span>—initially as a 
+              creative side hustle that sparked my passion for <em>visual communication</em>. This 
               foundation in design thinking naturally evolved into a deeper fascination with 
-              how users interact with digital interfaces.
+              how users interact with <span className="font-medium text-foreground">digital interfaces</span>.
             </p>
             <p>
-              Today, I'm focused on frontend development, UX design, and interaction design, 
-              with a particular interest in how artificial intelligence can enhance the creative 
-              process. I believe AI isn't here to replace designers, but to amplify our capabilities—
+              Today, I'm focused on <span className="font-medium text-foreground">frontend development</span>, <span className="font-medium text-foreground">UX design</span>, and <span className="font-medium text-foreground">interaction design</span>, 
+              with a particular interest in how <strong className="text-foreground">artificial intelligence</strong> can enhance the creative 
+              process. I believe <em>AI isn't here to replace designers</em>, but to <strong className="text-foreground">amplify our capabilities</strong>—
               helping us iterate faster, explore more possibilities, and create more personalized experiences.
             </p>
             <p>
               When I'm not crafting digital experiences, you'll find me exploring the latest 
-              design tools, experimenting with AI-powered workflows, or diving deep into 
-              emerging technologies that could shape the future of human-computer interaction.
+              design tools, experimenting with <span className="font-medium text-foreground">AI-powered workflows</span>, or diving deep into 
+              <em>emerging technologies</em> that could shape the future of human-computer interaction.
             </p>
           </div>
         </div>
