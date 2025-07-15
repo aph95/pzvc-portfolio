@@ -1,5 +1,4 @@
 import { Play, Users, Target, Lightbulb, Cog, Eye, GitBranch, Package, Trophy, ChevronRight } from 'lucide-react';
-import InteractiveFlowViewer from './InteractiveFlowViewer';
 
 interface PatientZeroCaseStudyProps {
   onCollapse?: () => void;
@@ -292,7 +291,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
             </div>
           ))}
         </div>
-        <InteractiveFlowViewer />
+        <PlaceholderSection title="Flowchart (image or embedded visual)" />
       </section>
 
       {/* Final Build & Demo */}
