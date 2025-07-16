@@ -38,7 +38,7 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
       <div className="bg-accent/50 rounded-lg p-6">
         <div className="flex items-center gap-3 mb-4">
           <Cog className="h-6 w-6 text-primary" />
-          <h3 className="text-xl font-semibold text-foreground">Tools Used</h3>
+          <h3 className="text-xl font-semibold text-foreground">Tools used</h3>
         </div>
         <p className="text-foreground/80">
           <strong>Software:</strong> Figma, Adobe Illustrator, Draw.io
@@ -81,7 +81,7 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <Users className="h-6 w-6 text-primary" />
-          <h3 className="text-xl font-semibold text-foreground">Target Group</h3>
+          <h3 className="text-xl font-semibold text-foreground">Target group</h3>
         </div>
         <div className="space-y-4 mb-4">
           <p className="text-foreground/80"><SafeTextRenderer text="**Age:** 16–25 years" /></p>
@@ -110,7 +110,7 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <Compass className="h-6 w-6 text-primary" />
-          <h3 className="text-xl font-semibold text-foreground">Technology Scouting</h3>
+          <h3 className="text-xl font-semibold text-foreground">Technology scouting</h3>
         </div>
         <p className="text-foreground/80 mb-4">Before designing Hallie, I explored existing tools and technologies related to:</p>
         <div className="space-y-3">
@@ -133,7 +133,7 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <Layers className="h-6 w-6 text-primary" />
-          <h3 className="text-xl font-semibold text-foreground">Early Structure & Flow</h3>
+          <h3 className="text-xl font-semibold text-foreground">Early structure & flow</h3>
         </div>
         <p className="text-foreground/80 mb-4">I created a <strong>flow sheet</strong> to establish how Hallie detects context, processes it, and chooses appropriate interventions such as nudges, encouragement, or reflection prompts.</p>
         <div className="my-8 space-y-4">
@@ -175,7 +175,7 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <BookOpen className="h-6 w-6 text-primary" />
-          <h3 className="text-xl font-semibold text-foreground">User Journey Mapping</h3>
+          <h3 className="text-xl font-semibold text-foreground">User journey mapping</h3>
         </div>
         <p className="text-foreground/80 mb-6">
           To visualize the user's emotional experience and digital behaviors throughout a study session, a user journey map was created. This helped align the AI's interventions with real user needs and moods.
@@ -199,7 +199,7 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <Star className="h-6 w-6 text-primary" />
-          <h3 className="text-xl font-semibold text-foreground">Prototype Development</h3>
+          <h3 className="text-xl font-semibold text-foreground">Prototype development</h3>
         </div>
         <p className="text-foreground/80 mb-4">Using insights from the research and flow design, I developed:</p>
         <div className="space-y-3 mb-6">

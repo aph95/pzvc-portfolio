@@ -127,7 +127,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
       <div className="bg-accent/50 rounded-lg p-6">
         <div className="flex items-center gap-3 mb-4">
           <Cog className="h-6 w-6 text-primary" />
-          <h3 className="text-xl font-semibold text-foreground">Tools Used</h3>
+          <h3 className="text-xl font-semibold text-foreground">Tools used</h3>
         </div>
         <p className="text-foreground/80">
           <strong>Software:</strong> Adobe Illustrator, Adobe XD, Draw.io, Adobe Premiere Pro, Adobe After Effects
@@ -138,7 +138,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <Target className="h-6 w-6 text-primary" />
-          <h3 className="text-xl font-semibold text-foreground">Project Goals</h3>
+          <h3 className="text-xl font-semibold text-foreground">Project goals</h3>
         </div>
         <p className="text-foreground/80 mb-4">
           To guide the design of Patient Zero, I defined the following goals:
@@ -163,7 +163,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <Eye className="h-6 w-6 text-primary" />
-          <h3 className="text-xl font-semibold text-foreground">Research & Trend Analysis</h3>
+          <h3 className="text-xl font-semibold text-foreground">Research & trend analysis</h3>
         </div>
         <p className="text-foreground/80 mb-4">I conducted an initial scan of:</p>
         <div className="space-y-3">
@@ -184,7 +184,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <Users className="h-6 w-6 text-primary" />
-          <h3 className="text-xl font-semibold text-foreground">Game & Play Analysis</h3>
+          <h3 className="text-xl font-semibold text-foreground">Game & play analysis</h3>
         </div>
         <p className="text-foreground/80 mb-4">I analyzed:</p>
         <div className="space-y-3">
@@ -206,7 +206,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <Lightbulb className="h-6 w-6 text-primary" />
-          <h3 className="text-xl font-semibold text-foreground">Initial Concept Development</h3>
+          <h3 className="text-xl font-semibold text-foreground">Initial concept development</h3>
         </div>
         <p className="text-foreground/80 mb-4">Several early design directions were explored, including:</p>
         <div className="space-y-3">
@@ -228,7 +228,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <Package className="h-6 w-6 text-primary" />
-          <h3 className="text-xl font-semibold text-foreground">Rapid Prototyping</h3>
+          <h3 className="text-xl font-semibold text-foreground">Rapid prototyping</h3>
         </div>
         <p className="text-foreground/80 mb-4">I created and tested <strong>9 unique prototypes</strong> focusing on:</p>
         <div className="grid md:grid-cols-2 gap-3">
@@ -251,7 +251,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <Eye className="h-6 w-6 text-primary" />
-          <h3 className="text-xl font-semibold text-foreground">Observation & Iterative Feedback</h3>
+          <h3 className="text-xl font-semibold text-foreground">Observation & iterative feedback</h3>
         </div>
         <p className="text-foreground/80 mb-4">I conducted:</p>
         <div className="space-y-3 mb-4">
@@ -277,7 +277,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <GitBranch className="h-6 w-6 text-primary" />
-          <h3 className="text-xl font-semibold text-foreground">Game Flow Design</h3>
+          <h3 className="text-xl font-semibold text-foreground">Game flow design</h3>
         </div>
         <p className="text-foreground/80 mb-4">A detailed <strong>game flow</strong> was created to finalize:</p>
         <div className="grid md:grid-cols-2 gap-3">
@@ -332,7 +332,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <Play className="h-6 w-6 text-primary" />
-          <h3 className="text-xl font-semibold text-foreground">Final Build & Demo</h3>
+          <h3 className="text-xl font-semibold text-foreground">Final build & demo</h3>
         </div>
         <p className="text-foreground/80 mb-4">The <strong>final product</strong> included:</p>
         <div className="space-y-3">
