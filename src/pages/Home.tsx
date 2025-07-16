@@ -28,16 +28,13 @@ const Home = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="fade-in">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-foreground mb-8 leading-tight">
-              Where design meets
-              <span className="block text-blue-400 font-medium">intelligence,</span>
-              <span className="block">experiences become</span>
-              <span className="block text-indigo-400 font-medium">extraordinary</span>
+              Hi, I'm Aleksandar, a UX designer and aspiring frontend developer.
             </h1>
           </div>
           
           <div className="fade-in fade-in-delay-1">
             <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-              I'm <strong>Aleksandar</strong>, a <strong>UX designer</strong> and <strong>frontend developer</strong> who harnesses the power of <strong>AI</strong> to create <strong>intuitive, innovative digital experiences</strong> that naturally guide users toward <strong>meaningful interactions</strong>.
+              I create thoughtful digital experiences that feel natural to use — blending design, code, and AI to help users move with clarity and confidence.
             </p>
           </div>
           
