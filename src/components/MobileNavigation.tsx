@@ -24,35 +24,40 @@ const MobileNavigation = () => {
 
   return (
     <>
-      {/* Mobile Logo */}
-      <Link 
-        to="/" 
-        className="fixed top-4 left-6 z-[60] text-lg font-outfit font-extrabold text-foreground hover:text-foreground/80 transition-colors duration-200"
-      >
-        PZVC
-      </Link>
+      {/* Mobile Navbar Background */}
+      <nav className="fixed top-0 left-0 right-0 z-[55] bg-white/20 dark:bg-black/20 backdrop-blur-[20px] border-b border-white/30 dark:border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
+        <div className="flex items-center justify-between px-6 py-4">
+          {/* Mobile Logo */}
+          <Link 
+            to="/" 
+            className="text-lg font-outfit font-extrabold text-foreground hover:text-foreground/80 transition-colors duration-200"
+          >
+            PZVC
+          </Link>
 
-      {/* Hamburger Button */}
-      <button
-        onClick={toggleMenu}
-        className="fixed top-4 right-6 z-[60] p-2 rounded-md bg-white/20 dark:bg-black/20 backdrop-blur-[20px] border border-white/30 dark:border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] transition-all duration-300 hover:bg-white/30 dark:hover:bg-black/30"
-        aria-label={isOpen ? 'Close menu' : 'Open menu'}
-      >
-        <div className="relative w-6 h-6">
-          <Menu 
-            className={cn(
-              "absolute inset-0 w-6 h-6 text-foreground transition-all duration-300",
-              isOpen ? "opacity-0 rotate-180 scale-75" : "opacity-100 rotate-0 scale-100"
-            )}
-          />
-          <X 
-            className={cn(
-              "absolute inset-0 w-6 h-6 text-foreground transition-all duration-300",
-              isOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 rotate-180 scale-75"
-            )}
-          />
+          {/* Hamburger Button */}
+          <button
+            onClick={toggleMenu}
+            className="p-2 rounded-md bg-white/20 dark:bg-black/20 backdrop-blur-[20px] border border-white/30 dark:border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] transition-all duration-300 hover:bg-white/30 dark:hover:bg-black/30"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          >
+            <div className="relative w-6 h-6">
+              <Menu 
+                className={cn(
+                  "absolute inset-0 w-6 h-6 text-foreground transition-all duration-300",
+                  isOpen ? "opacity-0 rotate-180 scale-75" : "opacity-100 rotate-0 scale-100"
+                )}
+              />
+              <X 
+                className={cn(
+                  "absolute inset-0 w-6 h-6 text-foreground transition-all duration-300",
+                  isOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 rotate-180 scale-75"
+                )}
+              />
+            </div>
+          </button>
         </div>
-      </button>
+      </nav>
 
       {/* Full Screen Overlay */}
       <div
