@@ -4,6 +4,7 @@ import { usePageTitle } from '../hooks/usePageTitle';
 import FloatingPlanet from '../components/FloatingPlanet';
 import PatientZeroCaseStudy from '../components/PatientZeroCaseStudy';
 import DeliverlyCaseStudy from '../components/DeliverlyCaseStudy';
+import HallieCaseStudy from '../components/HallieCaseStudy';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -40,6 +41,18 @@ const Projects = () => {
       logo: "/lovable-uploads/85e937a9-af1f-4909-9f3c-5fffdad97a2a.png",
       fullCoverImage: true,
       prototypeUrl: "https://www.figma.com/proto/R3S5emLjv1eL84nVBFdszs/Deliverly?node-id=48-1133&t=X23M6OvpfhyIXPxK-1"
+    },
+    {
+      id: 3,
+      title: "Hallie",
+      category: "AI Companion Design",
+      year: "2024",
+      description: "An AI-powered study companion for students aged 16–25. Hallie acts as a gentle digital companion that provides non-intrusive, emotionally intelligent support during solo study sessions.",
+      challenge: "Students struggle with maintaining focus during independent study, often falling into cycles of digital distraction without supportive accountability systems that feel encouraging rather than judgmental.",
+      solution: "Designed an AI companion that passively monitors study context and provides gentle, context-aware nudges, encouragement, and reflection prompts to help students stay present and motivated.",
+      impact: "Created a human-centered AI design that demonstrates how technology can support student wellbeing and academic success through empathy rather than strict productivity metrics.",
+      tags: ["AI Design", "Student Experience", "Digital Wellbeing", "UX Research"],
+      gradient: "from-blue-900/20 to-indigo-900/40"
     }
   ];
 
@@ -200,6 +213,8 @@ const Projects = () => {
                     <PatientZeroCaseStudy onCollapse={() => setSelectedProject(null)} />
                   ) : project.id === 2 ? (
                     <DeliverlyCaseStudy onCollapse={() => setSelectedProject(null)} />
+                  ) : project.id === 3 ? (
+                    <HallieCaseStudy onCollapse={() => setSelectedProject(null)} />
                   ) : (
                     <div className="grid md:grid-cols-3 gap-8">
                       <div>
