@@ -35,7 +35,7 @@ const MobileNavigation = () => {
       {/* Hamburger Button */}
       <button
         onClick={toggleMenu}
-        className="fixed top-4 right-6 z-[60] p-2 rounded-md bg-background/80 backdrop-blur-md border border-border transition-all duration-300 hover:bg-accent"
+        className="fixed top-4 right-6 z-[60] p-2 rounded-md bg-white/20 dark:bg-black/20 backdrop-blur-[20px] border border-white/30 dark:border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] transition-all duration-300 hover:bg-white/30 dark:hover:bg-black/30"
         aria-label={isOpen ? 'Close menu' : 'Open menu'}
       >
         <div className="relative w-6 h-6">
@@ -57,7 +57,7 @@ const MobileNavigation = () => {
       {/* Full Screen Overlay */}
       <div
         className={cn(
-          "fixed inset-0 z-50 bg-background/95 backdrop-blur-md transition-all duration-500 ease-in-out",
+          "fixed inset-0 z-50 bg-white/20 dark:bg-black/20 backdrop-blur-[20px] border-b border-white/30 dark:border-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] transition-all duration-500 ease-in-out",
           isOpen 
             ? "opacity-100 visible" 
             : "opacity-0 invisible"

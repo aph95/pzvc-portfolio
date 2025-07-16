@@ -5,8 +5,11 @@ import React from 'react';
  * This replaces dangerouslySetInnerHTML with a safer alternative
  */
 export const SafeTextRenderer: React.FC<{ text: string }> = ({ text }) => {
+  // First, convert **text** to <strong>text</strong>
+  const htmlText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  
   // Split text by <strong> tags and render appropriately
-  const parts = text.split(/(<strong>.*?<\/strong>)/g);
+  const parts = htmlText.split(/(<strong>.*?<\/strong>)/g);
   
   return (
     <>
