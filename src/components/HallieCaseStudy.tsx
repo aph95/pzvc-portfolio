@@ -1,6 +1,7 @@
 import React from 'react';
-import { Users, Compass, Zap, Target, BookOpen, Lightbulb, Layers, Star, Trophy, Cog, ChevronRight } from 'lucide-react';
+import { Users, Compass, Zap, Target, BookOpen, Lightbulb, Layers, Star, Trophy, Cog, ChevronRight, Download } from 'lucide-react';
 import { SafeTextRenderer } from '../lib/safeTextRenderer';
+import { Button } from '@/components/ui/button';
 
 interface HallieCaseStudyProps {
   onCollapse?: () => void;
@@ -134,10 +135,40 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
           <Layers className="h-6 w-6 text-primary" />
           <h3 className="text-xl font-semibold text-foreground">Early Structure & Flow</h3>
         </div>
-        <p className="text-foreground/80 mb-6">
-          I created a flow sheet to establish how Hallie detects context, processes it, and chooses appropriate interventions such as nudges, encouragement, or reflection prompts.
-        </p>
-        <PlaceholderSection title="Flow sheet diagram" />
+        <p className="text-foreground/80 mb-4">I created a <strong>flow sheet</strong> to establish how Hallie detects context, processes it, and chooses appropriate interventions such as nudges, encouragement, or reflection prompts.</p>
+        <div className="my-8 space-y-4">
+          <div className="relative group rounded-lg border border-border bg-background shadow-sm overflow-hidden">
+            <img
+              src="/lovable-uploads/0d01b392-6920-4222-9a5f-841a94c3202d.png"
+              alt="Hallie AI Study Flow Diagram"
+              className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+            />
+            {/* Hover overlay with label */}
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start p-4">
+              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 backdrop-blur-sm text-white px-4 py-3 rounded-md shadow-lg">
+                <p className="text-base font-semibold">Hallie AI Study Flow</p>
+                <p className="text-sm text-white/90">Complete decision tree and AI intervention logic</p>
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-center">
+            <Button
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/lovable-uploads/0d01b392-6920-4222-9a5f-841a94c3202d.png';
+                link.download = 'hallie-ai-study-flow.png';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+              variant="outline"
+              className="group border-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+            >
+              <Download className="h-4 w-4 mr-2" />
+              Download full AI study flow
+            </Button>
+          </div>
+        </div>
       </section>
 
       {/* User Journey Mapping */}
