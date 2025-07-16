@@ -28,8 +28,8 @@ const Home = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="fade-in">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-foreground mb-8 leading-tight">
-              Hi, I'm <span className="text-blue-400 font-medium">Aleksandar,</span>
-              <span className="block">a <span className="text-indigo-400 font-medium">UX designer</span> and aspiring</span>
+              Hi, I'm <span className="text-blue-400 font-medium">Aleksandar</span> —
+              <span className="block"><span className="text-indigo-400 font-medium">UX designer</span> & aspiring</span>
               <span className="block text-blue-400 font-medium">frontend developer.</span>
             </h1>
           </div>
