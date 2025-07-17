@@ -135,7 +135,34 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
             </div>
           ))}
         </div>
-        <PlaceholderSection title="Wireframe page or structure overview" />
+        <div className="space-y-6 my-8">
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="space-y-2">
+              <img 
+                src="/lovable-uploads/d0e297f5-a7d0-4b9c-b651-8d49462ce864.png" 
+                alt="Deliverly wireframe - Map view with start shift interface"
+                className="w-full h-auto rounded-lg border border-border"
+              />
+              <p className="text-sm text-muted-foreground text-center">Map view with start shift interface</p>
+            </div>
+            <div className="space-y-2">
+              <img 
+                src="/lovable-uploads/70bcce6e-cf1a-4b07-a8cf-33fac798ee4b.png" 
+                alt="Deliverly wireframe - Order details and route planning"
+                className="w-full h-auto rounded-lg border border-border"
+              />
+              <p className="text-sm text-muted-foreground text-center">Order details and route planning</p>
+            </div>
+            <div className="space-y-2">
+              <img 
+                src="/lovable-uploads/f92a199d-08e5-4056-a7b8-21e0ee306466.png" 
+                alt="Deliverly wireframe - Earnings tracking interface"
+                className="w-full h-auto rounded-lg border border-border"
+              />
+              <p className="text-sm text-muted-foreground text-center">Earnings tracking interface</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Design Exploration & Iteration */}
