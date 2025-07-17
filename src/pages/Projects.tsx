@@ -46,13 +46,15 @@ const Projects = () => {
       id: 3,
       title: "Hallie",
       category: "AI Companion Design",
-      year: "2024",
+      year: "2025",
       description: "An AI-powered study companion for students aged 16–25. Hallie acts as a gentle digital companion that provides non-intrusive, emotionally intelligent support during solo study sessions.",
       challenge: "Students struggle with maintaining focus during independent study, often falling into cycles of digital distraction without supportive accountability systems that feel encouraging rather than judgmental.",
       solution: "Designed an AI companion that passively monitors study context and provides gentle, context-aware nudges, encouragement, and reflection prompts to help students stay present and motivated.",
       impact: "Created a human-centered AI design that demonstrates how technology can support student wellbeing and academic success through empathy rather than strict productivity metrics.",
       tags: ["AI Design", "Student Experience", "Digital Wellbeing", "UX Research"],
-      gradient: "from-blue-900/20 to-indigo-900/40"
+      gradient: "from-blue-900/20 to-indigo-900/40",
+      logo: "/lovable-uploads/3037bcf4-215e-4a32-9131-2c8d7962d443.png",
+      fullCoverImage: true
     }
   ];
 
