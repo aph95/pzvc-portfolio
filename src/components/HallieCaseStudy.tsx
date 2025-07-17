@@ -192,7 +192,22 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
         <p className="text-foreground/80 mb-6">
           A storyboard was developed to illustrate a typical user's interaction with Hallie across different phases of a study session — from focus to distraction, recovery, and reflection.
         </p>
-        <PlaceholderSection title="Storyboard frames" />
+        <div className="my-8">
+          <div className="relative group rounded-lg border border-border bg-background shadow-sm overflow-hidden">
+            <img
+              src="/lovable-uploads/caaa6cc6-608d-4b68-80b4-e562c7f279d4.png"
+              alt="Hallie Storyboard - User Journey Through Study Session"
+              className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+            />
+            {/* Hover overlay with label */}
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start p-4">
+              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 backdrop-blur-sm text-white px-4 py-3 rounded-md shadow-lg">
+                <p className="text-base font-semibold">Hallie Storyboard</p>
+                <p className="text-sm text-white/90">User journey from focus to distraction and recovery</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Prototype Development */}
