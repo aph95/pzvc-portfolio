@@ -53,8 +53,8 @@ const About = () => {
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
             I'm <span className="font-semibold text-foreground">Aleksandar Praizovic Hedström</span>, a 29-year-old designer and developer passionate 
-            about creating <span className="font-medium text-foreground">digital experiences</span> that seamlessly blend <em>human intuition</em> with 
-             <em>technological innovation</em>. Currently pursuing my Bachelor's in Informatics with 
+            about creating <span className="font-medium text-foreground">digital experiences</span> that seamlessly blend <em>human intuition</em> with{' '}
+            <em>technological innovation</em>. Currently pursuing my Bachelor's in Informatics with
             a specialization in <span className="font-medium text-foreground">Digital Design</span> at Kristianstad University.
           </p>
         </div>
