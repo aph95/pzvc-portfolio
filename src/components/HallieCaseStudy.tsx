@@ -103,7 +103,7 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
             </div>
           ))}
         </div>
-        <PlaceholderSection title="Target audience illustration or persona summary" />
+        
       </section>
 
       {/* Technology Scouting */}
@@ -180,7 +180,39 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
         <p className="text-foreground/80 mb-6">
           To visualize the user's emotional experience and digital behaviors throughout a study session, a user journey map was created. This helped align the AI's interventions with real user needs and moods.
         </p>
-        <PlaceholderSection title="User journey map" />
+        <div className="my-8 space-y-4">
+          <div className="relative group rounded-lg border border-border bg-background shadow-sm overflow-hidden">
+            <img
+              src="/lovable-uploads/5124184e-c1fe-41e5-9a1a-83307d122153.png"
+              alt="Hallie User Journey Map - Study Session Emotional Experience"
+              className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+            />
+            {/* Hover overlay with label */}
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start p-4">
+              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 backdrop-blur-sm text-white px-4 py-3 rounded-md shadow-lg">
+                <p className="text-base font-semibold">User Journey Map</p>
+                <p className="text-sm text-white/90">Emotional experience and digital behaviors during study sessions</p>
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-center">
+            <Button
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/lovable-uploads/5124184e-c1fe-41e5-9a1a-83307d122153.png';
+                link.download = 'hallie-user-journey-map.png';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+              variant="outline"
+              className="group border-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+            >
+              <Download className="h-4 w-4 mr-2" />
+              Download user journey map
+            </Button>
+          </div>
+        </div>
       </section>
 
       {/* Storyboard */}
