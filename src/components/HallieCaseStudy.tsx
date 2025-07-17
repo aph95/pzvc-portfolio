@@ -229,8 +229,38 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
           ))}
         </div>
         <div className="grid md:grid-cols-2 gap-6">
-          <PlaceholderSection title="Low fidelity prototype screenshots" />
-          <PlaceholderSection title="High fidelity prototype screenshots" />
+          <div className="my-8">
+            <div className="relative group rounded-lg border border-border bg-background shadow-sm overflow-hidden">
+              <img
+                src="/lovable-uploads/12534ce3-fff7-4557-ab26-45a422e494df.png"
+                alt="Hallie Low Fidelity Prototype"
+                className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+              />
+              {/* Hover overlay with label */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start p-4">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 backdrop-blur-sm text-white px-4 py-3 rounded-md shadow-lg">
+                  <p className="text-base font-semibold">Low Fidelity Prototype</p>
+                  <p className="text-sm text-white/90">Basic interaction flows and AI responses</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="my-8">
+            <div className="relative group rounded-lg border border-border bg-background shadow-sm overflow-hidden">
+              <img
+                src="/lovable-uploads/16bd1c21-598c-463c-aa29-940daa4b0aa8.png"
+                alt="Hallie High Fidelity Prototype"
+                className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+              />
+              {/* Hover overlay with label */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start p-4">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 backdrop-blur-sm text-white px-4 py-3 rounded-md shadow-lg">
+                  <p className="text-base font-semibold">High Fidelity Prototype</p>
+                  <p className="text-sm text-white/90">Hallie's tone, visual identity, and UI behavior</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
