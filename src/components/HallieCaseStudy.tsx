@@ -41,7 +41,7 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
           <h3 className="text-xl font-semibold text-foreground">Tools used</h3>
         </div>
         <p className="text-foreground/80">
-          <strong>Software:</strong> Figma, Adobe Illustrator, Draw.io
+          <strong>Software:</strong> Adobe XD, Adobe Illustrator, Draw.io
         </p>
       </div>
 
@@ -126,7 +126,7 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
             </div>
           ))}
         </div>
-        <PlaceholderSection title="Technology scouting overview" />
+        
       </section>
 
       {/* Early Structure & Flow */}
