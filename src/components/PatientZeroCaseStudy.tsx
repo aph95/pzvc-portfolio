@@ -221,7 +221,45 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
             </div>
           ))}
         </div>
-        <PlaceholderSection title="Concept sketches or UX journey map" />
+        {/* Early Concept Sketches */}
+        <div className="my-8 space-y-6">
+          <h4 className="text-lg font-semibold text-foreground mb-4">Early concept sketches</h4>
+          <p className="text-foreground/80 mb-6">
+            These were early concept sketches that were iterated into what Patient Zero is today. The initial approach involved using <strong>AR through one's phone</strong> and a <strong>capture the flag</strong> gameplay mechanic instead of the humans vs zombies theme. However, AR was scrapped due to technical limitations and the capture the flag concept was replaced with a more exciting thematic approach focusing on infection mechanics.
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* First concept sketch */}
+            <div className="relative group rounded-lg border border-border bg-background shadow-sm overflow-hidden">
+              <img
+                src="/lovable-uploads/d3902b3b-aac8-442f-8dd2-dbb6dd1a7ac7.png"
+                alt="Early AR concept sketch showing phone-based augmented reality gameplay"
+                className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start p-4">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 backdrop-blur-sm text-white px-4 py-3 rounded-md shadow-lg">
+                  <p className="text-base font-semibold">AR Concept Sketch</p>
+                  <p className="text-sm text-white/90">Phone-based AR gameplay concept</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Second concept sketch */}
+            <div className="relative group rounded-lg border border-border bg-background shadow-sm overflow-hidden">
+              <img
+                src="/lovable-uploads/72703a2c-d0da-42ad-a5c4-a501c642ce77.png"
+                alt="Technical drawing of VR/AR headset design with measurements"
+                className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start p-4">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 backdrop-blur-sm text-white px-4 py-3 rounded-md shadow-lg">
+                  <p className="text-base font-semibold">Device Technical Drawing</p>
+                  <p className="text-sm text-white/90">Hardware specifications and measurements</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Rapid Prototyping */}
