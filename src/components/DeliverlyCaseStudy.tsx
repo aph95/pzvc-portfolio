@@ -267,34 +267,30 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
             <strong>iterative rethinking</strong> of key problem areas in current delivery tools, designed through the lens of real <strong>driver pain points</strong>.
           </p>
         </div>
-        <div className="space-y-6 my-8">
-          <div className="grid gap-6">
-            <div className="space-y-2">
-              <img 
-                src="/lovable-uploads/4e93bb68-e015-405b-8d18-4958594a74c1.png" 
-                alt="Deliverly onboarding screen - Main landing page with delivery scooter illustration"
-                className="w-full h-auto rounded-lg border border-border"
-              />
-              <p className="text-sm text-muted-foreground text-center">Onboarding screen with brand introduction</p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <img 
-                  src="/lovable-uploads/46b833ff-5225-4966-a8db-6a4006f0ea8a.png" 
-                  alt="Deliverly map interface - Navigation and delivery tracking with route visualization"
-                  className="w-full h-auto rounded-lg border border-border"
-                />
-                <p className="text-sm text-muted-foreground text-center">Map interface with delivery tracking</p>
-              </div>
-              <div className="space-y-2">
-                <img 
-                  src="/lovable-uploads/91f1f3c7-6d68-4153-984a-01d0a8c7f2c3.png" 
-                  alt="Deliverly customer communication - Chat interface with real-time messaging"
-                  className="w-full h-auto rounded-lg border border-border"
-                />
-                <p className="text-sm text-muted-foreground text-center">Customer communication interface</p>
-              </div>
-            </div>
+        <div className="grid md:grid-cols-3 gap-6 my-8">
+          <div className="space-y-2">
+            <img 
+              src="/lovable-uploads/4e93bb68-e015-405b-8d18-4958594a74c1.png" 
+              alt="Deliverly onboarding screen - Main landing page with delivery scooter illustration"
+              className="w-full h-auto rounded-lg border border-border"
+            />
+            <p className="text-sm text-muted-foreground text-center">Onboarding screen with brand introduction</p>
+          </div>
+          <div className="space-y-2">
+            <img 
+              src="/lovable-uploads/46b833ff-5225-4966-a8db-6a4006f0ea8a.png" 
+              alt="Deliverly map interface - Navigation and delivery tracking with route visualization"
+              className="w-full h-auto rounded-lg border border-border"
+            />
+            <p className="text-sm text-muted-foreground text-center">Map interface with delivery tracking</p>
+          </div>
+          <div className="space-y-2">
+            <img 
+              src="/lovable-uploads/91f1f3c7-6d68-4153-984a-01d0a8c7f2c3.png" 
+              alt="Deliverly customer communication - Chat interface with real-time messaging"
+              className="w-full h-auto rounded-lg border border-border"
+            />
+            <p className="text-sm text-muted-foreground text-center">Customer communication interface</p>
           </div>
         </div>
       </section>
