@@ -85,6 +85,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div 
               key={project.id}
+              data-project-id={project.id}
               className={`notion-card overflow-hidden transition-all duration-500 fade-in fade-in-delay-${index + 1} ${
                 hoveredProject === project.id ? 'shadow-xl -translate-y-2' : 'hover:shadow-lg hover:-translate-y-1'
               }`}
@@ -173,9 +174,20 @@ const Projects = () => {
 
                   <div className="flex items-center gap-4">
                     <button
-                      onClick={() => setSelectedProject(
-                        selectedProject === project.id ? null : project.id
-                      )}
+                      onClick={() => {
+                        const newProject = selectedProject === project.id ? null : project.id;
+                        setSelectedProject(newProject);
+                        
+                        // Scroll to top of case study when opening
+                        if (newProject !== null) {
+                          setTimeout(() => {
+                            const element = document.querySelector(`[data-project-id="${project.id}"]`);
+                            if (element) {
+                              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                          }, 100);
+                        }
+                      }}
                       className="group inline-flex items-center text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200"
                     >
                       {selectedProject === project.id ? 'Collapse details' : 'Explore gravitational field'}

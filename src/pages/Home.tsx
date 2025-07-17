@@ -119,7 +119,7 @@ const Home = () => {
               <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <div className="w-6 h-6 bg-green-600 rounded-full"></div>
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">Concept to dode</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-4">Concept to code</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Bridging the gap between design vision and technical implementation 
                 through hands-on frontend development and prototyping.
