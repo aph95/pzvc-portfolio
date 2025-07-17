@@ -146,7 +146,7 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
             {/* Hover overlay with label */}
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start p-4">
               <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 backdrop-blur-sm text-white px-4 py-3 rounded-md shadow-lg">
-                <p className="text-base font-semibold">Hallie AI Study Flow</p>
+                <p className="text-base font-semibold">Hallie AI study flow</p>
                 <p className="text-sm text-white/90">Complete decision tree and AI intervention logic</p>
               </div>
             </div>
@@ -190,7 +190,7 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
             {/* Hover overlay with label */}
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start p-4">
               <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 backdrop-blur-sm text-white px-4 py-3 rounded-md shadow-lg">
-                <p className="text-base font-semibold">User Journey Map</p>
+                <p className="text-base font-semibold">User journey map</p>
                 <p className="text-sm text-white/90">Emotional experience and digital behaviors during study sessions</p>
               </div>
             </div>
@@ -234,7 +234,7 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
             {/* Hover overlay with label */}
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start p-4">
               <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 backdrop-blur-sm text-white px-4 py-3 rounded-md shadow-lg">
-                <p className="text-base font-semibold">Hallie Storyboard</p>
+                <p className="text-base font-semibold">Hallie storyboard</p>
                 <p className="text-sm text-white/90">User journey from focus to distraction and recovery</p>
               </div>
             </div>
@@ -271,7 +271,7 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
               {/* Hover overlay with label */}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start p-4">
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 backdrop-blur-sm text-white px-4 py-3 rounded-md shadow-lg">
-                  <p className="text-base font-semibold">Low Fidelity Prototype</p>
+                  <p className="text-base font-semibold">Low fidelity prototype</p>
                   <p className="text-sm text-white/90">Basic interaction flows and AI responses</p>
                 </div>
               </div>
@@ -287,7 +287,7 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
               {/* Hover overlay with label */}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start p-4">
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 backdrop-blur-sm text-white px-4 py-3 rounded-md shadow-lg">
-                  <p className="text-base font-semibold">High Fidelity Prototype</p>
+                  <p className="text-base font-semibold">High fidelity prototype</p>
                   <p className="text-sm text-white/90">Hallie's tone, visual identity, and UI behavior</p>
                 </div>
               </div>
