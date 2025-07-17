@@ -37,8 +37,7 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
         <div className="space-y-4">
           <p className="text-foreground/80 leading-relaxed">
             While working as a <strong>delivery driver</strong> for a major Swedish food delivery company during my studies in digital design, 
-            I encountered daily frustrations caused by <strong>poorly designed apps</strong> and tools. The workflow was not optimized for 
-            <strong>real-world use</strong>: small tap targets, non-intuitive flows, and an overall <strong>lack of empathy</strong> for the driver's experience.
+            I encountered daily frustrations caused by <strong>poorly designed apps</strong> and tools. The workflow was not optimized for <strong>real-world use</strong>: small tap targets, non-intuitive flows, and an overall <strong>lack of empathy</strong> for the driver's experience.
           </p>
           <p className="text-foreground/80 leading-relaxed">
             Deliverly emerged from a desire to <strong>improve—not replace</strong>—these tools, by focusing on <strong>iterative betterment</strong> of the 
