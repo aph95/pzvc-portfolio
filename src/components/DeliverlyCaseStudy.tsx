@@ -192,7 +192,26 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
             I conducted multiple <strong>informal feedback sessions</strong> with former co-workers and design peers to iterate on layout, text, and overall <strong>usability</strong>.
           </p>
         </div>
-        <PlaceholderSection title="Screens showing early vs refined UI, test feedback summary" />
+        <div className="space-y-6 my-8">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <img 
+                src="/lovable-uploads/5f1205a8-4089-4291-9bc3-8d6b9c140740.png" 
+                alt="Early wireframe UI - Basic layout and structure"
+                className="w-full h-auto rounded-lg border border-border"
+              />
+              <p className="text-sm text-muted-foreground text-center">Early UI: Wireframe stage</p>
+            </div>
+            <div className="space-y-2">
+              <img 
+                src="/lovable-uploads/06d2170e-620d-4d15-af93-9e223d9acb4b.png" 
+                alt="Refined UI - Polished interface with improved visual hierarchy"
+                className="w-full h-auto rounded-lg border border-border"
+              />
+              <p className="text-sm text-muted-foreground text-center">Refined UI: Final design with enhanced UX</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Visual Identity & Branding */}
