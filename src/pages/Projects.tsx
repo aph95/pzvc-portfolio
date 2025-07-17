@@ -54,7 +54,8 @@ const Projects = () => {
       tags: ["AI Design", "Student Experience", "Digital Wellbeing", "UX Research"],
       gradient: "from-blue-900/20 to-indigo-900/40",
       logo: "/lovable-uploads/3037bcf4-215e-4a32-9131-2c8d7962d443.png",
-      fullCoverImage: true
+      fullCoverImage: true,
+      prototypeUrl: "https://xd.adobe.com/view/2e78f163-164a-4b70-b7c9-cfb3f7e21205-7b2b/"
     }
   ];
 
