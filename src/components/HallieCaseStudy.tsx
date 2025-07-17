@@ -29,9 +29,27 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
       {/* Header */}
       <div className="text-center">
         <h2 className="text-3xl font-bold text-foreground mb-4">Hallie</h2>
-        <p className="text-lg text-foreground/70">
+        <p className="text-lg text-foreground/70 mb-8">
           An AI-powered study companion for students aged 16–25
         </p>
+        
+        {/* Main Hero Image */}
+        <div className="max-w-2xl mx-auto mb-8">
+          <div className="relative group rounded-lg border border-border bg-background shadow-sm overflow-hidden">
+            <img
+              src="/lovable-uploads/3037bcf4-215e-4a32-9131-2c8d7962d443.png"
+              alt="Hallie - AI Study Companion Interface"
+              className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+            />
+            {/* Hover overlay with label */}
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
+              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 backdrop-blur-sm text-white px-4 py-3 rounded-md shadow-lg">
+                <p className="text-base font-semibold">Hallie Interface</p>
+                <p className="text-sm text-white/90">AI study companion in action</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Tools Used */}
@@ -41,7 +59,7 @@ const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
           <h3 className="text-xl font-semibold text-foreground">Tools used</h3>
         </div>
         <p className="text-foreground/80">
-          <strong>Software:</strong> Figma, Adobe Illustrator, Draw.io
+          <strong>Software:</strong> Figma, Adobe Illustrator, Draw.io | <strong>Year:</strong> 2025
         </p>
       </div>
 
