@@ -8,21 +8,6 @@ interface HallieCaseStudyProps {
 }
 
 const HallieCaseStudy: React.FC<HallieCaseStudyProps> = ({ onCollapse }) => {
-  const PlaceholderSection = ({ title }: { title: string }) => (
-    <div className="my-8 p-6 border-2 border-dashed border-border rounded-lg bg-accent/30">
-      <div className="text-center">
-        <div className="w-16 h-16 mx-auto mb-4 bg-muted rounded-lg flex items-center justify-center">
-          <Layers className="h-8 w-8 text-muted-foreground" />
-        </div>
-        <p className="text-sm text-muted-foreground font-medium">
-          Placeholder: {title}
-        </p>
-        <p className="text-xs text-muted-foreground/70 mt-1">
-          Visual content will be added here
-        </p>
-      </div>
-    </div>
-  );
 
   return (
     <div className="space-y-12">

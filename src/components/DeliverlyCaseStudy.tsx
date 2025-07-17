@@ -6,21 +6,6 @@ interface DeliverlyCaseStudyProps {
 }
 
 const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
-  const PlaceholderSection = ({ title }: { title: string }) => (
-    <div className="my-8 p-6 border-2 border-dashed border-border rounded-lg bg-accent/30">
-      <div className="text-center">
-        <div className="w-16 h-16 mx-auto mb-4 bg-muted rounded-lg flex items-center justify-center">
-          <Package className="h-8 w-8 text-muted-foreground" />
-        </div>
-        <p className="text-sm text-muted-foreground font-medium">
-          Placeholder: {title}
-        </p>
-        <p className="text-xs text-muted-foreground/70 mt-1">
-          Visual content will be added here
-        </p>
-      </div>
-    </div>
-  );
 
   return (
     <div className="space-y-12">
@@ -81,7 +66,7 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
             </div>
           ))}
         </div>
-        <PlaceholderSection title="Visual showing user goals, personas, or design values" />
+        
       </section>
 
       {/* Research & Field Insights */}
@@ -110,7 +95,7 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
             This firsthand exposure grounded my understanding in practical reality, forming the core of the design approach.
           </p>
         </div>
-        <PlaceholderSection title="Journey map, quotes, or field notes" />
+        
       </section>
 
       {/* Wireframing & Structure */}
@@ -236,7 +221,7 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
             </div>
           ))}
         </div>
-        <PlaceholderSection title="Logo, palette, or brand style tile" />
+        
       </section>
 
       {/* Final Prototype */}

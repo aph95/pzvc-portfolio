@@ -97,21 +97,6 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
     }
   ];
 
-  const PlaceholderSection = ({ title }: { title: string }) => (
-    <div className="my-8 p-6 border-2 border-dashed border-border rounded-lg bg-accent/30">
-      <div className="text-center">
-        <div className="w-16 h-16 mx-auto mb-4 bg-muted rounded-lg flex items-center justify-center">
-          <Package className="h-8 w-8 text-muted-foreground" />
-        </div>
-        <p className="text-sm text-muted-foreground font-medium">
-          Placeholder: {title}
-        </p>
-        <p className="text-xs text-muted-foreground/70 mt-1">
-          Visual content will be added here
-        </p>
-      </div>
-    </div>
-  );
 
   return (
     <div className="space-y-12">
@@ -156,7 +141,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
              </li>
           ))}
         </ul>
-        <PlaceholderSection title="Moodboard or visual goal diagram" />
+        
       </section>
 
       {/* Research & Trend Analysis */}
@@ -177,7 +162,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
             </div>
           ))}
         </div>
-        <PlaceholderSection title="Screenshots or links to key references" />
+        
       </section>
 
       {/* Game & Play Analysis */}
@@ -199,7 +184,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
             </div>
           ))}
         </div>
-        <PlaceholderSection title="Competitive game breakdown or mechanic diagrams" />
+        
       </section>
 
       {/* Initial Concept Development */}
@@ -282,7 +267,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
             </div>
           ))}
         </div>
-        <PlaceholderSection title="Prototype screenshots or testing notes" />
+        
       </section>
 
       {/* Observation & Iterative Feedback */}
@@ -308,7 +293,7 @@ const PatientZeroCaseStudy = ({ onCollapse }: PatientZeroCaseStudyProps) => {
             Key insights helped refine user experience and system clarity.
           </p>
         </div>
-        <PlaceholderSection title="Workshop photos or quotes" />
+        
       </section>
 
       {/* Game Flow Design */}
