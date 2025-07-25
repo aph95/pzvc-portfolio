@@ -194,7 +194,7 @@ const DeliverlyFeature = () => {
                       onClick={navigateToProject}
                       className="group inline-flex items-center px-5 py-2.5 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 text-sm font-medium"
                     >
-                      View Full Project
+                      View full project
                       <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </button>
                   </div>
@@ -226,7 +226,7 @@ const DeliverlyFeature = () => {
                 onClick={navigateToProject}
                 className="group inline-flex items-center px-5 py-2.5 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 text-sm font-medium"
               >
-                View Full Project
+                View full project
                 <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
             </div>
