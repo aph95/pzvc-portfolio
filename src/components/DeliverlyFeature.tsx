@@ -56,8 +56,8 @@ const DeliverlyFeature = () => {
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden lg:block relative overflow-x-auto">
-          <div className="flex items-center justify-center relative transition-all duration-700 ease-out min-w-[800px]">
+        <div className="hidden lg:block relative">
+          <div className="flex items-center justify-center relative transition-all duration-700 ease-out">
             {/* Deliverly Mockup */}
             <div
               className={`transition-all duration-700 ease-out ${
@@ -146,9 +146,9 @@ const DeliverlyFeature = () => {
               style={{ 
                 left: '50%', 
                 top: '50%', 
-                transform: `translate(calc(min(15vw, 80px) ${isCardExpanded ? '' : '+ 20px'}), -50%) ${!isCardExpanded ? 'scale(0.95)' : ''}`,
-                minWidth: 'min(320px, 28vw)',
-                maxWidth: 'calc(50vw - 2rem)',
+                transform: `translate(calc(min(12vw, 60px) ${isCardExpanded ? '' : '+ 20px'}), -50%) ${!isCardExpanded ? 'scale(0.95)' : ''}`,
+                minWidth: 'min(300px, 25vw)',
+                maxWidth: 'calc(45vw)',
                 width: 'auto'
               }}
             >
