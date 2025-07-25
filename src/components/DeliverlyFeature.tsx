@@ -205,21 +205,21 @@ const DeliverlyFeature = () => {
         </div>
 
         {/* Mobile Layout - Simple centered mockup */}
-        <div className="lg:hidden flex justify-center">
-          <div className="relative">
+        <div className="lg:hidden flex justify-center px-6">
+          <div className="relative flex flex-col items-center">
             <img
               src="/lovable-uploads/fa5f55aa-fc88-4725-ab83-1f9e1c8c3e68.png"
               alt="Deliverly mobile app prototype showing delivery interface"
-              className="w-80 h-auto rounded-3xl shadow-2xl"
+              className="w-80 h-auto rounded-3xl shadow-2xl mx-auto"
               style={{
                 filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15))',
               }}
             />
-            <div className="mt-6 text-center space-y-4">
+            <div className="mt-6 text-center space-y-4 max-w-sm">
               <h3 className="text-xl font-semibold text-foreground">
                 Deliverly – Feedback-Driven Delivery Experience
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed max-w-sm mx-auto">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 Exploring emotionally aware feedback mechanisms for couriers and customers through thoughtful interaction design.
               </p>
               <button
