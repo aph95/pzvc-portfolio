@@ -56,12 +56,12 @@ const DeliverlyFeature = () => {
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden lg:block relative px-6">
-          <div className="flex items-center justify-center relative transition-all duration-700 ease-out max-w-6xl mx-auto">
+        <div className="hidden lg:block relative px-8 xl:px-6">
+          <div className="flex items-center justify-center relative transition-all duration-700 ease-out max-w-5xl xl:max-w-6xl mx-auto">
             {/* Deliverly Mockup */}
             <div
               className={`transition-all duration-700 ease-out ${
-                isCardExpanded ? 'transform -translate-x-16 lg:-translate-x-24 xl:-translate-x-32' : ''
+                isCardExpanded ? 'transform -translate-x-12 lg:-translate-x-20 xl:-translate-x-32' : ''
               }`}
             >
               <div
@@ -146,9 +146,9 @@ const DeliverlyFeature = () => {
               style={{ 
                 left: '50%', 
                 top: '50%', 
-                transform: `translate(${isCardExpanded ? '8rem' : '10rem'}, -50%) ${!isCardExpanded ? 'scale(0.95)' : ''}`,
-                minWidth: '300px',
-                maxWidth: '340px',
+                transform: `translate(${isCardExpanded ? '6rem' : '8rem'}, -50%) ${!isCardExpanded ? 'scale(0.95)' : ''}`,
+                minWidth: '280px',
+                maxWidth: '320px',
                 width: 'auto'
               }}
             >
