@@ -56,12 +56,12 @@ const DeliverlyFeature = () => {
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden lg:block relative">
-          <div className="flex items-center justify-center relative transition-all duration-700 ease-out">
+        <div className="hidden lg:block relative px-6">
+          <div className="flex items-center justify-center relative transition-all duration-700 ease-out max-w-6xl mx-auto">
             {/* Deliverly Mockup */}
             <div
               className={`transition-all duration-700 ease-out ${
-                isCardExpanded ? 'transform -translate-x-20 lg:-translate-x-32 xl:-translate-x-48' : ''
+                isCardExpanded ? 'transform -translate-x-16 lg:-translate-x-24 xl:-translate-x-32' : ''
               }`}
             >
               <div
@@ -105,7 +105,7 @@ const DeliverlyFeature = () => {
             {isCardExpanded && (
               <svg 
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none z-5"
-                width="300" 
+                width="200" 
                 height="100" 
                 style={{ overflow: 'visible' }}
               >
@@ -119,7 +119,7 @@ const DeliverlyFeature = () => {
                 <line
                   x1="-30"
                   y1="50"
-                  x2="120"
+                  x2="100"
                   y2="50"
                   stroke="url(#lineGradient)"
                   strokeWidth="2"
@@ -130,9 +130,9 @@ const DeliverlyFeature = () => {
                   }}
                 />
                 {/* Data points along the line */}
-                <circle cx="10" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.6" className="animate-pulse" />
-                <circle cx="50" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.4" className="animate-pulse" />
-                <circle cx="90" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.3" className="animate-pulse" />
+                <circle cx="0" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.6" className="animate-pulse" />
+                <circle cx="35" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.4" className="animate-pulse" />
+                <circle cx="70" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.3" className="animate-pulse" />
               </svg>
             )}
 
@@ -146,9 +146,9 @@ const DeliverlyFeature = () => {
               style={{ 
                 left: '50%', 
                 top: '50%', 
-                transform: `translate(calc(min(12vw, 60px) ${isCardExpanded ? '' : '+ 20px'}), -50%) ${!isCardExpanded ? 'scale(0.95)' : ''}`,
-                minWidth: 'min(300px, 25vw)',
-                maxWidth: 'calc(45vw)',
+                transform: `translate(${isCardExpanded ? '8rem' : '10rem'}, -50%) ${!isCardExpanded ? 'scale(0.95)' : ''}`,
+                minWidth: '300px',
+                maxWidth: '340px',
                 width: 'auto'
               }}
             >
