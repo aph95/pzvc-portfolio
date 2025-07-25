@@ -178,7 +178,7 @@ const DeliverlyFeature = () => {
                       Deliverly
                     </h3>
                     <p className="text-sm text-muted-foreground">
-                      Feedback-Driven Delivery Experience
+                    Feedback-driven delivery experience
                     </p>
                   </div>
 
@@ -217,7 +217,7 @@ const DeliverlyFeature = () => {
             />
             <div className="mt-6 text-center space-y-4 max-w-sm">
               <h3 className="text-xl font-semibold text-foreground">
-                Deliverly – Feedback-Driven Delivery Experience
+                Deliverly – Feedback-driven delivery experience
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 Exploring emotionally aware feedback mechanisms for couriers and customers through thoughtful interaction design.
