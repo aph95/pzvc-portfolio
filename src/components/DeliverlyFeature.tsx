@@ -56,12 +56,12 @@ const DeliverlyFeature = () => {
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden lg:block relative">
-          <div className="flex items-center justify-center relative transition-all duration-700 ease-out">
+        <div className="hidden lg:block relative overflow-x-auto">
+          <div className="flex items-center justify-center relative transition-all duration-700 ease-out min-w-[800px]">
             {/* Deliverly Mockup */}
             <div
               className={`transition-all duration-700 ease-out ${
-                isCardExpanded ? 'transform -translate-x-48' : ''
+                isCardExpanded ? 'transform -translate-x-20 lg:-translate-x-32 xl:-translate-x-48' : ''
               }`}
             >
               <div
@@ -140,18 +140,20 @@ const DeliverlyFeature = () => {
             <div 
               className={`absolute transition-all duration-700 ease-out ${
                 isCardExpanded 
-                  ? 'opacity-100 translate-x-0 scale-100' 
-                  : 'opacity-0 translate-x-8 scale-95 pointer-events-none'
+                  ? 'opacity-100 scale-100' 
+                  : 'opacity-0 scale-95 pointer-events-none'
               }`}
               style={{ 
                 left: '50%', 
                 top: '50%', 
-                transform: `translate(${isCardExpanded ? '80px' : '100px'}, -50%) ${!isCardExpanded ? 'scale(0.95)' : ''}`,
-                minWidth: '320px' 
+                transform: `translate(calc(min(15vw, 80px) ${isCardExpanded ? '' : '+ 20px'}), -50%) ${!isCardExpanded ? 'scale(0.95)' : ''}`,
+                minWidth: 'min(320px, 28vw)',
+                maxWidth: 'calc(50vw - 2rem)',
+                width: 'auto'
               }}
             >
               <div 
-                className="relative bg-background/95 backdrop-blur-sm border border-border/50 rounded-2xl p-8 shadow-xl"
+                className="relative bg-background/95 backdrop-blur-sm border border-border/50 rounded-2xl p-6 lg:p-8 shadow-xl"
                 style={{
                   background: 'linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--background) / 0.95) 100%)',
                   boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px hsl(var(--border) / 0.3)',
