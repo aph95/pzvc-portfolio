@@ -97,12 +97,6 @@ const DeliverlyFeature = () => {
                   
                   {/* Hover overlay */}
                   <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-primary/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                  
-                  {/* Connection point indicator */}
-                  {isCardExpanded && (
-                    <div className="absolute top-8 right-0 w-3 h-3 bg-primary rounded-full animate-pulse" 
-                         style={{ transform: 'translate(50%, -50%)' }} />
-                  )}
                 </div>
               </div>
             </div>
@@ -125,7 +119,7 @@ const DeliverlyFeature = () => {
                 <line
                   x1="-30"
                   y1="50"
-                  x2="220"
+                  x2="120"
                   y2="50"
                   stroke="url(#lineGradient)"
                   strokeWidth="2"
@@ -136,9 +130,9 @@ const DeliverlyFeature = () => {
                   }}
                 />
                 {/* Data points along the line */}
-                <circle cx="40" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.6" className="animate-pulse" />
-                <circle cx="100" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.4" className="animate-pulse" />
-                <circle cx="160" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.3" className="animate-pulse" />
+                <circle cx="10" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.6" className="animate-pulse" />
+                <circle cx="50" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.4" className="animate-pulse" />
+                <circle cx="90" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.3" className="animate-pulse" />
               </svg>
             )}
 
@@ -152,7 +146,7 @@ const DeliverlyFeature = () => {
               style={{ 
                 left: '50%', 
                 top: '50%', 
-                transform: `translate(${isCardExpanded ? '200px' : '220px'}, -50%) ${!isCardExpanded ? 'translateX(2rem) scale(0.95)' : ''}`,
+                transform: `translate(${isCardExpanded ? '80px' : '100px'}, -50%) ${!isCardExpanded ? 'scale(0.95)' : ''}`,
                 minWidth: '320px' 
               }}
             >
