@@ -129,10 +129,6 @@ const DeliverlyFeature = () => {
                     animation: 'draw-line 0.8s ease-out forwards, pulse 2s ease-in-out infinite 0.8s',
                   }}
                 />
-                {/* Data points along the line */}
-                <circle cx="0" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.6" className="animate-pulse" />
-                <circle cx="35" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.4" className="animate-pulse" />
-                <circle cx="70" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.3" className="animate-pulse" />
               </svg>
             )}
 
