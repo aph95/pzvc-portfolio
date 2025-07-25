@@ -5,6 +5,7 @@ import { useMousePosition } from '../hooks/useMousePosition';
 import { usePageTitle } from '../hooks/usePageTitle';
 import SpacetimeGrid from '../components/SpacetimeGrid';
 import FloatingPlanet from '../components/FloatingPlanet';
+import DeliverlyFeature from '../components/DeliverlyFeature';
 
 const Home = () => {
   const mousePosition = useMousePosition();
@@ -58,6 +59,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Deliverly Feature Section */}
+      <DeliverlyFeature />
 
       {/* Contact Section */}
       <section className="relative py-20 px-6 border-y border-border/20 bg-gradient-to-r from-transparent via-muted/30 to-transparent z-10">
