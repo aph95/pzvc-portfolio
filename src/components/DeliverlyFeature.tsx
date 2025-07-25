@@ -57,47 +57,53 @@ const DeliverlyFeature = () => {
 
         {/* Desktop Layout */}
         <div className="hidden lg:block relative">
-          <div className="flex items-center justify-center gap-16 relative">
+          <div className="flex items-center justify-center relative transition-all duration-700 ease-out">
             {/* Deliverly Mockup */}
             <div
-              ref={mockupRef}
-              className="relative cursor-pointer transition-all duration-500 ease-out hover:scale-105 z-10"
-              style={{
-                transform: `perspective(1000px) rotateX(${mousePosition.y}deg) rotateY(${mousePosition.x}deg)`,
-              }}
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
-              onClick={handleMockupClick}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  handleMockupClick();
-                }
-              }}
-              tabIndex={0}
-              role="button"
-              aria-label="View Deliverly prototype details"
-              aria-expanded={isCardExpanded}
+              className={`transition-all duration-700 ease-out ${
+                isCardExpanded ? 'transform -translate-x-32' : ''
+              }`}
             >
-              <div className="relative">
-                <img
-                  src="/lovable-uploads/fa5f55aa-fc88-4725-ab83-1f9e1c8c3e68.png"
-                  alt="Deliverly mobile app prototype showing delivery interface"
-                  className="w-80 h-auto rounded-3xl shadow-2xl transition-all duration-500"
-                  style={{
-                    filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15))',
-                    boxShadow: isCardExpanded ? '0 0 0 2px hsl(var(--primary) / 0.3)' : 'none',
-                  }}
-                />
-                
-                {/* Hover overlay */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-primary/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Connection point indicator */}
-                {isCardExpanded && (
-                  <div className="absolute top-8 right-0 w-3 h-3 bg-primary rounded-full animate-pulse" 
-                       style={{ transform: 'translate(50%, -50%)' }} />
-                )}
+              <div
+                ref={mockupRef}
+                className="relative cursor-pointer transition-all duration-500 ease-out hover:scale-105 z-10"
+                style={{
+                  transform: `perspective(1000px) rotateX(${mousePosition.y}deg) rotateY(${mousePosition.x}deg)`,
+                }}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                onClick={handleMockupClick}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleMockupClick();
+                  }
+                }}
+                tabIndex={0}
+                role="button"
+                aria-label="View Deliverly prototype details"
+                aria-expanded={isCardExpanded}
+              >
+                <div className="relative">
+                  <img
+                    src="/lovable-uploads/fa5f55aa-fc88-4725-ab83-1f9e1c8c3e68.png"
+                    alt="Deliverly mobile app prototype showing delivery interface"
+                    className="w-80 h-auto rounded-3xl shadow-2xl transition-all duration-500"
+                    style={{
+                      filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15))',
+                      boxShadow: isCardExpanded ? '0 0 0 2px hsl(var(--primary) / 0.3)' : 'none',
+                    }}
+                  />
+                  
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-primary/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                  
+                  {/* Connection point indicator */}
+                  {isCardExpanded && (
+                    <div className="absolute top-8 right-0 w-3 h-3 bg-primary rounded-full animate-pulse" 
+                         style={{ transform: 'translate(50%, -50%)' }} />
+                  )}
+                </div>
               </div>
             </div>
 
@@ -105,7 +111,7 @@ const DeliverlyFeature = () => {
             {isCardExpanded && (
               <svg 
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none z-5"
-                width="200" 
+                width="300" 
                 height="100" 
                 style={{ overflow: 'visible' }}
               >
@@ -117,9 +123,9 @@ const DeliverlyFeature = () => {
                   </linearGradient>
                 </defs>
                 <line
-                  x1="-80"
+                  x1="-30"
                   y1="50"
-                  x2="120"
+                  x2="170"
                   y2="50"
                   stroke="url(#lineGradient)"
                   strokeWidth="2"
@@ -130,15 +136,15 @@ const DeliverlyFeature = () => {
                   }}
                 />
                 {/* Data points along the line */}
-                <circle cx="-40" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.6" className="animate-pulse" />
-                <circle cx="20" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.4" className="animate-pulse" />
-                <circle cx="80" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.3" className="animate-pulse" />
+                <circle cx="20" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.6" className="animate-pulse" />
+                <circle cx="70" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.4" className="animate-pulse" />
+                <circle cx="120" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.3" className="animate-pulse" />
               </svg>
             )}
 
             {/* Expandable Info Card */}
             <div 
-              className={`transition-all duration-700 ease-out ${
+              className={`absolute right-0 top-1/2 transform -translate-y-1/2 transition-all duration-700 ease-out ${
                 isCardExpanded 
                   ? 'opacity-100 translate-x-0 scale-100' 
                   : 'opacity-0 translate-x-8 scale-95 pointer-events-none'
@@ -160,9 +166,6 @@ const DeliverlyFeature = () => {
                 >
                   <X size={14} className="text-muted-foreground group-hover:text-foreground transition-colors" />
                 </button>
-
-                {/* Header indicator */}
-                <div className="absolute -top-1 left-8 w-8 h-2 bg-gradient-to-r from-primary/60 to-primary/20 rounded-full" />
 
                 <div className="space-y-6">
                   <div>
@@ -194,13 +197,6 @@ const DeliverlyFeature = () => {
                       <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </button>
                   </div>
-                </div>
-
-                {/* Tactical UI accents */}
-                <div className="absolute bottom-4 left-4 flex gap-1">
-                  <div className="w-1 h-1 bg-primary/40 rounded-full" />
-                  <div className="w-1 h-1 bg-primary/30 rounded-full" />
-                  <div className="w-1 h-1 bg-primary/20 rounded-full" />
                 </div>
               </div>
             </div>
