@@ -61,7 +61,7 @@ const DeliverlyFeature = () => {
             {/* Deliverly Mockup */}
             <div
               className={`transition-all duration-700 ease-out ${
-                isCardExpanded ? 'transform -translate-x-32' : ''
+                isCardExpanded ? 'transform -translate-x-48' : ''
               }`}
             >
               <div
@@ -125,7 +125,7 @@ const DeliverlyFeature = () => {
                 <line
                   x1="-30"
                   y1="50"
-                  x2="170"
+                  x2="220"
                   y2="50"
                   stroke="url(#lineGradient)"
                   strokeWidth="2"
@@ -136,20 +136,25 @@ const DeliverlyFeature = () => {
                   }}
                 />
                 {/* Data points along the line */}
-                <circle cx="20" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.6" className="animate-pulse" />
-                <circle cx="70" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.4" className="animate-pulse" />
-                <circle cx="120" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.3" className="animate-pulse" />
+                <circle cx="40" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.6" className="animate-pulse" />
+                <circle cx="100" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.4" className="animate-pulse" />
+                <circle cx="160" cy="50" r="2" fill="hsl(var(--primary))" opacity="0.3" className="animate-pulse" />
               </svg>
             )}
 
             {/* Expandable Info Card */}
             <div 
-              className={`absolute right-0 top-1/2 transform -translate-y-1/2 transition-all duration-700 ease-out ${
+              className={`absolute transition-all duration-700 ease-out ${
                 isCardExpanded 
                   ? 'opacity-100 translate-x-0 scale-100' 
                   : 'opacity-0 translate-x-8 scale-95 pointer-events-none'
               }`}
-              style={{ minWidth: '320px' }}
+              style={{ 
+                left: '50%', 
+                top: '50%', 
+                transform: `translate(${isCardExpanded ? '200px' : '220px'}, -50%) ${!isCardExpanded ? 'translateX(2rem) scale(0.95)' : ''}`,
+                minWidth: '320px' 
+              }}
             >
               <div 
                 className="relative bg-background/95 backdrop-blur-sm border border-border/50 rounded-2xl p-8 shadow-xl"
