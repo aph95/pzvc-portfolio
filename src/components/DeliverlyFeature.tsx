@@ -172,7 +172,7 @@ const DeliverlyFeature = () => {
                 <div className="space-y-6">
                   <div>
                     <div className="flex items-center gap-2 mb-2">
-                      <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                       <span className="text-xs font-medium text-primary uppercase tracking-wider">Active Prototype</span>
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-1">
