@@ -19,9 +19,23 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
     if (!ctx) return;
 
     const resizeCanvas = () => {
-      canvas.width = canvas.offsetWidth * window.devicePixelRatio;
-      canvas.height = canvas.offsetHeight * window.devicePixelRatio;
-      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      
+      // Account for zoom by using actual display size
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      
+      // Set canvas display size
+      canvas.style.width = rect.width + 'px';
+      canvas.style.height = rect.height + 'px';
+      
+      // Scale context to match device pixel ratio
+      ctx.scale(dpr, dpr);
+      
+      // Ensure transparent background
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
     };
 
     resizeCanvas();
@@ -67,8 +81,10 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
       ctx.strokeStyle = gridColor;
       ctx.lineWidth = 1;
 
-      const cols = Math.ceil(canvas.offsetWidth / gridSize);
-      const rows = Math.ceil(canvas.offsetHeight / gridSize);
+      // Use getBoundingClientRect for zoom-aware dimensions
+      const rect = canvas.getBoundingClientRect();
+      const cols = Math.ceil(rect.width / gridSize);
+      const rows = Math.ceil(rect.height / gridSize);
 
       // Draw curved vertical lines
       for (let i = 0; i <= cols; i++) {
@@ -167,7 +183,7 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
         // Validate that all values are finite before creating gradient
         if (isFinite(canvasMouseX) && isFinite(canvasMouseY) && 
             canvasMouseX >= 0 && canvasMouseY >= 0 &&
-            canvasMouseX <= canvas.offsetWidth && canvasMouseY <= canvas.offsetHeight) {
+            canvasMouseX <= rect.width && canvasMouseY <= rect.height) {
           
           const gradient = ctx.createRadialGradient(
             canvasMouseX, canvasMouseY, 0,
@@ -199,7 +215,12 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
     <canvas
       ref={canvasRef}
       className={`absolute inset-0 pointer-events-none ${className}`}
-      style={{ width: '100%', height: '100%' }}
+      style={{ 
+        width: '100%', 
+        height: '100%',
+        background: 'transparent',
+        zIndex: -1
+      }}
     />
   );
 };
