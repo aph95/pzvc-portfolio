@@ -147,7 +147,7 @@ const DeliverlyFeature = () => {
               style={{ 
                 left: '50%', 
                 top: '50%', 
-                transform: `translate(${isCardExpanded ? '32rem' : '34rem'}, -50%) ${!isCardExpanded ? 'scale(0.95)' : ''}`,
+                transform: `translate(${isCardExpanded ? '3rem' : '4rem'}, -50%) ${!isCardExpanded ? 'scale(0.95)' : ''}`,
                 minWidth: '280px',
                 maxWidth: '320px',
                 width: 'auto'
