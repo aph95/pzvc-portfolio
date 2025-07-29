@@ -19,22 +19,30 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
     if (!ctx) return;
 
     const resizeCanvas = () => {
-      const rect = canvas.getBoundingClientRect();
+      const container = canvas.parentElement;
+      if (!container) return;
+      
+      const containerRect = container.getBoundingClientRect();
       const dpr = window.devicePixelRatio || 1;
       
-      // Set canvas internal resolution
-      canvas.width = rect.width * dpr;
-      canvas.height = rect.height * dpr;
+      // Use container dimensions directly to avoid zoom issues
+      const width = containerRect.width;
+      const height = containerRect.height;
       
-      // Reset canvas styling to match container exactly
-      canvas.style.width = '100%';
-      canvas.style.height = '100%';
+      // Set canvas resolution
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
       
-      // Scale context for high DPI
+      // Set display size
+      canvas.style.width = width + 'px';
+      canvas.style.height = height + 'px';
+      
+      // Scale context
       ctx.scale(dpr, dpr);
       
-      // Ensure completely transparent background
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Store dimensions for calculations
+      canvas.setAttribute('data-width', width.toString());
+      canvas.setAttribute('data-height', height.toString());
     };
 
     resizeCanvas();
@@ -80,10 +88,11 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
       ctx.strokeStyle = gridColor;
       ctx.lineWidth = 1;
 
-      // Use getBoundingClientRect for zoom-aware dimensions
-      const rect = canvas.getBoundingClientRect();
-      const cols = Math.ceil(rect.width / gridSize);
-      const rows = Math.ceil(rect.height / gridSize);
+      // Use stored dimensions for consistent calculations
+      const width = parseFloat(canvas.getAttribute('data-width') || '0');
+      const height = parseFloat(canvas.getAttribute('data-height') || '0');
+      const cols = Math.ceil(width / gridSize);
+      const rows = Math.ceil(height / gridSize);
 
       // Draw curved vertical lines
       for (let i = 0; i <= cols; i++) {
@@ -176,13 +185,15 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
       // Draw gravitational well visualization around mouse
       if (mousePosition) {
         const rect = canvas.getBoundingClientRect();
+        const width = parseFloat(canvas.getAttribute('data-width') || '0');
+        const height = parseFloat(canvas.getAttribute('data-height') || '0');
         const canvasMouseX = mousePosition.x - rect.left;
         const canvasMouseY = mousePosition.y - rect.top;
         
         // Validate that all values are finite before creating gradient
         if (isFinite(canvasMouseX) && isFinite(canvasMouseY) && 
             canvasMouseX >= 0 && canvasMouseY >= 0 &&
-            canvasMouseX <= rect.width && canvasMouseY <= rect.height) {
+            canvasMouseX <= width && canvasMouseY <= height) {
           
           const gradient = ctx.createRadialGradient(
             canvasMouseX, canvasMouseY, 0,
