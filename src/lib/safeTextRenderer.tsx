@@ -1,8 +1,17 @@
 import React from 'react';
 
 /**
- * Safely renders text with basic formatting like <strong> tags
- * This replaces dangerouslySetInnerHTML with a safer alternative
+ * SECURITY: Safe Text Renderer Component
+ * Safely renders text with basic formatting like <strong> tags without using dangerouslySetInnerHTML.
+ * 
+ * Security Features:
+ * - Prevents XSS attacks by avoiding innerHTML injection
+ * - Only supports whitelisted formatting (**text** -> <strong>text</strong>)
+ * - Uses React's built-in XSS protection through JSX rendering
+ * - Input validation ensures only expected patterns are processed
+ * 
+ * This component should be used whenever displaying user-generated content
+ * or content that might contain formatting markup.
  */
 export const SafeTextRenderer: React.FC<{ text: string }> = ({ text }) => {
   // First, convert **text** to <strong>text</strong>
