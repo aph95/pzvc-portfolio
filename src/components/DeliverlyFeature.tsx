@@ -34,17 +34,12 @@ const DeliverlyFeature = () => {
   };
 
   const navigateToProject = () => {
-    // Navigate to Projects page and scroll to Deliverly case study
-    window.location.href = '/projects#deliverly';
-    
-    // If already on projects page, scroll directly to Deliverly
-    if (window.location.pathname === '/projects') {
-      setTimeout(() => {
-        const deliverlyProject = document.querySelector('[data-project-id="2"]');
-        if (deliverlyProject) {
-          deliverlyProject.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 100);
+    // Scroll to projects section or navigate to projects page
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/projects';
     }
   };
 
@@ -62,11 +57,13 @@ const DeliverlyFeature = () => {
 
         {/* Desktop Layout */}
         <div className="hidden lg:block relative px-8 xl:px-6">
-          <div className={`flex items-center justify-center transition-all duration-700 ease-out mx-auto ${
-            isCardExpanded ? 'max-w-none gap-8' : 'max-w-5xl xl:max-w-6xl'
-          }`}>
+          <div className="flex items-center justify-center relative transition-all duration-700 ease-out max-w-5xl xl:max-w-6xl mx-auto">
             {/* Deliverly Mockup */}
-            <div className="flex-shrink-0">
+            <div
+              className={`transition-all duration-700 ease-out ${
+                isCardExpanded ? 'transform -translate-x-12 lg:-translate-x-20 xl:-translate-x-32' : ''
+              }`}
+            >
               <div
                 ref={mockupRef}
                 className="relative cursor-pointer transition-all duration-500 ease-out hover:scale-105 z-10"
@@ -89,9 +86,9 @@ const DeliverlyFeature = () => {
               >
                 <div className="relative">
                   <img
-                    src="/lovable-uploads/bd12014a-c65a-4ffa-ad65-b93088964d27.png"
-                    alt="Deliverly mobile app prototype showing profile, login, and delivery tracking screens"
-                    className="w-[56rem] h-auto rounded-3xl shadow-2xl transition-all duration-500"
+                    src="/lovable-uploads/2723c751-3269-43f8-8b05-51ab9d584b30.png"
+                    alt="Deliverly mobile app prototype showing delivery interface"
+                    className="w-80 h-auto rounded-3xl shadow-2xl transition-all duration-500"
                     style={{
                       filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15))',
                       boxShadow: isCardExpanded ? '0 0 0 2px hsl(var(--primary) / 0.3)' : 'none',
@@ -106,47 +103,48 @@ const DeliverlyFeature = () => {
 
             {/* Animated Connection Line */}
             {isCardExpanded && (
-              <div className="flex items-center">
-                <svg 
-                  className="pointer-events-none"
-                  width="80" 
-                  height="2" 
-                  style={{ overflow: 'visible' }}
-                >
-                  <defs>
-                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.8" />
-                      <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="0.4" />
-                      <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.2" />
-                    </linearGradient>
-                  </defs>
-                  <line
-                    x1="0"
-                    y1="1"
-                    x2="80"
-                    y2="1"
-                    stroke="url(#lineGradient)"
-                    strokeWidth="2"
-                    strokeDasharray="4 2"
-                    className="animate-pulse"
-                    style={{
-                      animation: 'draw-line 0.8s ease-out forwards, pulse 2s ease-in-out infinite 0.8s',
-                    }}
-                  />
-                </svg>
-              </div>
+              <svg 
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none z-5"
+                width="200" 
+                height="100" 
+                style={{ overflow: 'visible' }}
+              >
+                <defs>
+                  <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.8" />
+                    <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.2" />
+                  </linearGradient>
+                </defs>
+                <line
+                  x1="-30"
+                  y1="50"
+                  x2="100"
+                  y2="50"
+                  stroke="url(#lineGradient)"
+                  strokeWidth="2"
+                  strokeDasharray="4 2"
+                  className="animate-pulse"
+                  style={{
+                    animation: 'draw-line 0.8s ease-out forwards, pulse 2s ease-in-out infinite 0.8s',
+                  }}
+                />
+              </svg>
             )}
 
             {/* Expandable Info Card */}
             <div 
-              className={`transition-all duration-700 ease-out ${
+              className={`absolute transition-all duration-700 ease-out ${
                 isCardExpanded 
-                  ? 'opacity-100 scale-100 translate-x-0' 
-                  : 'opacity-0 scale-95 translate-x-8 pointer-events-none'
+                  ? 'opacity-100 scale-100' 
+                  : 'opacity-0 scale-95 pointer-events-none'
               }`}
               style={{ 
-                minWidth: '320px',
-                maxWidth: '400px',
+                left: '50%', 
+                top: '50%', 
+                transform: `translate(${isCardExpanded ? '6rem' : '8rem'}, -50%) ${!isCardExpanded ? 'scale(0.95)' : ''}`,
+                minWidth: '280px',
+                maxWidth: '320px',
                 width: 'auto'
               }}
             >
@@ -202,108 +200,32 @@ const DeliverlyFeature = () => {
           </div>
         </div>
 
-        {/* Mobile Layout - Responsive stack */}
+        {/* Mobile Layout - Simple centered mockup */}
         <div className="lg:hidden flex justify-center px-6">
           <div className="relative flex flex-col items-center">
-            <div
-              className="cursor-pointer transition-all duration-300 ease-out"
-              onClick={handleMockupClick}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  handleMockupClick();
-                }
+            <img
+              src="/lovable-uploads/2723c751-3269-43f8-8b05-51ab9d584b30.png"
+              alt="Deliverly mobile app prototype showing delivery interface"
+              className="w-80 h-auto rounded-3xl shadow-2xl mx-auto"
+              style={{
+                filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15))',
               }}
-              tabIndex={0}
-              role="button"
-              aria-label="View Deliverly prototype details"
-              aria-expanded={isCardExpanded}
-            >
-              <img
-                src="/lovable-uploads/bd12014a-c65a-4ffa-ad65-b93088964d27.png"
-                alt="Deliverly mobile app prototype showing profile, login, and delivery tracking screens"
-                className="w-80 sm:w-96 h-auto rounded-3xl shadow-2xl mx-auto transition-all duration-300"
-                style={{
-                  filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15))',
-                  boxShadow: isCardExpanded ? '0 0 0 2px hsl(var(--primary) / 0.3)' : 'none',
-                }}
-              />
-            </div>
-            
-            {/* Mobile Info Panel */}
-            <div className={`transition-all duration-500 ease-out ${
-              isCardExpanded 
-                ? 'opacity-100 scale-100 max-h-96' 
-                : 'opacity-0 scale-95 max-h-0 pointer-events-none'
-            } overflow-hidden mt-6 w-full max-w-md`}>
-              <div 
-                className="relative bg-background/95 backdrop-blur-sm border border-border/50 rounded-2xl p-6 shadow-xl"
-                style={{
-                  background: 'linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--background) / 0.95) 100%)',
-                  boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px hsl(var(--border) / 0.3)',
-                }}
+            />
+            <div className="mt-6 text-center space-y-4 max-w-sm">
+              <h3 className="text-xl font-semibold text-foreground">
+                Deliverly – Feedback-driven delivery experience
+              </h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Exploring emotionally aware feedback mechanisms for couriers and customers through thoughtful interaction design.
+              </p>
+              <button
+                onClick={navigateToProject}
+                className="group inline-flex items-center px-5 py-2.5 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 text-sm font-medium"
               >
-                {/* Close button */}
-                <button
-                  onClick={() => setIsCardExpanded(false)}
-                  className="absolute top-4 right-4 w-8 h-8 rounded-full border border-border/50 bg-background/50 hover:bg-accent transition-all duration-200 flex items-center justify-center group"
-                  aria-label="Close project details"
-                >
-                  <X size={14} className="text-muted-foreground group-hover:text-foreground transition-colors" />
-                </button>
-
-                <div className="space-y-4">
-                  <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                      <span className="text-xs font-medium text-primary uppercase tracking-wider">Active Prototype</span>
-                    </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-1">
-                      Deliverly
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      Feedback-driven delivery experience
-                    </p>
-                  </div>
-
-                  <div className="space-y-3">
-                    <div className="h-px bg-gradient-to-r from-border via-border/50 to-transparent" />
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Exploring emotionally aware feedback mechanisms for couriers and customers through thoughtful interaction design.
-                    </p>
-                  </div>
-
-                  <div className="pt-2">
-                    <button
-                      onClick={navigateToProject}
-                      className="group inline-flex items-center px-5 py-2.5 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 text-sm font-medium w-full justify-center"
-                    >
-                      View full project
-                      <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </button>
-                  </div>
-                </div>
-              </div>
+                View full project
+                <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </button>
             </div>
-
-            {/* Fallback content when panel is closed */}
-            {!isCardExpanded && (
-              <div className="mt-6 text-center space-y-4 max-w-sm animate-fade-in">
-                <h3 className="text-xl font-semibold text-foreground">
-                  Deliverly – Feedback-driven delivery experience
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Exploring emotionally aware feedback mechanisms for couriers and customers through thoughtful interaction design.
-                </p>
-                <button
-                  onClick={navigateToProject}
-                  className="group inline-flex items-center px-5 py-2.5 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 text-sm font-medium"
-                >
-                  View full project
-                  <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </button>
-              </div>
-            )}
           </div>
         </div>
       </div>
