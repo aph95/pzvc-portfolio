@@ -34,12 +34,17 @@ const DeliverlyFeature = () => {
   };
 
   const navigateToProject = () => {
-    // Scroll to projects section or navigate to projects page
-    const projectsSection = document.getElementById('projects');
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      window.location.href = '/projects';
+    // Navigate to Projects page and scroll to Deliverly case study
+    window.location.href = '/projects#deliverly';
+    
+    // If already on projects page, scroll directly to Deliverly
+    if (window.location.pathname === '/projects') {
+      setTimeout(() => {
+        const deliverlyProject = document.querySelector('[data-project-id="2"]');
+        if (deliverlyProject) {
+          deliverlyProject.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
     }
   };
 
