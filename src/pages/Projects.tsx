@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { usePageTitle } from '../hooks/usePageTitle';
 import FloatingPlanet from '../components/FloatingPlanet';
@@ -9,7 +10,26 @@ import HallieCaseStudy from '../components/HallieCaseStudy';
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const location = useLocation();
   usePageTitle('PZVC - Projects');
+
+  // Handle navigation from other pages with scroll intent
+  useEffect(() => {
+    const state = location.state as { scrollToProject?: number } | undefined;
+    if (state?.scrollToProject) {
+      const projectId = state.scrollToProject;
+      
+      // Wait for component to mount and render
+      setTimeout(() => {
+        const targetProject = document.querySelector(`[data-project-id="${projectId}"]`);
+        if (targetProject) {
+          targetProject.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Also expand the project details
+          setSelectedProject(projectId);
+        }
+      }, 300);
+    }
+  }, [location.state]);
 
   const projects = [
     {
