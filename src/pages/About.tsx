@@ -20,7 +20,7 @@ const About = () => {
         if (contactElement) {
           contactElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-      }, 300);
+      }, 100);
     }
   }, [location.hash]);
 
