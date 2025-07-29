@@ -60,8 +60,20 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Deliverly Feature Section */}
-      <DeliverlyFeature />
+      {/* Featured Prototype Section */}
+      <section className="relative py-20 px-6 border-y border-border/20 bg-gradient-to-r from-transparent via-muted/30 to-transparent z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-light text-foreground mb-4">
+              Featured prototype
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Explore my latest interactive prototype showcasing innovative design solutions.
+            </p>
+          </div>
+          <DeliverlyFeature />
+        </div>
+      </section>
 
       {/* Contact Section */}
       <section className="relative py-20 px-6 border-y border-border/20 bg-gradient-to-r from-transparent via-muted/30 to-transparent z-10">
