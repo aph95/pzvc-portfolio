@@ -155,7 +155,7 @@ const About = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-lg hover:bg-accent transition-colors duration-200 group min-h-[80px]"
               >
-                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-700 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
                   <FontAwesomeIcon icon={faLinkedin} className="text-white text-xl" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -168,7 +168,7 @@ const About = () => {
                 href="mailto:aleksandar.praizovic.hedstrom@gmail.com"
                 className="flex items-center gap-4 p-4 rounded-lg hover:bg-accent transition-colors duration-200 group min-h-[80px]"
               >
-                <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-700 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
                   <FontAwesomeIcon icon={faEnvelope} className="text-white text-xl" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -181,7 +181,7 @@ const About = () => {
                 href="tel:+46704329507"
                 className="flex items-center gap-4 p-4 rounded-lg hover:bg-accent transition-colors duration-200 group min-h-[80px]"
               >
-                <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-700 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
                   <FontAwesomeIcon icon={faPhone} className="text-white text-xl" />
                 </div>
                 <div className="flex-1 min-w-0">
