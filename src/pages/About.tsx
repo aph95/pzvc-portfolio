@@ -142,7 +142,7 @@ const About = () => {
         </div>
 
         {/* Contact Section */}
-        <div className="fade-in fade-in-delay-4">
+        <div id="contact" className="fade-in fade-in-delay-4">
           <h2 className="text-2xl font-semibold text-foreground mb-8">Let's connect</h2>
           <div className="notion-card p-8 hover:shadow-lg transition-all duration-300">
             <p className="text-muted-foreground mb-8 text-lg">
