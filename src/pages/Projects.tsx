@@ -116,18 +116,18 @@ const Projects = () => {
                 {/* Project Visual */}
                 <div className="md:w-1/2">
                   {project.embedVideoUrl ? (
-                    <div className="aspect-video relative overflow-hidden">
+                    <div className="aspect-video relative overflow-hidden bg-black">
                       <iframe
                         src={project.embedVideoUrl}
                         title={`${project.title} demo video`}
-                        className="w-full h-full"
+                        className="w-full h-full object-cover"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
                       />
                     </div>
                   ) : project.fullCoverImage ? (
-                    <div className="aspect-video relative overflow-hidden">
+                    <div className="aspect-video relative overflow-hidden bg-background">
                       <img 
                         src={project.logo} 
                         alt={`${project.title} illustration`} 
