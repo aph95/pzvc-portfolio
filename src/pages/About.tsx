@@ -153,12 +153,12 @@ const About = () => {
                 href="https://www.linkedin.com/in/aleksandar-praizović-hedström-178b7633a" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-lg hover:bg-accent transition-colors duration-200 group"
+                className="flex items-center gap-4 p-4 rounded-lg hover:bg-accent transition-colors duration-200 group min-h-[80px]"
               >
-                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
                   <FontAwesomeIcon icon={faLinkedin} className="text-white text-xl" />
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                   <p className="font-semibold text-foreground">LinkedIn</p>
                   <p className="text-sm text-muted-foreground">Professional profile</p>
                 </div>
@@ -166,25 +166,25 @@ const About = () => {
 
               <a 
                 href="mailto:aleksandar.praizovic.hedstrom@gmail.com"
-                className="flex items-center gap-4 p-4 rounded-lg hover:bg-accent transition-colors duration-200 group"
+                className="flex items-center gap-4 p-4 rounded-lg hover:bg-accent transition-colors duration-200 group min-h-[80px]"
               >
-                <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
                   <FontAwesomeIcon icon={faEnvelope} className="text-white text-xl" />
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                   <p className="font-semibold text-foreground">Email</p>
-                  <p className="text-sm text-muted-foreground">aleksandar.praizovic.hedstrom@gmail.com</p>
+                  <p className="text-sm text-muted-foreground break-all">aleksandar.praizovic.hedstrom@gmail.com</p>
                 </div>
               </a>
 
               <a 
                 href="tel:+46704329507"
-                className="flex items-center gap-4 p-4 rounded-lg hover:bg-accent transition-colors duration-200 group"
+                className="flex items-center gap-4 p-4 rounded-lg hover:bg-accent transition-colors duration-200 group min-h-[80px]"
               >
-                <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
                   <FontAwesomeIcon icon={faPhone} className="text-white text-xl" />
                 </div>
-                <div>
+                <div className="flex-1 min-w-0">
                   <p className="font-semibold text-foreground">Phone</p>
                   <p className="text-sm text-muted-foreground">070-432 95 07</p>
                 </div>
