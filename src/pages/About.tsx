@@ -2,6 +2,9 @@
 import { useState } from 'react';
 import { usePageTitle } from '../hooks/usePageTitle';
 import FloatingPlanet from '../components/FloatingPlanet';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const About = () => {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
@@ -119,7 +122,7 @@ const About = () => {
         </div>
 
         {/* Skills */}
-        <div className="fade-in fade-in-delay-3">
+        <div className="fade-in fade-in-delay-3 mb-16">
           <h2 className="text-2xl font-semibold text-foreground mb-8">Core competencies</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {skills.map((skillGroup, index) => (
@@ -135,6 +138,58 @@ const About = () => {
                 </ul>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Contact Section */}
+        <div className="fade-in fade-in-delay-4">
+          <h2 className="text-2xl font-semibold text-foreground mb-8">Let's connect</h2>
+          <div className="notion-card p-8 hover:shadow-lg transition-all duration-300">
+            <p className="text-muted-foreground mb-8 text-lg">
+              I'm always interested in new opportunities, collaborations, and conversations about design and technology.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6">
+              <a 
+                href="https://www.linkedin.com/in/aleksandar-praizović-hedström-178b7633a" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-lg hover:bg-accent transition-colors duration-200 group"
+              >
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                  <FontAwesomeIcon icon={faLinkedin} className="text-white text-xl" />
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground">LinkedIn</p>
+                  <p className="text-sm text-muted-foreground">Professional profile</p>
+                </div>
+              </a>
+
+              <a 
+                href="mailto:aleksandar.praizovic.hedstrom@gmail.com"
+                className="flex items-center gap-4 p-4 rounded-lg hover:bg-accent transition-colors duration-200 group"
+              >
+                <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                  <FontAwesomeIcon icon={faEnvelope} className="text-white text-xl" />
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground">Email</p>
+                  <p className="text-sm text-muted-foreground">aleksandar.praizovic.hedstrom@gmail.com</p>
+                </div>
+              </a>
+
+              <a 
+                href="tel:+46704329507"
+                className="flex items-center gap-4 p-4 rounded-lg hover:bg-accent transition-colors duration-200 group"
+              >
+                <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                  <FontAwesomeIcon icon={faPhone} className="text-white text-xl" />
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground">Phone</p>
+                  <p className="text-sm text-muted-foreground">070-432 95 07</p>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
