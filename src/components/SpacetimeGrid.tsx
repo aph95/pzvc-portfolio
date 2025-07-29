@@ -19,30 +19,9 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
     if (!ctx) return;
 
     const resizeCanvas = () => {
-      const container = canvas.parentElement;
-      if (!container) return;
-      
-      const containerRect = container.getBoundingClientRect();
-      const dpr = window.devicePixelRatio || 1;
-      
-      // Use container dimensions directly to avoid zoom issues
-      const width = containerRect.width;
-      const height = containerRect.height;
-      
-      // Set canvas resolution
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-      
-      // Set display size
-      canvas.style.width = width + 'px';
-      canvas.style.height = height + 'px';
-      
-      // Scale context
-      ctx.scale(dpr, dpr);
-      
-      // Store dimensions for calculations
-      canvas.setAttribute('data-width', width.toString());
-      canvas.setAttribute('data-height', height.toString());
+      canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+      canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
     };
 
     resizeCanvas();
@@ -88,11 +67,8 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
       ctx.strokeStyle = gridColor;
       ctx.lineWidth = 1;
 
-      // Use stored dimensions for consistent calculations
-      const width = parseFloat(canvas.getAttribute('data-width') || '0');
-      const height = parseFloat(canvas.getAttribute('data-height') || '0');
-      const cols = Math.ceil(width / gridSize);
-      const rows = Math.ceil(height / gridSize);
+      const cols = Math.ceil(canvas.offsetWidth / gridSize);
+      const rows = Math.ceil(canvas.offsetHeight / gridSize);
 
       // Draw curved vertical lines
       for (let i = 0; i <= cols; i++) {
@@ -185,15 +161,13 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
       // Draw gravitational well visualization around mouse
       if (mousePosition) {
         const rect = canvas.getBoundingClientRect();
-        const width = parseFloat(canvas.getAttribute('data-width') || '0');
-        const height = parseFloat(canvas.getAttribute('data-height') || '0');
         const canvasMouseX = mousePosition.x - rect.left;
         const canvasMouseY = mousePosition.y - rect.top;
         
         // Validate that all values are finite before creating gradient
         if (isFinite(canvasMouseX) && isFinite(canvasMouseY) && 
             canvasMouseX >= 0 && canvasMouseY >= 0 &&
-            canvasMouseX <= width && canvasMouseY <= height) {
+            canvasMouseX <= canvas.offsetWidth && canvasMouseY <= canvas.offsetHeight) {
           
           const gradient = ctx.createRadialGradient(
             canvasMouseX, canvasMouseY, 0,
@@ -224,16 +198,8 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
   return (
     <canvas
       ref={canvasRef}
-      className={`w-full h-full pointer-events-none ${className}`}
-      style={{ 
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        background: 'transparent',
-        opacity: 1
-      }}
+      className={`absolute inset-0 pointer-events-none ${className}`}
+      style={{ width: '100%', height: '100%' }}
     />
   );
 };
