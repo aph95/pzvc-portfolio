@@ -109,7 +109,7 @@ const Projects = () => {
                   ) : project.fullCoverImage ? (
                     <div className="aspect-video relative overflow-hidden">
                       <img 
-                        src="/lovable-uploads/cda45a3a-9892-43ff-a334-5db91e45e0dc.png" 
+                        src={project.logo} 
                         alt={`${project.title} illustration`} 
                         className="w-full h-full object-cover"
                       />
