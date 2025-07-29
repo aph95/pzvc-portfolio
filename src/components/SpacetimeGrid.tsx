@@ -22,19 +22,18 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
       const rect = canvas.getBoundingClientRect();
       const dpr = window.devicePixelRatio || 1;
       
-      // Account for zoom by using actual display size
+      // Set canvas internal resolution
       canvas.width = rect.width * dpr;
       canvas.height = rect.height * dpr;
       
-      // Set canvas display size
-      canvas.style.width = rect.width + 'px';
-      canvas.style.height = rect.height + 'px';
+      // Reset canvas styling to match container exactly
+      canvas.style.width = '100%';
+      canvas.style.height = '100%';
       
-      // Scale context to match device pixel ratio
+      // Scale context for high DPI
       ctx.scale(dpr, dpr);
       
-      // Ensure transparent background
-      ctx.globalCompositeOperation = 'source-over';
+      // Ensure completely transparent background
       ctx.clearRect(0, 0, canvas.width, canvas.height);
     };
 
@@ -214,12 +213,15 @@ const SpacetimeGrid = ({ className = '', mousePosition }: SpacetimeGridProps) =>
   return (
     <canvas
       ref={canvasRef}
-      className={`absolute inset-0 pointer-events-none ${className}`}
+      className={`w-full h-full pointer-events-none ${className}`}
       style={{ 
-        width: '100%', 
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
         height: '100%',
         background: 'transparent',
-        zIndex: -1
+        opacity: 1
       }}
     />
   );
