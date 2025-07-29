@@ -114,9 +114,9 @@ const Projects = () => {
             >
               <div className="md:flex">
                 {/* Project Visual */}
-                <div className="md:w-1/2">
+                <div className="md:w-1/2 h-64 md:h-auto">
                   {project.embedVideoUrl ? (
-                    <div className="aspect-video relative overflow-hidden bg-black">
+                    <div className="w-full h-full relative overflow-hidden bg-black">
                       <iframe
                         src={project.embedVideoUrl}
                         title={`${project.title} demo video`}
@@ -127,7 +127,7 @@ const Projects = () => {
                       />
                     </div>
                   ) : project.fullCoverImage ? (
-                    <div className="aspect-video relative overflow-hidden bg-background">
+                    <div className="w-full h-full relative overflow-hidden bg-background">
                       <img 
                         src={project.logo} 
                         alt={`${project.title} illustration`} 
@@ -135,7 +135,7 @@ const Projects = () => {
                       />
                     </div>
                   ) : (
-                    <div className={`aspect-video bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
+                    <div className={`w-full h-full bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
                       <div className="text-center z-10">
                         {project.logo ? (
                           <img 
