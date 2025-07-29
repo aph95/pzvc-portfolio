@@ -85,12 +85,12 @@ const Home = () => {
             <p className="text-muted-foreground mb-8">
               Ready to collaborate? Send me a message and let's create something extraordinary together.
             </p>
-            <a
-              href="mailto:aleksandar.praizovic.hedstrom@gmail.com"
+            <Link
+              to="/about#contact"
               className="inline-flex items-center px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
             >
               Contact me
-            </a>
+            </Link>
           </div>
         </div>
       </section>
