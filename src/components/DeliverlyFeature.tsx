@@ -93,7 +93,7 @@ const DeliverlyFeature = () => {
                   <img
                     src="/lovable-uploads/bd12014a-c65a-4ffa-ad65-b93088964d27.png"
                     alt="Deliverly mobile app prototype showing profile, login, and delivery tracking screens"
-                    className="w-96 h-auto rounded-3xl shadow-2xl transition-all duration-500"
+                    className="w-[28rem] h-auto rounded-3xl shadow-2xl transition-all duration-500"
                     style={{
                       filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15))',
                       boxShadow: isCardExpanded ? '0 0 0 2px hsl(var(--primary) / 0.3)' : 'none',
@@ -211,7 +211,7 @@ const DeliverlyFeature = () => {
             <img
               src="/lovable-uploads/bd12014a-c65a-4ffa-ad65-b93088964d27.png"
               alt="Deliverly mobile app prototype showing profile, login, and delivery tracking screens"
-              className="w-80 h-auto rounded-3xl shadow-2xl mx-auto"
+              className="w-96 h-auto rounded-3xl shadow-2xl mx-auto"
               style={{
                 filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15))',
               }}
