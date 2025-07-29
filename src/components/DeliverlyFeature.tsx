@@ -51,14 +51,6 @@ const DeliverlyFeature = () => {
   return (
     <section className="relative py-20 px-6 z-10">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 fade-in">
-          <h2 className="text-3xl md:text-4xl font-light text-foreground mb-4">
-            Featured prototype
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Exploring emotionally intelligent design through thoughtful user experiences
-          </p>
-        </div>
 
         {/* Desktop Layout */}
         <div className="hidden lg:block relative px-8 xl:px-6">
