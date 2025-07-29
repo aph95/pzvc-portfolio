@@ -296,6 +296,16 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
             make an outsized impact on daily <strong>user experience</strong>.
           </p>
         </div>
+        
+        {/* Final Mobile App Mockup */}
+        <div className="mt-8">
+          <img 
+            src="/lovable-uploads/b11a809a-ed39-498b-8b41-e52bf273876b.png" 
+            alt="Deliverly mobile app final mockup - Three phone screens showing profile, login, and map interfaces"
+            className="w-full h-auto rounded-lg border border-border"
+          />
+          <p className="text-sm text-muted-foreground text-center mt-2">Complete mobile app interface showcase</p>
+        </div>
       </section>
 
       {/* Collapse Button */}
