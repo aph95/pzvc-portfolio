@@ -21,7 +21,7 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
       <div className="bg-accent/50 rounded-lg p-6">
         <div className="flex items-center gap-3 mb-4">
           <Cog className="h-6 w-6 text-primary" />
-          <h3 className="text-2xl font-bold text-foreground mb-3">Tools used</h3>
+          <h3 className="text-2xl font-bold text-foreground">Tools used</h3>
         </div>
         <p className="text-foreground/80">
           <strong>Software:</strong> Adobe Illustrator, Figma, Draw.io
@@ -32,7 +32,7 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <Smartphone className="h-6 w-6 text-primary" />
-          <h3 className="text-2xl font-bold text-foreground mb-3">Background</h3>
+          <h3 className="text-2xl font-bold text-foreground">Background</h3>
         </div>
         <div className="space-y-4">
           <p className="text-foreground/80 leading-relaxed">
@@ -50,7 +50,7 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <Target className="h-6 w-6 text-primary" />
-          <h3 className="text-2xl font-bold text-foreground mb-3">Project goals</h3>
+          <h3 className="text-2xl font-bold text-foreground">Project goals</h3>
         </div>
         <div className="grid md:grid-cols-2 gap-3">
           {[
@@ -72,7 +72,7 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <Search className="h-6 w-6 text-primary" />
-          <h3 className="text-2xl font-bold text-foreground mb-3">Research & field insights</h3>
+          <h3 className="text-2xl font-bold text-foreground">Research & field insights</h3>
         </div>
         <p className="text-foreground/80 mb-4">
           Being <strong>embedded in the delivery environment</strong> gave me direct access to:
@@ -101,7 +101,7 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <PenTool className="h-6 w-6 text-primary" />
-          <h3 className="text-2xl font-bold text-foreground mb-3">Wireframing & structure</h3>
+          <h3 className="text-2xl font-bold text-foreground">Wireframing & structure</h3>
         </div>
         <p className="text-foreground/80 mb-4">
           Before jumping into high-fidelity design, a complete <strong>wireframe</strong> of the app was created, exploring:
@@ -153,7 +153,7 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <Package className="h-6 w-6 text-primary" />
-          <h3 className="text-2xl font-bold text-foreground mb-3">Design exploration & iteration</h3>
+          <h3 className="text-2xl font-bold text-foreground">Design exploration & iteration</h3>
         </div>
         <p className="text-foreground/80 mb-4">
           After <strong>wireframing</strong>, I moved into refining and testing design elements including:
@@ -202,7 +202,7 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <Palette className="h-6 w-6 text-primary" />
-          <h3 className="text-2xl font-bold text-foreground mb-3">Visual identity & branding</h3>
+          <h3 className="text-2xl font-bold text-foreground">Visual identity & branding</h3>
         </div>
         <p className="text-foreground/80 mb-4">
           Deliverly's <strong>visual identity</strong> was built to reflect:
@@ -227,7 +227,7 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
       <section>
         <div className="flex items-center gap-3 mb-6">
           <Smartphone className="h-6 w-6 text-primary" />
-          <h3 className="text-2xl font-bold text-foreground mb-3">Final prototype</h3>
+          <h3 className="text-2xl font-bold text-foreground">Final prototype</h3>
         </div>
         <p className="text-foreground/80 mb-4">
           The <strong>final prototype</strong> includes:
@@ -283,7 +283,7 @@ const DeliverlyCaseStudy = ({ onCollapse }: DeliverlyCaseStudyProps) => {
       <section className="bg-accent/50 rounded-lg p-8">
         <div className="flex items-center gap-3 mb-6">
           <Trophy className="h-6 w-6 text-primary" />
-          <h3 className="text-2xl font-bold text-foreground mb-3">Summary</h3>
+          <h3 className="text-2xl font-bold text-foreground">Summary</h3>
         </div>
         <div className="space-y-4">
           <p className="text-foreground/80 leading-relaxed text-lg">
