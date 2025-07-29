@@ -60,8 +60,64 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Deliverly Feature Section */}
-      <DeliverlyFeature />
+      {/* Section Divider with Curved Transition */}
+      <div className="relative z-10">
+        <div className="h-24 md:h-32"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-muted/40 pointer-events-none"></div>
+        
+        {/* Curved SVG Divider */}
+        <div className="absolute top-8 left-0 right-0 overflow-hidden">
+          <svg 
+            className="w-full h-16 md:h-20" 
+            viewBox="0 0 1200 120" 
+            preserveAspectRatio="none"
+            fill="none"
+          >
+            <path
+              d="M0,0 C150,60 350,90 600,60 C850,30 1050,60 1200,0 L1200,120 L0,120 Z"
+              fill="hsl(var(--muted) / 0.1)"
+              className="animate-pulse"
+              style={{ animationDuration: '4s' }}
+            />
+            <path
+              d="M0,20 C200,80 400,50 600,70 C800,90 1000,40 1200,20 L1200,120 L0,120 Z"
+              fill="hsl(var(--muted) / 0.05)"
+              className="animate-pulse"
+              style={{ animationDuration: '6s', animationDelay: '1s' }}
+            />
+          </svg>
+        </div>
+
+        {/* Subtle Geometric Accent */}
+        <div className="absolute top-12 left-1/2 transform -translate-x-1/2">
+          <div className="w-1 h-8 bg-gradient-to-b from-primary/20 to-transparent rounded-full"></div>
+        </div>
+      </div>
+
+      {/* Featured Prototype Section with Enhanced Background */}
+      <div className="relative bg-gradient-to-b from-muted/40 via-muted/30 to-background">
+        {/* Section Header */}
+        <div className="relative z-10 pt-16 pb-8 px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-3 px-4 py-2 bg-background/60 backdrop-blur-sm border border-border/30 rounded-full mb-6">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+                Featured Work
+              </span>
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+              Prototype Spotlight
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Dive into my latest design exploration — a real-world mobile app prototype 
+              built from genuine user insights and tested in the field.
+            </p>
+          </div>
+        </div>
+
+        {/* Deliverly Feature Component */}
+        <DeliverlyFeature />
+      </div>
 
       {/* Contact Section */}
       <section className="relative py-20 px-6 border-y border-border/20 bg-gradient-to-r from-transparent via-muted/30 to-transparent z-10">
