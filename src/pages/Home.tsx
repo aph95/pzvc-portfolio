@@ -61,7 +61,7 @@ const Home = () => {
       </section>
 
       {/* Featured Prototype Section Header */}
-      <section className="relative py-12 px-6 border-y border-border/20 bg-gradient-to-r from-transparent via-muted/30 to-transparent z-10">
+      <section className="relative py-12 px-6 border-y border-border/30 bg-gradient-to-r from-transparent via-muted/50 to-transparent z-10">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-light text-foreground mb-4">
             Featured prototype
@@ -76,7 +76,7 @@ const Home = () => {
       <DeliverlyFeature />
 
       {/* Contact Section */}
-      <section className="relative py-20 px-6 border-y border-border/20 bg-gradient-to-r from-transparent via-muted/30 to-transparent z-10">
+      <section className="relative py-20 px-6 border-y border-border/30 bg-gradient-to-r from-transparent via-muted/50 to-transparent z-10">
         <div className="max-w-2xl mx-auto text-center">
           <div className="fade-in">
             <h2 className="text-3xl md:text-4xl font-light text-foreground mb-4">
