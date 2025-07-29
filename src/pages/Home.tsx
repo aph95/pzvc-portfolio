@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden transition-colors duration-300">
       {/* Spacetime Grid Background */}
-      <div className="absolute inset-0">
+      <div className="fixed inset-0 -z-20">
         <SpacetimeGrid mousePosition={mousePosition} />
       </div>
 
