@@ -60,25 +60,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Sci-fi Divider */}
-      <div className="relative z-10 py-16 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="relative flex items-center justify-center">
-            {/* Glowing side lines */}
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-blue-400/40 to-transparent"></div>
-            
-            {/* Central diamond with pulsing glow */}
-            <div className="relative mx-6">
-              <div className="w-3 h-3 bg-blue-400 rotate-45 animate-pulse shadow-lg shadow-blue-400/50"></div>
-              <div className="absolute inset-0 w-3 h-3 bg-blue-400/20 rotate-45 scale-150 animate-ping"></div>
-            </div>
-            
-            {/* Glowing side lines */}
-            <div className="flex-1 h-px bg-gradient-to-l from-transparent via-blue-400/40 to-transparent"></div>
-          </div>
-        </div>
-      </div>
-
       {/* Deliverly Feature Section */}
       <DeliverlyFeature />
 

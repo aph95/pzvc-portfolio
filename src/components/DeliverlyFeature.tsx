@@ -1,13 +1,11 @@
 import { useState, useRef } from 'react';
 import { ChevronRight, X } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 import { useIsMobile } from '../hooks/use-mobile';
 
 const DeliverlyFeature = () => {
   const [isCardExpanded, setIsCardExpanded] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const mockupRef = useRef<HTMLDivElement>(null);
-  const navigate = useNavigate();
   const isMobile = useIsMobile();
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -36,15 +34,17 @@ const DeliverlyFeature = () => {
   };
 
   const navigateToProject = () => {
+    // Navigate to Projects page and scroll to Deliverly case study
+    window.location.href = '/projects#deliverly';
+    
     // If already on projects page, scroll directly to Deliverly
     if (window.location.pathname === '/projects') {
-      const deliverlyProject = document.querySelector('[data-project-id="2"]');
-      if (deliverlyProject) {
-        deliverlyProject.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    } else {
-      // Navigate to Projects page and use state to trigger scroll
-      navigate('/projects', { state: { scrollToProject: 2 } });
+      setTimeout(() => {
+        const deliverlyProject = document.querySelector('[data-project-id="2"]');
+        if (deliverlyProject) {
+          deliverlyProject.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
     }
   };
 
