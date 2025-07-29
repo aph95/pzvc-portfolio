@@ -86,7 +86,7 @@ const DeliverlyFeature = () => {
               >
                 <div className="relative">
                   <img
-                    src="/lovable-uploads/20e376f8-6788-40b1-a233-3e5039e5779e.png"
+                    src="/lovable-uploads/fa5f55aa-fc88-4725-ab83-1f9e1c8c3e68.png"
                     alt="Deliverly mobile app prototype showing delivery interface"
                     className="w-80 h-auto rounded-3xl shadow-2xl transition-all duration-500"
                     style={{
@@ -204,7 +204,7 @@ const DeliverlyFeature = () => {
         <div className="lg:hidden flex justify-center px-6">
           <div className="relative flex flex-col items-center">
             <img
-              src="/lovable-uploads/20e376f8-6788-40b1-a233-3e5039e5779e.png"
+              src="/lovable-uploads/fa5f55aa-fc88-4725-ab83-1f9e1c8c3e68.png"
               alt="Deliverly mobile app prototype showing delivery interface"
               className="w-80 h-auto rounded-3xl shadow-2xl mx-auto"
               style={{
