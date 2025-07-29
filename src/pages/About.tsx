@@ -1,5 +1,6 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { usePageTitle } from '../hooks/usePageTitle';
 import FloatingPlanet from '../components/FloatingPlanet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,7 +9,20 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const About = () => {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
+  const location = useLocation();
   usePageTitle('PZVC - About');
+
+  // Handle hash navigation and scrolling
+  useEffect(() => {
+    if (location.hash === '#contact') {
+      setTimeout(() => {
+        const contactElement = document.getElementById('contact');
+        if (contactElement) {
+          contactElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
+    }
+  }, [location.hash]);
 
   const toggleSection = (section: string) => {
     setExpandedSection(expandedSection === section ? null : section);
