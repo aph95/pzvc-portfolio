@@ -25,7 +25,7 @@ const Home = () => {
       <FloatingPlanet size="md" color="bg-indigo-500" initialX={15} initialY={80} speed={1.6} />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 z-10">
+      <section className="relative pt-32 pb-20 px-6 bg-background/80 backdrop-blur-sm z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="fade-in">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-foreground mb-8 leading-tight">
@@ -61,7 +61,7 @@ const Home = () => {
       </section>
 
       {/* Featured Prototype Section Header */}
-      <section className="relative py-12 px-6 border-y border-border/30 bg-gradient-to-r from-transparent via-muted/50 to-transparent z-10">
+      <section className="relative py-12 px-6 border-y border-border/30 bg-gradient-to-r from-transparent via-muted/50 to-transparent backdrop-blur-sm z-10">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-light text-foreground mb-4">
             Featured prototype
@@ -76,7 +76,7 @@ const Home = () => {
       <DeliverlyFeature />
 
       {/* Contact Section */}
-      <section className="relative py-20 px-6 border-y border-border/30 bg-gradient-to-r from-transparent via-muted/50 to-transparent z-10">
+      <section className="relative py-20 px-6 border-y border-border/30 bg-gradient-to-r from-transparent via-muted/50 to-transparent backdrop-blur-sm z-10">
         <div className="max-w-2xl mx-auto text-center">
           <div className="fade-in">
             <h2 className="text-3xl md:text-4xl font-light text-foreground mb-4">
@@ -96,7 +96,7 @@ const Home = () => {
       </section>
 
       {/* Design Philosophy Section */}
-      <section className="relative py-20 px-6 bg-gradient-to-b from-transparent to-muted/50 z-10">
+      <section className="relative py-20 px-6 bg-gradient-to-b from-transparent to-muted/50 backdrop-blur-sm z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 fade-in">
             <h2 className="text-3xl md:text-4xl font-light text-foreground mb-4">

@@ -49,7 +49,7 @@ const DeliverlyFeature = () => {
   };
 
   return (
-    <section className="relative py-20 px-6 z-10">
+    <section className="relative py-20 px-6 bg-background/90 backdrop-blur-sm z-10">
       <div className="max-w-7xl mx-auto">
 
         {/* Desktop Layout */}
