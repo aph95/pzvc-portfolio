@@ -111,7 +111,7 @@ const Projects = () => {
                       <img 
                         src="/lovable-uploads/d06c33c5-34d9-488d-903a-841b1c3dc27c.png" 
                         alt={`${project.title} illustration`} 
-                        className="w-full h-full object-contain p-8"
+                        className="w-full h-full object-cover"
                       />
                     </div>
                   ) : (
