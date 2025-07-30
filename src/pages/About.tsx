@@ -79,24 +79,33 @@ const About = () => {
         {/* Personal Story */}
         <div className="notion-card p-8 mb-16 fade-in fade-in-delay-1 hover:shadow-lg transition-all duration-300">
           <h2 className="text-2xl font-semibold text-foreground mb-6">My design philosophy</h2>
-          <div className="prose prose-lg text-muted-foreground leading-relaxed space-y-4">
-            <p>
-              My journey into design began with <span className="font-medium text-foreground">freelance graphic design work</span>—initially as a 
-              creative side hustle that sparked my passion for <em>visual communication</em>. This 
-              foundation in design thinking naturally evolved into a deeper fascination with 
-              how users interact with <span className="font-medium text-foreground">digital interfaces</span>.
-            </p>
-            <p>
-              Today, I'm focused on <span className="font-medium text-foreground">frontend development</span>, <span className="font-medium text-foreground">UX design</span>, and <span className="font-medium text-foreground">interaction design</span>, 
-              with a particular interest in how <strong className="text-foreground">artificial intelligence</strong> can enhance the creative 
-              process. I believe <em>AI isn't here to replace designers</em>, but to <strong className="text-foreground">amplify our capabilities</strong>—
-              helping us iterate faster, explore more possibilities, and create more personalized experiences.
-            </p>
-            <p>
-              When I'm not crafting digital experiences, you'll find me exploring the latest 
-              design tools, experimenting with <span className="font-medium text-foreground">AI-powered workflows</span>, or diving deep into 
-              <em>emerging technologies</em> that could shape the future of human-computer interaction.
-            </p>
+          <div className="flex flex-col md:flex-row gap-8 items-start">
+            <div className="prose prose-lg text-muted-foreground leading-relaxed space-y-4 flex-1">
+              <p>
+                My journey into design began with <span className="font-medium text-foreground">freelance graphic design work</span>—initially as a 
+                creative side hustle that sparked my passion for <em>visual communication</em>. This 
+                foundation in design thinking naturally evolved into a deeper fascination with 
+                how users interact with <span className="font-medium text-foreground">digital interfaces</span>.
+              </p>
+              <p>
+                Today, I'm focused on <span className="font-medium text-foreground">frontend development</span>, <span className="font-medium text-foreground">UX design</span>, and <span className="font-medium text-foreground">interaction design</span>, 
+                with a particular interest in how <strong className="text-foreground">artificial intelligence</strong> can enhance the creative 
+                process. I believe <em>AI isn't here to replace designers</em>, but to <strong className="text-foreground">amplify our capabilities</strong>—
+                helping us iterate faster, explore more possibilities, and create more personalized experiences.
+              </p>
+              <p>
+                When I'm not crafting digital experiences, you'll find me exploring the latest 
+                design tools, experimenting with <span className="font-medium text-foreground">AI-powered workflows</span>, or diving deep into 
+                <em>emerging technologies</em> that could shape the future of human-computer interaction.
+              </p>
+            </div>
+            <div className="flex-shrink-0 md:ml-8">
+              <img 
+                src="/lovable-uploads/939cca3f-b207-4c41-9adf-45355cc9d931.png" 
+                alt="Aleksandar Praizovic Hedström"
+                className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover shadow-lg"
+              />
+            </div>
           </div>
         </div>
 
