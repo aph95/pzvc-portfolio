@@ -83,7 +83,7 @@ const About = () => {
             <img 
               src="/lovable-uploads/939cca3f-b207-4c41-9adf-45355cc9d931.png" 
               alt="Aleksandar Praizovic Hedström"
-              className="w-40 h-40 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full object-cover object-[center_20%] shadow-lg mx-auto mb-6 sm:float-right sm:ml-4 sm:mb-3 sm:mt-1 sm:mx-0 cursor-default sm:hover:scale-110 sm:hover:rotate-3 sm:hover:shadow-2xl sm:hover:shadow-primary/20 transition-all duration-300 ease-out blur-[0.3px]"
+              className="w-40 h-40 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full object-cover object-[center_20%] shadow-lg mx-auto mb-6 sm:float-right sm:ml-4 sm:mb-3 sm:mt-1 sm:mx-0 cursor-default sm:hover:scale-110 sm:hover:rotate-3 sm:hover:shadow-2xl sm:hover:shadow-primary/20 transition-all duration-300 ease-out blur-[1px]"
             />
             <p>
               My journey into design began with <span className="font-medium text-foreground">freelance graphic design work</span>—initially as a 
