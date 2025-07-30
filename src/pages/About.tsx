@@ -83,7 +83,7 @@ const About = () => {
             <img 
               src="/lovable-uploads/939cca3f-b207-4c41-9adf-45355cc9d931.png" 
               alt="Aleksandar Praizovic Hedström"
-              className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover object-[center_20%] shadow-lg float-right ml-4 mb-3 mt-1"
+              className="w-32 md:w-40 h-auto shadow-lg float-right ml-4 mb-3"
             />
             <p>
               My journey into design began with <span className="font-medium text-foreground">freelance graphic design work</span>—initially as a 
