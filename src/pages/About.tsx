@@ -69,17 +69,17 @@ const About = () => {
             About my creative journey
           </h1>
           <div className="flex flex-col sm:flex-row sm:items-start gap-6">
-            <p className="text-xl text-muted-foreground leading-relaxed flex-1">
-              I'm <span className="font-semibold text-foreground">Aleksandar Praizovic Hedström</span>, a 29-year-old designer and developer passionate 
-              about creating <span className="font-medium text-foreground">digital experiences</span> that seamlessly blend <em>human intuition</em> with{' '}
-              <em>technological innovation</em>. Currently pursuing my Bachelor's in Informatics with
-              a specialization in <span className="font-medium text-foreground">Digital Design</span> at Kristianstad University.
-            </p>
             <img 
               src="/lovable-uploads/939cca3f-b207-4c41-9adf-45355cc9d931.png" 
               alt="Aleksandar Praizovic Hedström"
               className="w-40 h-40 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full object-cover object-[center_20%] shadow-lg mx-auto sm:mx-0 cursor-default hover:scale-110 hover:rotate-3 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 ease-out flex-shrink-0"
             />
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              I'm <span className="font-semibold text-foreground">Aleksandar Praizovic Hedström</span>, a 29-year-old designer and developer passionate 
+              about creating <span className="font-medium text-foreground">digital experiences</span> that seamlessly blend <em>human intuition</em> with{' '}
+              <em>technological innovation</em>. Currently pursuing my Bachelor's in Informatics with
+              a specialization in <span className="font-medium text-foreground">Digital Design</span> at Kristianstad University.
+            </p>
           </div>
         </div>
 
