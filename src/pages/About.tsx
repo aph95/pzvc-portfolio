@@ -68,23 +68,25 @@ const About = () => {
           <h1 className="text-4xl md:text-5xl font-light text-foreground mb-6">
             About my creative journey
           </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            I'm <span className="font-semibold text-foreground">Aleksandar Praizovic Hedström</span>, a 29-year-old designer and developer passionate 
-            about creating <span className="font-medium text-foreground">digital experiences</span> that seamlessly blend <em>human intuition</em> with{' '}
-            <em>technological innovation</em>. Currently pursuing my Bachelor's in Informatics with
-            a specialization in <span className="font-medium text-foreground">Digital Design</span> at Kristianstad University.
-          </p>
+          <div className="flex flex-col sm:flex-row sm:items-start gap-6">
+            <img 
+              src="/lovable-uploads/939cca3f-b207-4c41-9adf-45355cc9d931.png" 
+              alt="Aleksandar Praizovic Hedström"
+              className="w-40 h-40 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full object-cover object-[center_20%] shadow-lg mx-auto sm:mx-0 cursor-default hover:scale-110 hover:rotate-3 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 ease-out flex-shrink-0"
+            />
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              I'm <span className="font-semibold text-foreground">Aleksandar Praizovic Hedström</span>, a 29-year-old designer and developer passionate 
+              about creating <span className="font-medium text-foreground">digital experiences</span> that seamlessly blend <em>human intuition</em> with{' '}
+              <em>technological innovation</em>. Currently pursuing my Bachelor's in Informatics with
+              a specialization in <span className="font-medium text-foreground">Digital Design</span> at Kristianstad University.
+            </p>
+          </div>
         </div>
 
         {/* Personal Story */}
         <div className="notion-card p-8 mb-16 fade-in fade-in-delay-1 hover:shadow-lg transition-all duration-300">
           <h2 className="text-2xl font-semibold text-foreground mb-6">My design philosophy</h2>
           <div className="prose prose-lg text-muted-foreground leading-relaxed space-y-4">
-            <img 
-              src="/lovable-uploads/939cca3f-b207-4c41-9adf-45355cc9d931.png" 
-              alt="Aleksandar Praizovic Hedström"
-              className="w-40 h-40 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full object-cover object-[center_20%] shadow-lg mx-auto mb-6 sm:float-right sm:ml-4 sm:mb-3 sm:mt-1 sm:mx-0 cursor-default sm:hover:scale-110 sm:hover:rotate-3 sm:hover:shadow-2xl sm:hover:shadow-primary/20 transition-all duration-300 ease-out"
-            />
             <p>
               My journey into design began with <span className="font-medium text-foreground">freelance graphic design work</span>—initially as a 
               creative side hustle that sparked my passion for <em>visual communication</em>. This 
