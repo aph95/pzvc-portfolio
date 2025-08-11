@@ -16,21 +16,21 @@ interface PrototypeData {
 const prototypes: PrototypeData[] = [
   {
     id: 1,
-    name: 'Deliverly',
-    description: 'Feedback-driven delivery experience',
-    detailedDescription: 'Exploring emotionally aware feedback mechanisms for couriers and customers through real-time interaction cues and ethical delivery UX design.',
-    image: '/lovable-uploads/2723c751-3269-43f8-8b05-51ab9d584b30.png',
-    alt: 'Deliverly mobile app prototype showing delivery interface',
-    projectId: 2
-  },
-  {
-    id: 2,
     name: 'Autoclone',
     description: 'AI-powered car companion',
     detailedDescription: 'An intelligent automotive companion that democratizes car knowledge through real-time diagnostics, personalized insights, and AI-driven optimization for every driver.',
     image: '/lovable-uploads/4d825ce7-7683-411e-adbb-fdcd8892b1a4.png',
     alt: 'Autoclone mobile app prototype showing car diagnostic interface',
     projectId: 1
+  },
+  {
+    id: 2,
+    name: 'Deliverly',
+    description: 'Feedback-driven delivery experience',
+    detailedDescription: 'Exploring emotionally aware feedback mechanisms for couriers and customers through real-time interaction cues and ethical delivery UX design.',
+    image: '/lovable-uploads/2723c751-3269-43f8-8b05-51ab9d584b30.png',
+    alt: 'Deliverly mobile app prototype showing delivery interface',
+    projectId: 2
   }
 ];
 
