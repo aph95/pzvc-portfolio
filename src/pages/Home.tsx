@@ -5,7 +5,7 @@ import { useMousePosition } from '../hooks/useMousePosition';
 import { usePageTitle } from '../hooks/usePageTitle';
 import SpacetimeGrid from '../components/SpacetimeGrid';
 import FloatingPlanet from '../components/FloatingPlanet';
-import DeliverlyFeature from '../components/DeliverlyFeature';
+import FeaturedPrototypesCarousel from '../components/FeaturedPrototypesCarousel';
 
 const Home = () => {
   const mousePosition = useMousePosition();
@@ -60,20 +60,20 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Prototype Section Header */}
+      {/* Featured Prototypes Section Header */}
       <section className="relative py-12 px-6 border-y border-border/30 bg-gradient-to-r from-transparent via-muted/50 to-transparent z-10">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-light text-foreground mb-4">
-            Featured prototype
+            Featured prototypes
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Explore my latest interactive prototype showcasing innovative design solutions.
+            Explore my latest interactive prototypes showcasing innovative design solutions.
           </p>
         </div>
       </section>
 
-      {/* Deliverly Feature Section */}
-      <DeliverlyFeature />
+      {/* Featured Prototypes Carousel */}
+      <FeaturedPrototypesCarousel />
 
       {/* Contact Section */}
       <section className="relative py-20 px-6 border-y border-border/30 bg-gradient-to-r from-transparent via-muted/50 to-transparent z-10">
