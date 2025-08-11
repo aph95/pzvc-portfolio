@@ -44,8 +44,8 @@ const Projects = () => {
       impact: "Designed a comprehensive automotive companion that democratizes car knowledge, potentially reducing maintenance costs and improving vehicle longevity through proactive, AI-driven insights.",
       tags: ["AI Design", "Automotive UX", "Data Visualization", "Mobile App"],
       gradient: "from-orange-900/20 to-red-900/40",
-      logo: "/lovable-uploads/3946dae6-46c5-414f-9ae2-b824ae5a64e4.png",
-      fullCoverImage: false,
+      logo: "/lovable-uploads/b0568c1b-20c8-45aa-8eb7-a0f21a5ae5fb.png",
+      fullCoverImage: true,
       prototypeUrl: "https://www.figma.com/proto/autoclone-demo"
     },
     {
