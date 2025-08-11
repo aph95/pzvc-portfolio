@@ -142,48 +142,76 @@ const FeaturedPrototypesCarousel = () => {
         {/* Desktop Layout */}
         <div className="hidden lg:block relative px-8 xl:px-6">
           <div className="flex items-center justify-center relative transition-all duration-700 ease-out max-w-5xl xl:max-w-6xl mx-auto">
-            {/* Prototype Mockup */}
-            <div
-              className={`transition-all duration-700 ease-out ${
-                isCardExpanded ? 'transform -translate-x-12 lg:-translate-x-20 xl:-translate-x-32' : ''
-              }`}
-            >
-              <div
-                ref={mockupRef}
-                className="relative cursor-pointer transition-all duration-500 ease-out hover:scale-105 z-10"
-                style={{
-                  transform: `perspective(1000px) rotateX(${mousePosition.y}deg) rotateY(${mousePosition.x}deg)`,
-                }}
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
-                onClick={handleMockupClick}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    handleMockupClick();
-                  }
-                }}
-                tabIndex={0}
-                role="button"
-                aria-label={`View ${currentPrototype.name} prototype details`}
-                aria-expanded={isCardExpanded}
-              >
-                <div className="relative">
-                  <img
-                    src={currentPrototype.image}
-                    alt={currentPrototype.alt}
-                    className="w-80 h-auto rounded-3xl shadow-2xl transition-all duration-500"
+            
+            {/* Both Prototype Mockups */}
+            {prototypes.map((prototype, index) => {
+              const isActive = index === currentIndex;
+              const zIndex = isActive ? 20 : 10;
+              const translateX = isActive 
+                ? (isCardExpanded ? '-translate-x-12 lg:-translate-x-20 xl:-translate-x-32' : '') 
+                : index < currentIndex ? '-translate-x-40' : 'translate-x-40';
+              
+              return (
+                <div
+                  key={prototype.id}
+                  className={`absolute transition-all duration-700 ease-out ${translateX}`}
+                  style={{ zIndex }}
+                >
+                  <div
+                    ref={isActive ? mockupRef : null}
+                    className={`relative cursor-pointer transition-all duration-500 ease-out hover:scale-105 ${
+                      isActive ? '' : 'opacity-40 hover:opacity-60'
+                    }`}
                     style={{
-                      filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15))',
-                      boxShadow: isCardExpanded ? '0 0 0 2px hsl(var(--primary) / 0.3)' : 'none',
+                      transform: isActive 
+                        ? `perspective(1000px) rotateX(${mousePosition.y}deg) rotateY(${mousePosition.x}deg)`
+                        : 'perspective(1000px) rotateX(0deg) rotateY(0deg)',
                     }}
-                  />
-                  
-                  {/* Hover overlay */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-primary/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                    onMouseMove={isActive ? handleMouseMove : undefined}
+                    onMouseLeave={isActive ? handleMouseLeave : undefined}
+                    onClick={isActive ? handleMockupClick : () => goToSlide(index)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        if (isActive) {
+                          handleMockupClick();
+                        } else {
+                          goToSlide(index);
+                        }
+                      }
+                    }}
+                    tabIndex={0}
+                    role="button"
+                    aria-label={isActive ? `View ${prototype.name} prototype details` : `Switch to ${prototype.name} prototype`}
+                    aria-expanded={isActive ? isCardExpanded : false}
+                  >
+                    <div className="relative">
+                      <img
+                        src={prototype.image}
+                        alt={prototype.alt}
+                        className="w-80 h-auto rounded-3xl shadow-2xl transition-all duration-500"
+                        style={{
+                          filter: `drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15)) ${isActive ? '' : 'grayscale(0.3)'}`,
+                          boxShadow: isActive && isCardExpanded ? '0 0 0 2px hsl(var(--primary) / 0.3)' : 'none',
+                        }}
+                      />
+                      
+                      {/* Hover overlay */}
+                      <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-primary/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                      
+                      {/* Inactive overlay with click hint */}
+                      {!isActive && (
+                        <div className="absolute inset-0 rounded-3xl bg-black/20 hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
+                          <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg text-sm font-medium text-gray-800 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                            Click to view {prototype.name}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              );
+            })}
 
             {/* Animated Connection Line */}
             {isCardExpanded && (
