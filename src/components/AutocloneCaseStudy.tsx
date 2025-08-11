@@ -138,7 +138,7 @@ const AutocloneCaseStudy = ({ onCollapse }: AutocloneCaseStudyProps) => {
           ))}
         </div>
         <div className="my-8 space-y-4 flex justify-center">
-          <div className="relative group rounded-lg border border-border bg-white shadow-sm overflow-hidden max-w-2xl">
+          <div className="relative group rounded-lg border border-border bg-white shadow-sm overflow-hidden max-w-2xl p-6">
             <img
               src="/lovable-uploads/d58a86bb-8ad2-45c1-89e8-d954e406975d.png"
               alt="Autoclone Design Process Flow Diagram"
