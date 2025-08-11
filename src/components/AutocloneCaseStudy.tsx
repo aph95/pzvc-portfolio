@@ -248,8 +248,18 @@ const AutocloneCaseStudy = ({ onCollapse }: AutocloneCaseStudyProps) => {
           <h3 className="text-2xl font-bold text-foreground">AI Assistant feature</h3>
         </div>
         <div className="space-y-6 my-8">
-          <div className="bg-muted/50 rounded-lg p-8 border-2 border-dashed border-muted-foreground/30">
-            <p className="text-center text-muted-foreground italic">Placeholder for AI assistant screenshot</p>
+          <div className="relative group rounded-lg border border-border bg-white shadow-sm overflow-hidden">
+            <img
+              src="/lovable-uploads/609233a1-20e6-47df-9be6-bf7ef3c78e39.png"
+              alt="Autoclone AI Assistant Sparky - Three mobile screens showing the AI chat interface for car diagnostics and troubleshooting"
+              className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start p-4">
+              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 backdrop-blur-sm text-white px-4 py-3 rounded-md shadow-lg">
+                <p className="text-base font-semibold">AI Assistant Interface</p>
+                <p className="text-sm text-white/90">Sparky provides real-time car diagnostics and troubleshooting</p>
+              </div>
+            </div>
           </div>
         </div>
         <p className="text-foreground/80">
