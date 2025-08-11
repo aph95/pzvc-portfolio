@@ -46,7 +46,7 @@ const Projects = () => {
       gradient: "from-orange-900/20 to-red-900/40",
       logo: "/lovable-uploads/b0568c1b-20c8-45aa-8eb7-a0f21a5ae5fb.png",
       fullCoverImage: true,
-      prototypeUrl: "https://www.figma.com/proto/autoclone-demo"
+      prototypeUrl: "https://www.figma.com/proto/8FZt5qhEkm2dDkLeHheRoC/Digital-twin--Autoclone-?node-id=29-120&t=sKDaG9ME3GRrpvx7-1"
     },
     {
       id: 2,
