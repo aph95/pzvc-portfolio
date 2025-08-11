@@ -105,14 +105,58 @@ const AutocloneCaseStudy = ({ onCollapse }: AutocloneCaseStudyProps) => {
           <PenTool className="h-6 w-6 text-primary" />
           <h3 className="text-2xl font-bold text-foreground">Early wireframes</h3>
         </div>
-        <div className="space-y-6 my-8">
-          <div className="bg-muted/50 rounded-lg p-8 border-2 border-dashed border-muted-foreground/30">
-            <p className="text-center text-muted-foreground italic">Placeholder for wireframe image</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+          <div className="relative group rounded-lg border border-border bg-white shadow-sm overflow-hidden">
+            <img
+              src="/lovable-uploads/2225ebc2-778c-4421-b097-4433c1d83735.png"
+              alt="Autoclone Login Screen Wireframe"
+              className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start p-4">
+              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 backdrop-blur-sm text-white px-3 py-2 rounded-md shadow-lg">
+                <p className="text-sm font-medium">Login Screen</p>
+              </div>
+            </div>
+          </div>
+          <div className="relative group rounded-lg border border-border bg-white shadow-sm overflow-hidden">
+            <img
+              src="/lovable-uploads/b18f0a3a-ba71-4927-8b02-3f73f3e03f47.png"
+              alt="Autoclone Registration Screen Wireframe"
+              className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start p-4">
+              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 backdrop-blur-sm text-white px-3 py-2 rounded-md shadow-lg">
+                <p className="text-sm font-medium">Registration Screen</p>
+              </div>
+            </div>
+          </div>
+          <div className="relative group rounded-lg border border-border bg-white shadow-sm overflow-hidden">
+            <img
+              src="/lovable-uploads/f80a0782-cd3f-4cfe-be4b-52f855955a24.png"
+              alt="Autoclone OBD-II Connection Screen Wireframe"
+              className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start p-4">
+              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 backdrop-blur-sm text-white px-3 py-2 rounded-md shadow-lg">
+                <p className="text-sm font-medium">OBD-II Connection</p>
+              </div>
+            </div>
+          </div>
+          <div className="relative group rounded-lg border border-border bg-white shadow-sm overflow-hidden">
+            <img
+              src="/lovable-uploads/52439007-8092-4b77-99f2-230dad1b02b0.png"
+              alt="Autoclone Successfully Paired Screen Wireframe"
+              className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-start justify-start p-4">
+              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/80 backdrop-blur-sm text-white px-3 py-2 rounded-md shadow-lg">
+                <p className="text-sm font-medium">Successfully Paired</p>
+              </div>
+            </div>
           </div>
         </div>
         <p className="text-foreground/80">
-          These early layouts mapped out core user flows for logging in, connecting an OBD-II reader, 
-          and navigating between Dashboard, Diagnostics, Analytics, and Optimization pages.
+          These early layouts mapped out core user flows for logging in and connecting the OBD-II reader to the app.
         </p>
       </section>
 
