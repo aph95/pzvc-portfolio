@@ -35,6 +35,21 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "Autoclone",
+      category: "AI Automotive Design",
+      year: "2025",
+      description: "An AI-powered car companion for diagnostics, analytics, and performance optimization. Designed to simplify car maintenance and enhance the driving experience through intelligent insights.",
+      challenge: "Car diagnostics and maintenance are complex and intimidating for everyday drivers, often requiring expensive trips to mechanics for basic information and optimization guidance.",
+      solution: "Created an AI-powered platform that connects to OBD-II systems, providing real-time diagnostics, personalized optimization suggestions, and accessible troubleshooting guidance for all skill levels.",
+      impact: "Designed a comprehensive automotive companion that democratizes car knowledge, potentially reducing maintenance costs and improving vehicle longevity through proactive, AI-driven insights.",
+      tags: ["AI Design", "Automotive UX", "Data Visualization", "Mobile App"],
+      gradient: "from-orange-900/20 to-red-900/40",
+      logo: "/lovable-uploads/3946dae6-46c5-414f-9ae2-b824ae5a64e4.png",
+      fullCoverImage: false,
+      prototypeUrl: "https://www.figma.com/proto/autoclone-demo"
+    },
+    {
+      id: 2,
       title: "Patient Zero",
       category: "Phygital Game Design",
       year: "2025",
@@ -49,7 +64,7 @@ const Projects = () => {
       embedVideoUrl: "https://www.youtube.com/embed/20dxeJcHg78"
     },
     {
-      id: 2,
+      id: 3,
       title: "Deliverly",
       category: "Mobile App Design",
       year: "2025",
@@ -64,7 +79,7 @@ const Projects = () => {
       prototypeUrl: "https://www.figma.com/proto/R3S5emLjv1eL84nVBFdszs/Deliverly?node-id=48-1133&t=X23M6OvpfhyIXPxK-1"
     },
     {
-      id: 3,
+      id: 4,
       title: "Hallie",
       category: "AI Companion Design",
       year: "2025",
@@ -77,21 +92,6 @@ const Projects = () => {
       logo: "/lovable-uploads/3037bcf4-215e-4a32-9131-2c8d7962d443.png",
       fullCoverImage: true,
       prototypeUrl: "https://xd.adobe.com/view/2e78f163-164a-4b70-b7c9-cfb3f7e21205-7b2b/"
-    },
-    {
-      id: 4,
-      title: "Autoclone",
-      category: "AI Automotive Design",
-      year: "2025",
-      description: "An AI-powered car companion for diagnostics, analytics, and performance optimization. Designed to simplify car maintenance and enhance the driving experience through intelligent insights.",
-      challenge: "Car diagnostics and maintenance are complex and intimidating for everyday drivers, often requiring expensive trips to mechanics for basic information and optimization guidance.",
-      solution: "Created an AI-powered platform that connects to OBD-II systems, providing real-time diagnostics, personalized optimization suggestions, and accessible troubleshooting guidance for all skill levels.",
-      impact: "Designed a comprehensive automotive companion that democratizes car knowledge, potentially reducing maintenance costs and improving vehicle longevity through proactive, AI-driven insights.",
-      tags: ["AI Design", "Automotive UX", "Data Visualization", "Mobile App"],
-      gradient: "from-orange-900/20 to-red-900/40",
-      logo: "/lovable-uploads/3946dae6-46c5-414f-9ae2-b824ae5a64e4.png",
-      fullCoverImage: false,
-      prototypeUrl: "https://www.figma.com/proto/autoclone-demo"
     }
   ];
 
@@ -261,13 +261,13 @@ const Projects = () => {
               {selectedProject === project.id && (
                 <div className="border-t border-border p-8 animate-fade-in bg-accent/50">
                   {project.id === 1 ? (
-                    <PatientZeroCaseStudy onCollapse={() => setSelectedProject(null)} />
-                  ) : project.id === 2 ? (
-                    <DeliverlyCaseStudy onCollapse={() => setSelectedProject(null)} />
-                  ) : project.id === 3 ? (
-                    <HallieCaseStudy onCollapse={() => setSelectedProject(null)} />
-                  ) : project.id === 4 ? (
                     <AutocloneCaseStudy onCollapse={() => setSelectedProject(null)} />
+                  ) : project.id === 2 ? (
+                    <PatientZeroCaseStudy onCollapse={() => setSelectedProject(null)} />
+                  ) : project.id === 3 ? (
+                    <DeliverlyCaseStudy onCollapse={() => setSelectedProject(null)} />
+                  ) : project.id === 4 ? (
+                    <HallieCaseStudy onCollapse={() => setSelectedProject(null)} />
                   ) : (
                     <div className="grid md:grid-cols-3 gap-8">
                       <div>
