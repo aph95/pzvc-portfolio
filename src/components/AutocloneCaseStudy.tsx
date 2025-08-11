@@ -236,8 +236,12 @@ const AutocloneCaseStudy = ({ onCollapse }: AutocloneCaseStudyProps) => {
             </div>
           ))}
         </div>
-        <div className="bg-muted/50 rounded-lg p-8 border-2 border-dashed border-muted-foreground/30">
-          <p className="text-center text-muted-foreground italic">Placeholder for UI mockup gallery</p>
+        <div className="flex justify-center my-8">
+          <img
+            src="/lovable-uploads/d0d4685c-21a5-413b-868f-3e584d0a99ff.png"
+            alt="Autoclone UI mockup gallery - Five mobile screens showing optimization settings, login, analytics dashboard, and welcome screen"
+            className="w-full max-w-6xl h-auto"
+          />
         </div>
       </section>
 
