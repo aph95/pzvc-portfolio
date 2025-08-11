@@ -123,6 +123,21 @@ const AutocloneCaseStudy = ({ onCollapse }: AutocloneCaseStudyProps) => {
           <h3 className="text-2xl font-bold text-foreground">Prototyping & feedback</h3>
         </div>
         <p className="text-foreground/80 mb-4">
+          Three rounds of user research were conducted with actual stakeholders:
+        </p>
+        <div className="space-y-3 mb-6">
+          {[
+            "<strong>Generative research</strong> – Conducted with 3 individuals to gather needs and ideas, which directly informed the low-fidelity prototype.",
+            "<strong>First user test</strong> – Conducted with 3 new individuals, leading to the creation of the high-fidelity prototype.",
+            "<strong>Final user test</strong> – Conducted with 3 additional individuals, resulting in the iterated high-fidelity prototype."
+          ].map((item, index) => (
+            <div key={index} className="flex items-start gap-3 p-3 bg-accent/30 rounded-lg">
+              <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
+              <span className="text-foreground/80"><SafeTextRenderer text={item} /></span>
+            </div>
+          ))}
+        </div>
+        <p className="text-foreground/80 mb-4">
           I created and tested multiple iterations focusing on:
         </p>
         <div className="grid md:grid-cols-2 gap-3">
