@@ -286,6 +286,22 @@ const AutocloneCaseStudy = ({ onCollapse }: AutocloneCaseStudyProps) => {
         </div>
       </section>
 
+      {/* Credits */}
+      <section className="text-center py-6 border-t border-border">
+        <p className="text-sm text-muted-foreground">
+          Vehicle model courtesy of{" "}
+          <a
+            href="https://sketchfab.com/BlackSnow02"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:text-primary/80 transition-colors duration-200"
+          >
+            BlackSnow02
+          </a>
+          {" "}on Sketchfab
+        </p>
+      </section>
+
       {/* Collapse Button */}
       {onCollapse && (
         <div className="text-center pt-8">
