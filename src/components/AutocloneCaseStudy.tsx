@@ -17,6 +17,16 @@ const AutocloneCaseStudy = ({ onCollapse }: AutocloneCaseStudyProps) => {
         </p>
       </div>
 
+      {/* Cover Photo */}
+      <div className="mt-8">
+        <img 
+          src="/lovable-uploads/b0568c1b-20c8-45aa-8eb7-a0f21a5ae5fb.png" 
+          alt="Autoclone mobile app mockup - Multiple phone screens showcasing the car diagnostic and optimization interface"
+          className="w-full h-auto rounded-lg border border-border"
+        />
+        <p className="text-sm text-muted-foreground text-center mt-2">Complete mobile app interface showcase</p>
+      </div>
+
       {/* Tools Used */}
       <div className="bg-accent/50 rounded-lg p-6">
         <div className="flex items-center gap-3 mb-4">
