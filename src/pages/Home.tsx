@@ -9,7 +9,7 @@ import FeaturedPrototypesCarousel from '../components/FeaturedPrototypesCarousel
 
 const Home = () => {
   const mousePosition = useMousePosition();
-  usePageTitle('PZVC - Home');
+  usePageTitle('Aleksandar Praizovic Hedström - UX & Frontend Designer Portfolio');
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden transition-colors duration-300">

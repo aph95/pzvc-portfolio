@@ -12,7 +12,7 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
   const location = useLocation();
-  usePageTitle('PZVC - Projects');
+  usePageTitle('Projects - Aleksandar Praizovic Hedström | Portfolio Case Studies');
 
   // Handle navigation from other pages with scroll intent
   useEffect(() => {

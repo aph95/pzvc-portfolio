@@ -10,7 +10,7 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 const About = () => {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const location = useLocation();
-  usePageTitle('PZVC - About');
+  usePageTitle('About - Aleksandar Praizovic Hedström | UX & Frontend Designer');
 
   // Handle hash navigation and scrolling
   useEffect(() => {
