@@ -13,26 +13,25 @@ const Home = () => {
   usePageTitle('Aleksandar Praizovic Hedström - UX & Frontend Designer Portfolio');
 
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden transition-colors duration-300">
-      {/* Dark Veil Background */}
-      <div className="absolute inset-0 z-0">
-        <DarkVeil />
-      </div>
-
-      {/* Spacetime Grid Background */}
-      <div className="absolute inset-0 z-1">
-        <SpacetimeGrid mousePosition={mousePosition} />
-      </div>
-
-      {/* Floating Planets */}
-      <FloatingPlanet size="lg" color="bg-blue-500" initialX={20} initialY={30} speed={1.4} />
-      <FloatingPlanet size="md" color="bg-purple-500" initialX={80} initialY={20} speed={1.8} />
-      <FloatingPlanet size="sm" color="bg-green-500" initialX={70} initialY={70} speed={1.2} />
-      <FloatingPlanet size="md" color="bg-indigo-500" initialX={15} initialY={80} speed={1.6} />
-
+    <div className="bg-background transition-colors duration-300">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 z-10">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative min-h-screen overflow-hidden pt-32 pb-20 px-6">
+        {/* Dark Veil Background */}
+        <div className="absolute inset-0 z-0">
+          <DarkVeil />
+        </div>
+
+        {/* Spacetime Grid Background */}
+        <div className="absolute inset-0 z-1">
+          <SpacetimeGrid mousePosition={mousePosition} />
+        </div>
+
+        {/* Floating Planets */}
+        <FloatingPlanet size="lg" color="bg-blue-500" initialX={20} initialY={30} speed={1.4} />
+        <FloatingPlanet size="md" color="bg-purple-500" initialX={80} initialY={20} speed={1.8} />
+        <FloatingPlanet size="sm" color="bg-green-500" initialX={70} initialY={70} speed={1.2} />
+        <FloatingPlanet size="md" color="bg-indigo-500" initialX={15} initialY={80} speed={1.6} />
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="fade-in">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-foreground mb-8 leading-tight">
               Hi, I'm <span className="text-blue-400 font-medium">Aleksandar</span> —
