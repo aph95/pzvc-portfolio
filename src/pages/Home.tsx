@@ -6,6 +6,7 @@ import { usePageTitle } from '../hooks/usePageTitle';
 import SpacetimeGrid from '../components/SpacetimeGrid';
 import FloatingPlanet from '../components/FloatingPlanet';
 import FeaturedPrototypesCarousel from '../components/FeaturedPrototypesCarousel';
+import DarkVeil from '../components/DarkVeil';
 
 const Home = () => {
   const mousePosition = useMousePosition();
@@ -13,8 +14,13 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden transition-colors duration-300">
+      {/* Dark Veil Background */}
+      <div className="absolute inset-0 z-0">
+        <DarkVeil />
+      </div>
+
       {/* Spacetime Grid Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-1">
         <SpacetimeGrid mousePosition={mousePosition} />
       </div>
 
