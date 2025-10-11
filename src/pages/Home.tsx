@@ -6,7 +6,7 @@ import { usePageTitle } from '../hooks/usePageTitle';
 import SpacetimeGrid from '../components/SpacetimeGrid';
 import FloatingPlanet from '../components/FloatingPlanet';
 import FeaturedPrototypesCarousel from '../components/FeaturedPrototypesCarousel';
-import DarkVeil from '../components/DarkVeil';
+import LightRays from '../components/LightRays';
 
 const Home = () => {
   const mousePosition = useMousePosition();
@@ -16,9 +16,19 @@ const Home = () => {
     <div className="bg-background transition-colors duration-300">
       {/* Hero Section */}
       <section className="relative min-h-screen overflow-hidden pt-32 pb-20 px-6">
-        {/* Dark Veil Background */}
+        {/* Light Rays Background */}
         <div className="absolute inset-0 z-0">
-          <DarkVeil />
+          <LightRays
+            raysOrigin="top-center"
+            raysColor="#00ffff"
+            raysSpeed={1.5}
+            lightSpread={0.8}
+            rayLength={1.2}
+            followMouse={true}
+            mouseInfluence={0.1}
+            noiseAmount={0.1}
+            distortion={0.05}
+          />
         </div>
 
         {/* Spacetime Grid Background */}
