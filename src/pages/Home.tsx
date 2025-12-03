@@ -1,31 +1,37 @@
-
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
-import { useMousePosition } from '../hooks/useMousePosition';
 import { usePageTitle } from '../hooks/usePageTitle';
-import SpacetimeGrid from '../components/SpacetimeGrid';
-import FloatingPlanet from '../components/FloatingPlanet';
+import LiquidEther from '../components/LiquidEther';
 import FeaturedPrototypesCarousel from '../components/FeaturedPrototypesCarousel';
 
 const Home = () => {
-  const mousePosition = useMousePosition();
   usePageTitle('Aleksandar Praizovic Hedström - UX & Frontend Designer Portfolio');
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden transition-colors duration-300">
-      {/* Spacetime Grid Background */}
-      <div className="absolute inset-0">
-        <SpacetimeGrid mousePosition={mousePosition} />
+      {/* LiquidEther Background - Full viewport hero */}
+      <div className="absolute inset-0 h-screen">
+        <LiquidEther
+          colors={['#5227FF', '#FF9FFC', '#B19EEF']}
+          mouseForce={20}
+          cursorSize={100}
+          isViscous={false}
+          viscous={30}
+          iterationsViscous={32}
+          iterationsPoisson={32}
+          resolution={0.5}
+          isBounce={false}
+          autoDemo={true}
+          autoSpeed={0.5}
+          autoIntensity={2.2}
+          takeoverDuration={0.25}
+          autoResumeDelay={3000}
+          autoRampDuration={0.6}
+        />
       </div>
 
-      {/* Floating Planets */}
-      <FloatingPlanet size="lg" color="bg-blue-500" initialX={20} initialY={30} speed={1.4} />
-      <FloatingPlanet size="md" color="bg-purple-500" initialX={80} initialY={20} speed={1.8} />
-      <FloatingPlanet size="sm" color="bg-green-500" initialX={70} initialY={70} speed={1.2} />
-      <FloatingPlanet size="md" color="bg-indigo-500" initialX={15} initialY={80} speed={1.6} />
-
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 z-10">
+      <section className="relative min-h-screen flex items-center justify-center px-6 z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="fade-in">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-foreground mb-8 leading-tight">
