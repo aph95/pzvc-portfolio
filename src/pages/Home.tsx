@@ -61,24 +61,22 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Prototypes Section */}
-      <section className="relative py-20 px-6 z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/3 text-center lg:text-left">
-              <BlurText
-                text="Featured prototypes"
-                delay={80}
-                animateBy="words"
-                direction="top"
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight"
-              />
-            </div>
-            <div className="lg:w-2/3">
-              <FeaturedPrototypesCarousel />
-            </div>
-          </div>
+      {/* Featured Prototypes Divider */}
+      <section className="relative py-16 px-6 border-y border-border/30 bg-gradient-to-r from-transparent via-muted/10 to-transparent z-10">
+        <div className="max-w-6xl mx-auto text-center">
+          <BlurText
+            text="Featured prototypes"
+            delay={80}
+            animateBy="words"
+            direction="top"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight"
+          />
         </div>
+      </section>
+
+      {/* Featured Prototypes Carousel */}
+      <section className="relative py-12 z-10">
+        <FeaturedPrototypesCarousel />
       </section>
 
       {/* Contact Section */}
