@@ -140,12 +140,12 @@ const About = () => {
           {/* Philosophy Card */}
           <motion.div 
             variants={itemVariants}
-            className="relative bg-card rounded-3xl border border-border/50 p-6 sm:p-8 overflow-hidden group"
+            className="relative bg-card rounded-3xl border border-border/50 p-6 sm:p-8 overflow-hidden group flex flex-col"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative">
+            <div className="relative flex flex-col flex-1">
               <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Design Philosophy</h2>
-              <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
+              <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-muted-foreground leading-relaxed flex-1 flex flex-col justify-between">
                 <p>
                   My journey into design began with freelance graphic design work—initially as a 
                   creative side hustle that sparked my passion for visual communication.
@@ -165,12 +165,12 @@ const About = () => {
           {/* Experience Card */}
           <motion.div 
             variants={itemVariants}
-            className="relative bg-card rounded-3xl border border-border/50 p-6 sm:p-8 overflow-hidden group"
+            className="relative bg-card rounded-3xl border border-border/50 p-6 sm:p-8 overflow-hidden group flex flex-col"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative">
+            <div className="relative flex flex-col flex-1">
               <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">Experience</h2>
-              <div className="space-y-4 sm:space-y-5">
+              <div className="flex-1 flex flex-col justify-between">
                 {experiences.map((exp, index) => (
                   <motion.div 
                     key={index} 
