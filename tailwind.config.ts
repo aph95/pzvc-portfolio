@@ -10,8 +10,8 @@ export default {
 		"./src/**/*.{ts,tsx}",
 	],
 	prefix: "",
-	theme: {
-		container: {
+  theme: {
+    container: {
 			center: true,
 			padding: '2rem',
 			screens: {
@@ -22,6 +22,7 @@ export default {
 			fontFamily: {
 				inter: ['Inter', 'system-ui', 'sans-serif'],
 				outfit: ['Outfit', 'system-ui', 'sans-serif'],
+				serif: ['Playfair Display', 'Georgia', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
