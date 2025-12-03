@@ -83,59 +83,23 @@ const SinglePagePortfolio = () => {
         </div>
 
         <div className="relative z-10 h-full flex flex-col items-center justify-center px-6">
-          {/* Small caps label */}
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xs sm:text-sm tracking-[0.3em] uppercase text-white/60 mb-6 font-light"
-          >
-            Portfolio 2025
-          </motion.span>
-
-          {/* Main headline - Large expressive typography */}
+          {/* Main headline */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center text-white leading-[0.95] mb-4"
+            transition={{ duration: 1, delay: 0.2 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center text-white leading-tight"
           >
-            <span className="block">UX Designer</span>
-            <span className="block mt-2 font-light text-white/80">&</span>
-            <span className="block mt-2 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
-              No-Code Developer
-            </span>
+            User experience
+            <span className="block mt-2">&amp; web development</span>
           </motion.h1>
-
-          {/* Subheader - Light wide */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-8 text-lg sm:text-xl md:text-2xl text-white/70 font-extralight tracking-wide text-center max-w-2xl"
-          >
-            Crafting intuitive digital experiences through
-            <span className="text-white font-normal"> thoughtful design </span>
-            and
-            <span className="text-white font-normal"> modern technology</span>
-          </motion.p>
-
-          {/* Name with serif accent */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="mt-12 text-base sm:text-lg text-white/50 font-serif italic"
-          >
-            Aleksandar Praizovic Hedström
-          </motion.p>
 
           {/* Scroll indicator */}
           <motion.button
             onClick={() => scrollToSection('about')}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.5 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
             className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/60 hover:text-white transition-colors"
           >
             <motion.div
