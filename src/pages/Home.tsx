@@ -80,7 +80,7 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="relative py-20 px-6 border-y border-border/30 bg-gradient-to-r from-transparent via-muted/10 to-transparent z-10">
+      <section className="relative py-16 px-6 border-y border-border/30 bg-gradient-to-r from-transparent via-muted/10 to-transparent z-10">
         <div className="max-w-2xl mx-auto text-center">
           <div className="mb-8">
             <BlurText
