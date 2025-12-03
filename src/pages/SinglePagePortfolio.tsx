@@ -72,9 +72,9 @@ const SinglePagePortfolio = () => {
   };
 
   return (
-    <div ref={containerRef} className="bg-background text-foreground">
+    <div ref={containerRef} className="snap-container bg-background text-foreground">
       {/* HOME SECTION */}
-      <section id="home" className="h-screen relative overflow-hidden snap-start">
+      <section id="home" className="h-screen relative overflow-hidden snap-section">
         {/* LiquidEther Background */}
         <div className="absolute inset-0">
           <LiquidEther
@@ -163,7 +163,7 @@ const SinglePagePortfolio = () => {
       <section 
         ref={aboutRef}
         id="about" 
-        className="min-h-screen relative snap-start flex items-center py-24 px-6"
+        className="min-h-screen relative snap-section flex items-center py-24 px-6"
       >
         {/* Subtle gradient background */}
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-purple-950/20" />
@@ -318,7 +318,7 @@ const SinglePagePortfolio = () => {
       <section 
         ref={projectsRef}
         id="projects" 
-        className="min-h-screen relative snap-start py-24 px-6"
+        className="min-h-screen relative snap-section py-24 px-6"
       >
         {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-purple-950/20 via-background to-background" />
