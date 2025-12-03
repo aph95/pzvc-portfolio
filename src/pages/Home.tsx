@@ -80,18 +80,21 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="relative py-20 px-6 border-y border-border/30 bg-gradient-to-r from-transparent via-muted/50 to-transparent z-10">
+      <section className="relative py-20 px-6 border-y border-border/30 bg-gradient-to-r from-transparent via-muted/10 to-transparent z-10">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="fade-in">
-            <h2 className="text-3xl md:text-4xl font-light text-foreground mb-4">
-              Get in touch
-            </h2>
-            <p className="text-muted-foreground mb-8">
-              Ready to collaborate? Send me a message and let's create something extraordinary together.
-            </p>
+          <div className="mb-8">
+            <BlurText
+              text="Get in touch"
+              delay={80}
+              animateBy="words"
+              direction="top"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight"
+            />
+          </div>
+          <div className="fade-in fade-in-delay-2">
             <Link
               to="/about#contact"
-              className="inline-flex items-center px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-black font-medium rounded-full hover:bg-white/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
             >
               Contact me
             </Link>
