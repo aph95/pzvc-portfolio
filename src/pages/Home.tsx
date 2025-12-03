@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { usePageTitle } from '../hooks/usePageTitle';
 import LiquidEther from '../components/LiquidEther';
 import BlurText from '../components/BlurText';
-import ScrollFloat from '../components/ScrollFloat';
 import FeaturedPrototypesCarousel from '../components/FeaturedPrototypesCarousel';
 
 const Home = () => {
@@ -67,16 +66,13 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/3 text-center lg:text-left">
-              <ScrollFloat
-                animationDuration={1}
-                ease="back.inOut(2)"
-                scrollStart="center bottom+=50%"
-                scrollEnd="bottom bottom-=40%"
-                stagger={0.03}
-                textClassName="text-foreground"
-              >
-                Featured prototypes
-              </ScrollFloat>
+              <BlurText
+                text="Featured prototypes"
+                delay={80}
+                animateBy="words"
+                direction="top"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight"
+              />
             </div>
             <div className="lg:w-2/3">
               <FeaturedPrototypesCarousel />
