@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { usePageTitle } from '../hooks/usePageTitle';
 import LiquidEther from '../components/LiquidEther';
 import BlurText from '../components/BlurText';
+import ScrollFloat from '../components/ScrollFloat';
 import FeaturedPrototypesCarousel from '../components/FeaturedPrototypesCarousel';
 
 const Home = () => {
@@ -61,20 +62,28 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Prototypes Section Header */}
-      <section className="relative py-12 px-6 border-y border-border/30 bg-gradient-to-r from-transparent via-muted/50 to-transparent z-10">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-light text-foreground mb-4">
-            Featured prototypes
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Explore my latest interactive prototypes showcasing innovative design solutions.
-          </p>
+      {/* Featured Prototypes Section */}
+      <section className="relative py-20 px-6 z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="lg:w-1/3 text-center lg:text-left">
+              <ScrollFloat
+                animationDuration={1}
+                ease="back.inOut(2)"
+                scrollStart="center bottom+=50%"
+                scrollEnd="bottom bottom-=40%"
+                stagger={0.03}
+                textClassName="text-foreground"
+              >
+                Featured prototypes
+              </ScrollFloat>
+            </div>
+            <div className="lg:w-2/3">
+              <FeaturedPrototypesCarousel />
+            </div>
+          </div>
         </div>
       </section>
-
-      {/* Featured Prototypes Carousel */}
-      <FeaturedPrototypesCarousel />
 
       {/* Contact Section */}
       <section className="relative py-20 px-6 border-y border-border/30 bg-gradient-to-r from-transparent via-muted/50 to-transparent z-10">
