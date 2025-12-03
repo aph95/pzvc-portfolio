@@ -34,23 +34,13 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-6 z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-4">
-            <BlurText
-              text="Aleksandar Praizovic Hedström"
-              delay={100}
-              animateBy="words"
-              direction="top"
-              className="text-5xl md:text-6xl lg:text-7xl font-light text-white leading-tight"
-            />
-          </div>
-          
           <div className="mb-12">
             <BlurText
               text="User experience and web development"
-              delay={80}
+              delay={100}
               animateBy="words"
               direction="top"
-              className="text-xl md:text-2xl text-white/90 leading-relaxed"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
             />
           </div>
           
