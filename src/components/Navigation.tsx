@@ -25,8 +25,6 @@ const Navigation = () => {
               PZVC
             </Link>
             
-            <div className="w-px h-4 bg-white/20 dark:bg-white/10" />
-            
             <div className="flex items-center gap-1">
               {links.map((link) => (
                 <Link
