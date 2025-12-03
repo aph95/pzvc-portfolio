@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ArrowDown, Linkedin, Mail, Phone, ExternalLink } from 'lucide-react';
-import Dither from '../components/Dither';
+import LiquidEther from '../components/LiquidEther';
 
 const SinglePagePortfolio = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -69,17 +69,16 @@ const SinglePagePortfolio = () => {
     <div ref={containerRef} className="snap-container bg-background text-foreground relative">
       {/* HOME SECTION */}
       <section id="home" className="h-screen relative overflow-hidden snap-section">
-        {/* Dither Background */}
+        {/* LiquidEther Background */}
         <div className="absolute inset-0">
-          <Dither
-            waveColor={[0.5, 0.5, 0.5]}
-            disableAnimation={false}
-            enableMouseInteraction={true}
-            mouseRadius={0.3}
-            colorNum={4}
-            waveAmplitude={0.3}
-            waveFrequency={3}
-            waveSpeed={0.05}
+          <LiquidEther
+            colors={['#5227FF', '#FF9FFC', '#B19EEF']}
+            mouseForce={20}
+            cursorSize={100}
+            isViscous={false}
+            autoDemo={true}
+            autoSpeed={0.5}
+            autoIntensity={2.2}
           />
         </div>
 
