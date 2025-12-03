@@ -7,9 +7,11 @@ const SinglePagePortfolio = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
   
   const aboutInView = useInView(aboutRef, { once: true, margin: "-20%" });
   const projectsInView = useInView(projectsRef, { once: true, margin: "-20%" });
+  const contactInView = useInView(contactRef, { once: true, margin: "-20%" });
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -436,21 +438,128 @@ const SinglePagePortfolio = () => {
             ))}
           </div>
 
-          {/* Placeholder notice */}
+        </div>
+      </section>
+
+      {/* CONTACT SECTION */}
+      <section 
+        ref={contactRef}
+        id="contact" 
+        className="min-h-screen relative snap-section flex items-center py-24 px-6"
+      >
+        {/* Background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-purple-950/10 to-background" />
+        
+        <div className="relative z-10 max-w-4xl mx-auto w-full text-center">
+          {/* Section label */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={contactInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="mb-8"
+          >
+            <span className="text-xs tracking-[0.3em] uppercase text-muted-foreground border border-border/50 px-4 py-2 rounded-full">
+              Contact
+            </span>
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            animate={contactInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6"
+          >
+            Let's create something
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400">
+              amazing together
+            </span>
+          </motion.h2>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={contactInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-muted-foreground text-lg sm:text-xl mb-12 max-w-2xl mx-auto"
+          >
+            Whether you have a project in mind or just want to chat about design and technology, 
+            I'd love to hear from you.
+          </motion.p>
+
+          {/* Contact cards */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={contactInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="grid sm:grid-cols-3 gap-4 sm:gap-6 mb-16"
+          >
+            <a
+              href="mailto:alekansen@hotmail.com"
+              className="group p-6 sm:p-8 bg-card/50 border border-border/30 rounded-3xl hover:border-purple-500/30 hover:bg-card transition-all duration-300"
+            >
+              <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Mail className="w-6 h-6 text-purple-400" />
+              </div>
+              <h3 className="text-foreground font-semibold mb-2">Email</h3>
+              <p className="text-sm text-muted-foreground group-hover:text-purple-400 transition-colors">
+                alekansen@hotmail.com
+              </p>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/aleksandar-hedstrom"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-6 sm:p-8 bg-card/50 border border-border/30 rounded-3xl hover:border-purple-500/30 hover:bg-card transition-all duration-300"
+            >
+              <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Linkedin className="w-6 h-6 text-purple-400" />
+              </div>
+              <h3 className="text-foreground font-semibold mb-2">LinkedIn</h3>
+              <p className="text-sm text-muted-foreground group-hover:text-purple-400 transition-colors">
+                Connect with me
+              </p>
+            </a>
+
+            <a
+              href="tel:+46702574802"
+              className="group p-6 sm:p-8 bg-card/50 border border-border/30 rounded-3xl hover:border-purple-500/30 hover:bg-card transition-all duration-300"
+            >
+              <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Phone className="w-6 h-6 text-purple-400" />
+              </div>
+              <h3 className="text-foreground font-semibold mb-2">Phone</h3>
+              <p className="text-sm text-muted-foreground group-hover:text-purple-400 transition-colors">
+                +46 70 257 4802
+              </p>
+            </a>
+          </motion.div>
+
+          {/* Availability badge */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={contactInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="inline-flex items-center gap-3 px-6 py-3 bg-green-500/10 border border-green-500/20 rounded-full"
+          >
+            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+            <span className="text-sm text-green-400">Available for freelance projects</span>
+          </motion.div>
+
+          {/* Footer text */}
           <motion.p
             initial={{ opacity: 0 }}
-            animate={projectsInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="text-center text-muted-foreground/50 text-sm mt-12"
+            animate={contactInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-16 text-muted-foreground/50 text-sm"
           >
-            {/* PLACEHOLDER: Replace project content above with your own work */}
+            © 2025 Aleksandar Praizovic Hedström. Crafted with passion.
           </motion.p>
         </div>
       </section>
 
       {/* Fixed navigation dots */}
       <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-3">
-        {['home', 'about', 'projects'].map((section) => (
+        {['home', 'about', 'projects', 'contact'].map((section) => (
           <button
             key={section}
             onClick={() => scrollToSection(section)}
