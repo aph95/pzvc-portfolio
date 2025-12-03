@@ -66,50 +66,30 @@ const SinglePagePortfolio = () => {
           <LiquidEther colors={['#5227FF', '#FF9FFC', '#B19EEF']} mouseForce={20} cursorSize={100} isViscous={false} autoDemo={true} autoSpeed={0.5} autoIntensity={2.2} />
         </div>
 
-        <div className="relative z-10 h-full flex flex-col items-center justify-center px-6">
-          {/* Small caps label */}
-          
-
-          {/* Main headline - Large expressive typography */}
-          <motion.h1 initial={{
-          opacity: 0,
-          y: 40
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 1,
-          delay: 0.4
-        }} className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center text-white leading-[0.95] mb-4">
-            <span className="block">USEREXPERIENCE </span>
-            <span className="block mt-2 font-light text-white/80">&</span>
-            <span className="block mt-2 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
-              WEB DEVELOPMENT  
-            </span>
+        <div className="relative z-10 h-full flex flex-col justify-end px-8 pb-16 sm:px-12 sm:pb-20">
+          {/* Main headline - Bottom left positioning */}
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="font-syne text-xl sm:text-2xl md:text-3xl font-medium text-white tracking-tight"
+          >
+            UX Designer & Web Developer
           </motion.h1>
 
-          {/* Subheader - Light wide */}
-          
-
-          {/* Name with serif accent */}
-          
-
           {/* Scroll indicator */}
-          <motion.button onClick={() => scrollToSection('about')} initial={{
-          opacity: 0
-        }} animate={{
-          opacity: 1
-        }} transition={{
-          duration: 0.8,
-          delay: 1.5
-        }} className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/60 hover:text-white transition-colors">
-            <motion.div animate={{
-            y: [0, 8, 0]
-          }} transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }} className="flex flex-col items-center gap-2">
+          <motion.button 
+            onClick={() => scrollToSection('about')} 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1.5 }}
+            className="absolute bottom-12 right-8 sm:right-12 text-white/60 hover:text-white transition-colors"
+          >
+            <motion.div 
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="flex flex-col items-center gap-2"
+            >
               <span className="text-xs tracking-[0.2em] uppercase">Scroll</span>
               <ArrowDown className="w-5 h-5" />
             </motion.div>
