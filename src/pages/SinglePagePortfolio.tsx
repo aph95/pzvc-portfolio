@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { ArrowDown, Linkedin, Mail, Phone, ExternalLink } from 'lucide-react';
 import LiquidEther from '../components/LiquidEther';
 
@@ -12,14 +12,6 @@ const SinglePagePortfolio = () => {
   const aboutInView = useInView(aboutRef, { once: true, margin: "-20%" });
   const projectsInView = useInView(projectsRef, { once: true, margin: "-20%" });
   const contactInView = useInView(contactRef, { once: true, margin: "-20%" });
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
-
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
 
   const projects = [
     {
@@ -74,7 +66,7 @@ const SinglePagePortfolio = () => {
   };
 
   return (
-    <div ref={containerRef} className="snap-container bg-background text-foreground">
+    <div ref={containerRef} className="snap-container bg-background text-foreground relative">
       {/* HOME SECTION */}
       <section id="home" className="h-screen relative overflow-hidden snap-section">
         {/* LiquidEther Background */}
@@ -90,10 +82,7 @@ const SinglePagePortfolio = () => {
           />
         </div>
 
-        <motion.div 
-          style={{ opacity: heroOpacity, scale: heroScale }}
-          className="relative z-10 h-full flex flex-col items-center justify-center px-6"
-        >
+        <div className="relative z-10 h-full flex flex-col items-center justify-center px-6">
           {/* Small caps label */}
           <motion.span
             initial={{ opacity: 0, y: 20 }}
@@ -158,7 +147,7 @@ const SinglePagePortfolio = () => {
               <ArrowDown className="w-5 h-5" />
             </motion.div>
           </motion.button>
-        </motion.div>
+        </div>
       </section>
 
       {/* ABOUT SECTION */}
