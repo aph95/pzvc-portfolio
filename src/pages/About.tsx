@@ -2,9 +2,8 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { usePageTitle } from '../hooks/usePageTitle';
 import BlurText from '../components/BlurText';
-import MagicBento from '../components/MagicBento';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhone, faCode, faPalette, faWandMagicSparkles, faLayerGroup, faCubes, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const About = () => {
@@ -22,42 +21,42 @@ const About = () => {
     }
   }, [location.hash]);
 
-  const skillCards = [
+  const skills = [
     {
-      color: '#0a0a1a',
+      icon: faPalette,
       title: 'User Experience Design',
-      description: 'Creating intuitive interfaces that guide users naturally through their digital journey with clarity and purpose.',
-      label: 'Design & UX'
+      description: 'Creating intuitive interfaces that guide users naturally through their digital journey.',
+      color: 'bg-purple-500/10 text-purple-500'
     },
     {
-      color: '#0a0a1a',
+      icon: faWandMagicSparkles,
       title: 'Interaction Design',
       description: 'Crafting engaging, responsive interactions that feel natural and delightful.',
-      label: 'Design & UX'
+      color: 'bg-pink-500/10 text-pink-500'
     },
     {
-      color: '#0a0a1a',
+      icon: faCode,
       title: 'Frontend Development',
-      description: 'Building responsive, performant web applications with modern technologies and best practices.',
-      label: 'Development'
+      description: 'Building responsive, performant web applications with modern technologies.',
+      color: 'bg-blue-500/10 text-blue-500'
     },
     {
-      color: '#0a0a1a',
+      icon: faLightbulb,
       title: 'AI-Enhanced Workflows',
-      description: 'Leveraging artificial intelligence to amplify creativity and streamline design processes.',
-      label: 'AI & Innovation'
+      description: 'Leveraging AI to amplify creativity and streamline design processes.',
+      color: 'bg-amber-500/10 text-amber-500'
     },
     {
-      color: '#0a0a1a',
+      icon: faCubes,
       title: 'Prototyping',
-      description: 'Rapidly iterating on ideas to validate concepts and refine user experiences.',
-      label: 'Development'
+      description: 'Rapidly iterating on ideas to validate concepts and refine experiences.',
+      color: 'bg-green-500/10 text-green-500'
     },
     {
-      color: '#0a0a1a',
+      icon: faLayerGroup,
       title: 'Design Systems',
-      description: 'Creating scalable, consistent design languages that unite teams and products.',
-      label: 'Design & UX'
+      description: 'Creating scalable, consistent design languages that unite teams.',
+      color: 'bg-indigo-500/10 text-indigo-500'
     }
   ];
 
@@ -83,166 +82,129 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background pt-24 relative overflow-hidden transition-colors duration-300">
-      <div className="max-w-6xl mx-auto px-6 py-12 relative z-10">
-        {/* Hero Section */}
-        <div className="mb-20 text-center">
-          <div className="mb-8">
+    <div className="min-h-screen bg-background pt-24 pb-16 transition-colors duration-300">
+      <div className="max-w-6xl mx-auto px-6">
+        
+        {/* Hero Card */}
+        <div className="bg-card rounded-3xl border border-border/50 p-8 md:p-12 mb-8 animate-fade-in">
+          <div className="flex flex-col md:flex-row items-center gap-8">
             <img
               src="/lovable-uploads/939cca3f-b207-4c41-9adf-45355cc9d931.png"
               alt="Aleksandar Praizovic Hedström"
-              className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover object-[center_20%] shadow-lg mx-auto cursor-default hover:scale-110 hover:rotate-3 hover:shadow-2xl transition-all duration-300 ease-out"
+              className="w-32 h-32 md:w-40 md:h-40 rounded-2xl object-cover object-[center_20%] shadow-lg hover:scale-105 transition-transform duration-300"
             />
-          </div>
-          <BlurText
-            text="Aleksandar Praizovic Hedström"
-            delay={80}
-            animateBy="words"
-            direction="top"
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6"
-          />
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            A 29-year-old designer and developer passionate about creating digital experiences 
-            that seamlessly blend human intuition with technological innovation.
-          </p>
-        </div>
-
-        {/* Philosophy Section */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <BlurText
-              text="Design philosophy"
-              delay={80}
-              animateBy="words"
-              direction="top"
-              className="text-3xl md:text-4xl font-bold text-foreground leading-tight"
-            />
-          </div>
-          <div className="max-w-3xl mx-auto">
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              My journey into design began with freelance graphic design work—initially as a 
-              creative side hustle that sparked my passion for visual communication. This 
-              foundation naturally evolved into a deeper fascination with how users interact 
-              with digital interfaces.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Today, I focus on frontend development, UX design, and interaction design, 
-              with a particular interest in how artificial intelligence can enhance the creative 
-              process. I believe AI amplifies our capabilities—helping us iterate faster, 
-              explore more possibilities, and create more personalized experiences.
-            </p>
+            <div className="text-center md:text-left">
+              <BlurText
+                text="Aleksandar Praizovic Hedström"
+                delay={60}
+                animateBy="words"
+                direction="top"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-4"
+              />
+              <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
+                A 29-year-old designer and developer passionate about creating digital experiences 
+                that seamlessly blend human intuition with technological innovation.
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Skills Bento Grid */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <BlurText
-              text="Core competencies"
-              delay={80}
-              animateBy="words"
-              direction="top"
-              className="text-3xl md:text-4xl font-bold text-foreground leading-tight"
-            />
+        {/* Two Column Layout */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-8">
+          
+          {/* Philosophy Card */}
+          <div className="bg-card rounded-3xl border border-border/50 p-8 animate-fade-in" style={{ animationDelay: '100ms' }}>
+            <h2 className="text-2xl font-bold text-foreground mb-6">Design Philosophy</h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                My journey into design began with freelance graphic design work—initially as a 
+                creative side hustle that sparked my passion for visual communication.
+              </p>
+              <p>
+                Today, I focus on frontend development, UX design, and interaction design, 
+                with a particular interest in how AI can enhance the creative process.
+              </p>
+              <p>
+                I believe AI amplifies our capabilities—helping us iterate faster, explore more 
+                possibilities, and create more personalized experiences.
+              </p>
+            </div>
           </div>
-          <MagicBento
-            cards={skillCards}
-            textAutoHide={false}
-            enableStars={true}
-            enableSpotlight={true}
-            enableBorderGlow={true}
-            enableTilt={true}
-            enableMagnetism={true}
-            clickEffect={true}
-            spotlightRadius={300}
-            particleCount={12}
-            glowColor="132, 0, 255"
-          />
-        </div>
 
-        {/* Experience Timeline */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <BlurText
-              text="Experience"
-              delay={80}
-              animateBy="words"
-              direction="top"
-              className="text-3xl md:text-4xl font-bold text-foreground leading-tight"
-            />
-          </div>
-          <div className="space-y-6 max-w-3xl mx-auto">
-            {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className="relative pl-8 pb-8 border-l-2 border-border/50 last:pb-0"
-              >
-                <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary" />
-                <div className="bg-card/50 backdrop-blur-sm rounded-xl p-6 border border-border/30 hover:border-primary/30 transition-all duration-300">
+          {/* Experience Card */}
+          <div className="bg-card rounded-3xl border border-border/50 p-8 animate-fade-in" style={{ animationDelay: '150ms' }}>
+            <h2 className="text-2xl font-bold text-foreground mb-6">Experience</h2>
+            <div className="space-y-6">
+              {experiences.map((exp, index) => (
+                <div key={index} className="relative pl-6 border-l-2 border-primary/30">
+                  <div className="absolute left-[-5px] top-1 w-2 h-2 rounded-full bg-primary" />
                   <span className="text-sm text-primary font-medium">{exp.period}</span>
-                  <h3 className="text-xl font-semibold text-foreground mt-1">{exp.role}</h3>
-                  <p className="text-muted-foreground mt-1">{exp.company}</p>
-                  <p className="text-muted-foreground mt-3 text-sm">{exp.description}</p>
+                  <h3 className="text-foreground font-semibold mt-1">{exp.role}</h3>
+                  <p className="text-sm text-muted-foreground">{exp.company}</p>
+                  <p className="text-sm text-muted-foreground mt-2">{exp.description}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Skills Section */}
+        <div className="bg-card rounded-3xl border border-border/50 p-8 mb-8 animate-fade-in" style={{ animationDelay: '200ms' }}>
+          <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Core Competencies</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {skills.map((skill, index) => (
+              <div 
+                key={index} 
+                className="group p-6 rounded-2xl bg-muted/30 border border-border/30 hover:border-primary/30 hover:bg-muted/50 transition-all duration-300"
+              >
+                <div className={`w-12 h-12 rounded-xl ${skill.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <FontAwesomeIcon icon={skill.icon} className="text-xl" />
+                </div>
+                <h3 className="text-foreground font-semibold mb-2">{skill.title}</h3>
+                <p className="text-sm text-muted-foreground">{skill.description}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Contact Section */}
-        <div id="contact" className="mb-12">
-          <div className="text-center mb-12">
-            <BlurText
-              text="Let's connect"
-              delay={80}
-              animateBy="words"
-              direction="top"
-              className="text-3xl md:text-4xl font-bold text-foreground leading-tight"
-            />
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+        <div id="contact" className="bg-card rounded-3xl border border-border/50 p-8 animate-fade-in" style={{ animationDelay: '250ms' }}>
+          <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Let's Connect</h2>
+          <div className="grid sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
             <a
               href="https://www.linkedin.com/in/aleksandar-praizović-hedström-178b7633a"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-4 p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/30 hover:border-blue-500/50 hover:bg-blue-500/5 transition-all duration-300 group"
+              className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-muted/30 border border-border/30 hover:border-blue-500/50 hover:bg-blue-500/5 transition-all duration-300 group"
             >
-              <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-                <FontAwesomeIcon icon={faLinkedin} className="text-white text-2xl" />
+              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                <FontAwesomeIcon icon={faLinkedin} className="text-white text-xl" />
               </div>
-              <div className="text-center">
-                <p className="font-semibold text-foreground">LinkedIn</p>
-                <p className="text-sm text-muted-foreground">Professional profile</p>
-              </div>
+              <span className="font-medium text-foreground">LinkedIn</span>
             </a>
 
             <a
               href="mailto:aleksandar.praizovic.hedstrom@gmail.com"
-              className="flex flex-col items-center gap-4 p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/30 hover:border-green-500/50 hover:bg-green-500/5 transition-all duration-300 group"
+              className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-muted/30 border border-border/30 hover:border-green-500/50 hover:bg-green-500/5 transition-all duration-300 group"
             >
-              <div className="w-14 h-14 bg-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-                <FontAwesomeIcon icon={faEnvelope} className="text-white text-2xl" />
+              <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                <FontAwesomeIcon icon={faEnvelope} className="text-white text-xl" />
               </div>
-              <div className="text-center">
-                <p className="font-semibold text-foreground">Email</p>
-                <p className="text-sm text-muted-foreground">Get in touch</p>
-              </div>
+              <span className="font-medium text-foreground">Email</span>
             </a>
 
             <a
               href="tel:+46704329507"
-              className="flex flex-col items-center gap-4 p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/30 hover:border-purple-500/50 hover:bg-purple-500/5 transition-all duration-300 group"
+              className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-muted/30 border border-border/30 hover:border-purple-500/50 hover:bg-purple-500/5 transition-all duration-300 group"
             >
-              <div className="w-14 h-14 bg-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-                <FontAwesomeIcon icon={faPhone} className="text-white text-2xl" />
+              <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                <FontAwesomeIcon icon={faPhone} className="text-white text-xl" />
               </div>
-              <div className="text-center">
-                <p className="font-semibold text-foreground">Phone</p>
-                <p className="text-sm text-muted-foreground">070-432 95 07</p>
-              </div>
+              <span className="font-medium text-foreground">Phone</span>
             </a>
           </div>
         </div>
+
       </div>
     </div>
   );
