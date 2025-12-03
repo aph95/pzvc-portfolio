@@ -9,11 +9,6 @@ export default {
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
 	],
-	theme: {
-		extend: {
-			fontFamily: {
-				syne: ['Syne', 'sans-serif'],
-			},
 	prefix: "",
   theme: {
     container: {
