@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { usePageTitle } from '../hooks/usePageTitle';
 import LiquidEther from '../components/LiquidEther';
+import BlurText from '../components/BlurText';
 import FeaturedPrototypesCarousel from '../components/FeaturedPrototypesCarousel';
 
 const Home = () => {
@@ -33,18 +34,24 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-6 z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="fade-in">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-foreground mb-8 leading-tight">
-              Hi, I'm <span className="text-blue-400 font-medium">Aleksandar</span> —
-              <span className="block"><span className="text-indigo-400 font-medium">UX designer</span> & aspiring</span>
-              <span className="block text-blue-400 font-medium">frontend developer.</span>
-            </h1>
+          <div className="mb-4">
+            <BlurText
+              text="Aleksandar Praizovic Hedström"
+              delay={100}
+              animateBy="words"
+              direction="top"
+              className="text-5xl md:text-6xl lg:text-7xl font-light text-white leading-tight"
+            />
           </div>
           
-          <div className="fade-in fade-in-delay-1">
-            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-              I create thoughtful digital experiences that feel natural to use — blending design, code, and AI to help users move with clarity and confidence.
-            </p>
+          <div className="mb-12">
+            <BlurText
+              text="User experience and web development"
+              delay={80}
+              animateBy="words"
+              direction="top"
+              className="text-xl md:text-2xl text-white/90 leading-relaxed"
+            />
           </div>
           
           <div className="fade-in fade-in-delay-2 flex flex-col sm:flex-row gap-4 justify-center">
