@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
 import { usePageTitle } from '../hooks/usePageTitle';
 import LiquidEther from '../components/LiquidEther';
 import BlurText from '../components/BlurText';
@@ -47,15 +46,14 @@ const Home = () => {
           <div className="fade-in fade-in-delay-2 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/projects"
-              className="group inline-flex items-center px-8 py-4 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-black font-medium rounded-full hover:bg-white/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
             >
               My projects
-              <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             
             <Link
               to="/about"
-              className="inline-flex items-center px-8 py-4 border border-border text-foreground rounded-full hover:border-border/80 hover:bg-accent transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-white/30 text-white font-medium rounded-full hover:bg-white/10 transition-all duration-300 hover:-translate-y-0.5"
             >
               About me
             </Link>
