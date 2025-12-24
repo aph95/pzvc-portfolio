@@ -1,12 +1,16 @@
 import { useState } from 'react';
+import { Linkedin } from 'lucide-react';
 import LetterGlitch from '../components/LetterGlitch';
 import TextType from '../components/TextType';
 
 const SinglePagePortfolio = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isLinkedInHovered, setIsLinkedInHovered] = useState(false);
   const [showTag, setShowTag] = useState(false);
+  const [hideCursor, setHideCursor] = useState(false);
 
   const handleTypingComplete = () => {
+    setHideCursor(true);
     setShowTag(true);
   };
 
@@ -28,60 +32,111 @@ const SinglePagePortfolio = () => {
           text={["I'm currently coding\nthe new portfolio."]}
           typingSpeed={75}
           pauseDuration={1500}
-          showCursor={true}
+          showCursor={!hideCursor}
           cursorCharacter="|"
           loop={false}
           onTypingComplete={handleTypingComplete}
           className="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-tight text-center whitespace-pre-wrap"
         />
         
-        {/* Liquid Glass Tag */}
+        {/* Tags Container */}
         <div 
-          className={`mt-6 pointer-events-auto transition-all duration-700 ease-out ${
+          className={`mt-6 flex items-center gap-3 transition-all duration-700 ease-out ${
             showTag 
               ? 'opacity-100 translate-y-0 scale-100' 
               : 'opacity-0 translate-y-4 scale-95'
           }`}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
         >
+          {/* Coming 2026 Tag */}
           <div 
-            className={`
-              relative px-6 py-3 rounded-full
-              backdrop-blur-md
-              border border-white/20
-              transition-all duration-500 ease-out
-              ${isHovered 
-                ? 'bg-white/20 border-white/40 shadow-[0_8px_32px_rgba(255,255,255,0.15)] scale-105' 
-                : 'bg-white/10 shadow-[0_4px_16px_rgba(255,255,255,0.05)]'
-              }
-            `}
-            style={{
-              background: isHovered 
-                ? 'linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.2) 100%)'
-                : 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.1) 100%)'
-            }}
+            className="pointer-events-auto"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
-            {/* Shine effect */}
             <div 
               className={`
-                absolute inset-0 rounded-full overflow-hidden
-                transition-opacity duration-500
-                ${isHovered ? 'opacity-100' : 'opacity-0'}
+                relative px-6 py-3 rounded-full
+                backdrop-blur-md
+                border border-white/20
+                transition-all duration-500 ease-out
+                ${isHovered 
+                  ? 'bg-white/20 border-white/40 shadow-[0_8px_32px_rgba(255,255,255,0.15)] scale-105' 
+                  : 'bg-white/10 shadow-[0_4px_16px_rgba(255,255,255,0.05)]'
+                }
               `}
+              style={{
+                background: isHovered 
+                  ? 'linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.2) 100%)'
+                  : 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.1) 100%)'
+              }}
             >
+              {/* Shine effect */}
               <div 
-                className="absolute -inset-full bg-gradient-to-r from-transparent via-white/30 to-transparent rotate-12 translate-x-[-100%]"
-                style={{
-                  animation: isHovered ? 'shimmer 1.5s infinite' : 'none'
-                }}
-              />
+                className={`
+                  absolute inset-0 rounded-full overflow-hidden
+                  transition-opacity duration-500
+                  ${isHovered ? 'opacity-100' : 'opacity-0'}
+                `}
+              >
+                <div 
+                  className="absolute -inset-full bg-gradient-to-r from-transparent via-white/30 to-transparent rotate-12 translate-x-[-100%]"
+                  style={{
+                    animation: isHovered ? 'shimmer 1.5s infinite' : 'none'
+                  }}
+                />
+              </div>
+              
+              <span className="relative text-sm sm:text-base font-light text-white/90 tracking-widest uppercase">
+                Coming 2026
+              </span>
             </div>
-            
-            <span className="relative text-sm sm:text-base font-light text-white/90 tracking-widest uppercase">
-              Coming 2026
-            </span>
           </div>
+
+          {/* LinkedIn Tag */}
+          <a 
+            href="https://www.linkedin.com/in/aleksandar-praizovi%C4%87-hedstr%C3%B6m-178b7633a/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pointer-events-auto"
+            onMouseEnter={() => setIsLinkedInHovered(true)}
+            onMouseLeave={() => setIsLinkedInHovered(false)}
+          >
+            <div 
+              className={`
+                relative p-3 rounded-full
+                backdrop-blur-md
+                border border-white/20
+                transition-all duration-500 ease-out
+                ${isLinkedInHovered 
+                  ? 'bg-white/20 border-white/40 shadow-[0_8px_32px_rgba(255,255,255,0.15)] scale-105' 
+                  : 'bg-white/10 shadow-[0_4px_16px_rgba(255,255,255,0.05)]'
+                }
+              `}
+              style={{
+                background: isLinkedInHovered 
+                  ? 'linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.2) 100%)'
+                  : 'linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.1) 100%)'
+              }}
+            >
+              {/* Shine effect */}
+              <div 
+                className={`
+                  absolute inset-0 rounded-full overflow-hidden
+                  transition-opacity duration-500
+                  ${isLinkedInHovered ? 'opacity-100' : 'opacity-0'}
+                `}
+              >
+                <div 
+                  className="absolute -inset-full bg-gradient-to-r from-transparent via-white/30 to-transparent rotate-12 translate-x-[-100%]"
+                  style={{
+                    animation: isLinkedInHovered ? 'shimmer 1.5s infinite' : 'none'
+                  }}
+                />
+              </div>
+              
+              <Linkedin className="relative w-5 h-5 text-white/90" />
+            </div>
+          </a>
         </div>
       </div>
 
