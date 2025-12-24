@@ -61,7 +61,7 @@ const SinglePagePortfolio = () => {
               />
             </div>
             
-            <span className="relative text-sm sm:text-base font-medium text-white/90 tracking-wide uppercase">
+            <span className="relative text-sm sm:text-base font-light text-white/90 tracking-widest uppercase">
               Coming 2026
             </span>
           </div>
