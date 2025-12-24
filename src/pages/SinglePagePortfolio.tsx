@@ -19,7 +19,8 @@ const SinglePagePortfolio = () => {
       {/* Centered Text Overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none">
         <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-tight text-center">
-          Coding the new portfolio
+          <span className="block">I'm currently coding</span>
+          <span className="block">the new portfolio.</span>
         </h1>
         
         {/* Liquid Glass Tag */}
