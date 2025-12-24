@@ -24,7 +24,7 @@ const SinglePagePortfolio = () => {
         
         {/* Liquid Glass Tag */}
         <div 
-          className="mt-6 pointer-events-auto cursor-pointer"
+          className="mt-6 pointer-events-auto"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
