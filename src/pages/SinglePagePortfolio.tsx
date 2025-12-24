@@ -1,8 +1,14 @@
 import { useState } from 'react';
 import LetterGlitch from '../components/LetterGlitch';
+import TextType from '../components/TextType';
 
 const SinglePagePortfolio = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const [showTag, setShowTag] = useState(false);
+
+  const handleTypingComplete = () => {
+    setShowTag(true);
+  };
 
   return (
     <div className="w-full h-screen relative">
@@ -18,14 +24,24 @@ const SinglePagePortfolio = () => {
 
       {/* Centered Text Overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none">
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-tight text-center">
-          <span className="block">I'm currently coding</span>
-          <span className="block">the new portfolio.</span>
-        </h1>
+        <TextType
+          text={["I'm currently coding\nthe new portfolio."]}
+          typingSpeed={75}
+          pauseDuration={1500}
+          showCursor={true}
+          cursorCharacter="|"
+          loop={false}
+          onTypingComplete={handleTypingComplete}
+          className="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-tight text-center whitespace-pre-wrap"
+        />
         
         {/* Liquid Glass Tag */}
         <div 
-          className="mt-6 pointer-events-auto"
+          className={`mt-6 pointer-events-auto transition-all duration-700 ease-out ${
+            showTag 
+              ? 'opacity-100 translate-y-0 scale-100' 
+              : 'opacity-0 translate-y-4 scale-95'
+          }`}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -55,7 +71,7 @@ const SinglePagePortfolio = () => {
               `}
             >
               <div 
-                className="absolute -inset-full bg-gradient-to-r from-transparent via-white/30 to-transparent rotate-12 translate-x-[-100%] animate-[shimmer_2s_infinite]"
+                className="absolute -inset-full bg-gradient-to-r from-transparent via-white/30 to-transparent rotate-12 translate-x-[-100%]"
                 style={{
                   animation: isHovered ? 'shimmer 1.5s infinite' : 'none'
                 }}
